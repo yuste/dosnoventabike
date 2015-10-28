@@ -1,0 +1,44 @@
+
+<script type="text/javascript">
+var count=0;
+var page =1;
+</script>
+
+{{#videos}}
+	<script type="text/javascript">
+  	if (count == 0) document.write('<div class="pageInit pageNext page'+page+'">');
+  	else if (count%12 == 0) {
+  		page++;
+  		document.write('<div class="pageNext page'+page+'">');
+  	}
+  	count++;
+  	</script>
+	<div class="divLeft" data-link="{{link}}" data-description="{{description}}" data-name="{{name}}"><img class="imgVideo"  src="{{thumbnail_large}}" alt="{{name}}" width="186" height="105" itemprop="image" /></div>
+	<script type="text/javascript">
+  	if (count == 12) document.write('</div>');
+  	else if (count%12 == 0) document.write('</div>');
+  	</script>
+{{/videos}}
+
+
+
+
+<script type="text/javascript">
+   var stringPag = '</div><div class="paginationVimeo"><span class="numPagination paginationPrev disabled">PREVIOUS</span>';
+   page = 1;
+   var numPages
+	if (count > 12) {
+		 numPages = count/12;
+		if (numPages / parseInt(numPages) > 0) numPages = parseInt(numPages)+1
+		else numPages = parseInt(numPages);
+		for ( i = 1; i <= numPages; i++){
+			if (i ==1)stringPag += '<span class="numPagination num_1 active">'+i+'</span>';
+			else stringPag += '<span class="numPagination num_'+i+'">'+i+'</span>';
+		}
+		stringPag += '<span class="paginationNext numPagination">NEXT</span></div>';
+	}
+	else {
+		stringPag += '<span class="paginationNext numPagination">NEXT</span></div>';	
+	}
+	document.write(stringPag);
+</script>
