@@ -243,6 +243,9 @@ ul li a:hover {
 	text-transform: uppercase;
 	font-size: 18px !important;
     font-family: "Futura";
+    padding-right: 30px !important;
+    padding-left: 40px !important;
+    border-radius: 1px !important;
 }
 
 #sbi_load > a {
@@ -434,6 +437,11 @@ ul#menu-global_menu li {
 	border-top: solid 1px #ddd;
 	margin-left: 60px;
 }
+
+ul#menu-footer1 li a:hover{
+	color:#ffd800;
+}
+
 
 ul#menu-footer2 li a:hover{
 	color:#ffd800;
@@ -780,8 +788,32 @@ ol.qe-faqs-group-index  li {
  }
 
 
+/*STAFF*/
+
+.tableStaff {
+	border:none !important;
+}
+
+.tableStaff tr td{
+	width: 60% !important;
+	vertical-align: bottom;
+}
+
+.tableStaff tr td a img {
+	height: 300px;
+}
+
+.divTextColumnStaff{
+	padding-bottom: 40px;
+}
+
+.titleStaff {
+	margin-bottom: 0px !important;
+    font-family: Helvetica;
+}
 
  /*PLUGIN STOCKIST*/
+
 
 .storesTableLocator{
 	display: none;
@@ -1462,4 +1494,66 @@ table.tableHeadquarter tr td {
 
 .slb_data{
 	height: 0px !important;
+}
+
+/**PROJECT PAGE**/
+
+.boxProject{
+	text-align: center;
+	margin-bottom: 70px;
+	margin-top: 70px;
+}
+
+.boxProject > h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+.jsj-gallery-slideshow-gallery-container.jsj-gallery-slideshow-classic .jsj-gs-pager li {
+    height: 97px;
+    width: 118px;
+}
+
+.jsj-gallery-slideshow-gallery-container.jsj-gallery-slideshow-classic .jsj-gs-pager {
+     max-width: none;
+}
+
+.jsj-gallery-slideshow-gallery-numbering-2{
+	display: none;
+}
+
+#jsj-gallery-slideshow-gallery-next-2{
+	float: right;
+    margin-top: 320px;
+    background-image: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/arrowright.png");
+     background-repeat: no-repeat;
+  	 width: 50px;
+    height: 100px;
+    margin-left: 20px;
+
+
+}
+
+#jsj-gallery-slideshow-gallery-prev-2{
+	float: left;
+    margin-top: 320px;
+     background-image: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/arrowleft.png");
+     background-repeat: no-repeat;
+     width: 50px;
+     height: 100px;
+}
+
+#jsj-gallery-slideshow-gallery-numbering-2{
+	display: none;
+}
+
+.gallery-navigation .divider {
+	display: none;
+}
+
+.staffNextPrev{
+	border: 0px !important;
+    margin-top: 50px;
+    margin-bottom: 50px !important;
 }

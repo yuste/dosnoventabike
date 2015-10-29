@@ -114,6 +114,8 @@ add_shortcode( 'faqsScript', 'faqScript_func' );
 
 //[myjavascript2]
 
+/*Community dsnv start*/
+
 function myjavascript2_func( $atts ){
   
  return "<script>
@@ -325,6 +327,52 @@ function community_function_init() {
 }
 add_action( 'init', 'community_function_init' );
 
+
+/*Community dsnv end*/
+
+
+function projectdsnvFunction() {
+  ob_start();
+    $args = array( 'post_type' => 'projectdsnv', 'posts_per_page' => 10 );
+    $loop = new WP_Query( $args );
+    
+    
+    while ( $loop->have_posts() ) : $loop->the_post();
+      $imageProject  = get_field("image"); 
+      $titleProject  = get_field("title"); 
+      $subtitleProject  = get_field("subtitle"); 
+      $pageProject = get_field("pageproject");
+      echo "<div class='boxProject'>";
+      echo "<img src=".$imageProject["url"]." />";
+      echo "<h1><a href='".$pageProject."'>".$titleProject."</a></h1>";
+      echo "<h3>".$subtitleProject."</h3>";
+      echo "</div>";
+
+
+    endwhile;
+    $myvariable = ob_get_clean();
+        return $myvariable;
+}
+
+add_shortcode( 'porjectdsnvcort', 'projectdsnvFunction' );
+
+function project_function_init() {
+   $labels = array(
+    'name'               => _x( 'projectsDSNV', 'post type general name' ),
+    'singular_name'      => _x( 'projectsDSNV', 'post type singular name' ),
+  );
+  $args = array(
+    'labels'         => $labels,
+    'description'    => 'projects dsnv',
+    'public'         => true,
+    'has_archive'    => true,
+    'supports'       => array('title')
+
+  );
+  register_post_type( 'projectdsnv', $args );
+}
+
+add_action('init', 'project_function_init');
 
 /*function my_updated_messages( $messages ) {
   global $post, $post_ID;

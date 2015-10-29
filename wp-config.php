@@ -29,8 +29,8 @@ define('DB_PASSWORD', 'eerahgha');
 //define('DB_PASSWORD', 'dosnoventa2');
 
 /** MySQL hostname */
-//define('DB_HOST', '127.0.0.1:13312');
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1:13312');
+//define('DB_HOST', 'localhost');
 
 //define('DB_HOST', 'db582749724.db.1and1.com');
 //define('DB_HOST', 'db578329536.db.1and1.com');
