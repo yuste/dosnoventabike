@@ -1407,31 +1407,145 @@ ul.bikes img {
 }
 
 
-.select290 {
+.packSelect290{
+margin-left: 0px !important;	
+}
+
+.packSelect290 li {
+	list-style-position: outside;
+	list-style-type: none;
+	list-style-image: none;
+	display: inline-block;
+	margin-right: 30px;
+	font-family: "Helvetica";
+}
+
+.packSelect290 li a {
+font-family: "Helvetica";
+}
+
+.chooseFrameSelect {
+	height: 25px;
+    width: 200px;
+    border: 1px #ffffff solid;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 120px;
+
+}
+
+div.colorPicker-swatch {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #000;
+    margin: 2px;
+    float: left;
+    cursor: pointer;
+    line-height: 12px;
+}
+
+.chooseColorSelect{
+	height: 25px;
+    width: 200px;
+    border: 1px #ffffff solid;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 140px;
+}
+
+.color290{
 	border: 1px solid white;
-    background-color: #1f1f1f;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     margin-right: 30px;
     margin-bottom: 30px;
-    height: 25px;
-    width: 180px;
-    box-sizing: inherit;
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-    border-radius: 0px !important;
+    width: 239px;
+    position: absolute;
+    left:-999999px;
+    z-index: 9999;
+    border:1px;
+}
+#colorPicker_palette-0{
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-bottom: 15px;
 }
 
-select.select290 option:first-child {
-    display: none;
+.labelRal{
+	display: inline-block !important;
 }
 
-select.select290 option{
-	padding:0px 0px 0px;
-	margin-top:60px;
+
+.color290 li {
+	list-style-position: outside;
+	list-style-type: none;
+	list-style-image: none;
+	background-color: #ffffff;
+	z-index: 9999;
+	margin:0px;
+	/*padding-right: 70px;*/
+	display: block;
+
 }
 
+.color290 li a {
+	z-index: 9999;
+	margin-left: 10px;
+	color:black;
+	font-family: "Helvetica";
+	font-weight: bold;
+}
+
+.color290 li a:hover {
+	color:black !important;
+	cursor: pointer;
+	
+}
+
+.select290 {
+	border: 1px solid white;
+    background-color: #ffffff;
+    color: black;
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    position: absolute;
+    left:-999999px;
+    z-index: 9999;
+    border:1px;
+}
+
+.select290 li {
+	list-style-position: outside;
+	list-style-type: none;
+	list-style-image: none;
+	background-color: #ffffff;
+	z-index: 9999;
+	margin:0px;
+	padding-right: 102px;
+	display: block;
+
+}
+
+.select290 li a {
+	z-index: 9999;
+	margin-left: 10px;
+	color:black;
+	font-family: "Helvetica";
+	font-weight: bold;
+}
+
+
+.select290 li:hover a{
+	text-decoration: underline;
+}
+.select290 li a:hover {
+	color:black !important;
+	cursor: pointer;
+	text-decoration: underline;
+}
 
 .btn290 {
 		 outline: none;
@@ -1556,4 +1670,9 @@ table.tableHeadquarter tr td {
 	border: 0px !important;
     margin-top: 50px;
     margin-bottom: 50px !important;
+}
+
+
+.btn-share-social {
+	margin-right: 30px;
 }

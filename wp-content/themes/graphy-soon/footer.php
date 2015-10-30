@@ -147,6 +147,39 @@ function functionSubscribe() {
 	console.dir(jsonResp);
 }
 
+
+
+
+jQuery('.btn-share-social').hover(function(){
+
+   
+    if (jQuery(this).hasClass('share-face')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-face-on.png');
+    }
+    else if (jQuery(this).hasClass('share-tweet')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-twitter-on.png');
+    }
+     else if (jQuery(this).hasClass('share-pin')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-pin-on.png');
+    }
+     else if (jQuery(this).hasClass('share-tumblr')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-tumblr-on.png');
+    }
+}, function(){
+    if (jQuery(this).hasClass('share-face')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-face.png');
+    }
+    else if (jQuery(this).hasClass('share-tweet')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-twitter.png');
+    }
+     else if (jQuery(this).hasClass('share-pin')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-pin.png');
+    }
+     else if (jQuery(this).hasClass('share-tumblr')){
+        jQuery(this).attr('src', 'http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-tumblr.png');
+    }
+});
+
 jQuery('.buttonSubscribe').click(function() {
 	var emailAux = jQuery('.inputSubscribe').val();
 	//var valuejson = '{"apikey":"45557fa2e18187ffab7366067047947b-us11", "email_address":"dyuste@wesmartpark.com", "status":"subscribed"}';
