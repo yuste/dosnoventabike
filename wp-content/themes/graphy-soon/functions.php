@@ -227,6 +227,7 @@ function communityScript_func( $atts ){
       jQuery('.select290 li').click(function(){
           jQuery('.frame').addClass('hide');
           jQuery('.frame_'+jQuery(this).data('value')).removeClass('hide');
+          jQuery('.select290 li').removeClass('active');
           jQuery(this).addClass('active');
           jQuery('.chooseFrameSelect').html(jQuery(this).data('value'));
       });
