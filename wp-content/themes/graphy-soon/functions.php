@@ -310,7 +310,7 @@ function communityDNVFunction() {
     else:
       echo '<ul class="packSelect290"><li><a class="chooseFrameSelect" href="javascript:;">Elige Frame</a><ul class="select290 changeFrameSelect"></li>';
     endif;
-    echo '<li data-value="KUALA LUMPUR"><a>KUALA LUMPUR</a></li><li data-value="MONTECARLO"><a>MONTECARLO</a></li><li data-value="DETROIT"><a>DETROIT</a></li><li data-value="HOUSTON"><a>HOUSTON</a></li>';
+    echo '<li data-value="KUALA_LUMPUR"><a>KUALA_LUMPUR</a></li><li data-value="MONTECARLO"><a>MONTECARLO</a></li><li data-value="DETROIT"><a>DETROIT</a></li><li data-value="HOUSTON"><a>HOUSTON</a></li>';
     echo '<li data-value="BARCELONA"><a>BARCELONA</a></li><li data-value="TOKYO"><a>TOKYO</a></li><li data-value="EDINBURGH"><a>EDINBURGH</a></li><li data-value="SEOUL"><a>SEOUL</a></li>';
     echo '<li data-value="COPENHAGEN"><a>COPENHAGEN</a></li><li data-value="STUTTGART"><a>STUTTGART</a></li><li data-value="VERONA"><a>VERONA</a></li></ul></li>';
 
