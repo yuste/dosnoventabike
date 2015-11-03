@@ -827,14 +827,18 @@ ol.qe-faqs-group-index  li {
 
 .seeAllStores{
 	cursor: pointer;
-	margin-top: -150px;
+	margin-top: -150px !important;
 }
 
-.tableStoreLocator tr td{
-	min-width: 370px;
-	max-width: 370px;
+.tableStoreLocator tr td:first-child{
+	min-width: 400px;
+	max-width: 400px;
 }
 
+.storeNextYou{
+    margin-top: 60px;
+    margin-bottom: 20px;
+   }
 
 .titleBubbleHeader{
 	margin-top: 0px !important;

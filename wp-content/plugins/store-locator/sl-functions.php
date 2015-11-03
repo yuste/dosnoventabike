@@ -1893,9 +1893,14 @@ $form.="<table style='width:100%;/*border:solid silver 1px*/' cellspacing='0px' 
      <tr>
         <td style='width:100%' valign='top' id='map_td'> <div id='sl_map' style='width:$width$width_units; height:$height$height_units'></div><table cellpadding='0px' class='sl_footer' style='width:$width$width_units;{$hide}' ><tr><td class='sl_footer_left_column'><a href='http://www.viadat.com/store-locator' target='_blank' title='WordPress Store Locator -- LotsOfLocales&trade;'>WordPress Store Locator</a></td><td class='sl_footer_right_column'> <a href='http://www.viadat.com' target='_blank' title='Map Maker for Creating Store Locators or Any Address Maps Using WordPress & Google Maps'>Viadat Creations</a></td></tr></table>
 		</td>
-      </tr>
-      <tr><td><h1>STORES NEXT TO YOU</h1></td></tr>
-	  <tr id='cm_mapTR'>
+      </tr>";
+      if (strrpos($_SERVER['REQUEST_URI'], "en/")):
+      	$form .= "<tr><td><h1 class='storeNextYou'>STORES NEXT TO YOU</h1></td></tr>";
+  	  else:
+  	  	$form .= "<tr><td><h1 class='storeNextYou'>TIENDAS A TU LADO</h1></td></tr>";
+  	  endif;
+
+	$form .="<tr id='cm_mapTR'>
         <td width='' valign='top' style='/*display:hidden; border-right:solid silver 1px*/' id='map_sidebar_td'> <div id='map_sidebar' style='width:$width$width_units;/* $height$height_units; */'> <div class='text_below_map'>$sl_instruction_message</div></div>
         </td></tr>
   </table></form>";
