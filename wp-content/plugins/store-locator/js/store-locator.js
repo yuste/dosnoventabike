@@ -1,1 +1,629 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3 m;3 1k;3 1q;3 18=[];3 w;3 1W=0;5(!1Q(1G)){3 1G=[]}3 2z=(1Q(1G)&&1G.1d>0)?1G[0]:\'Y\';3 Q=T.4I(/\\.([^\\.]+)$/);3 2E=(b Q[1]==\'j\'||Q[1]==\'W\'||Q[1]==\'\');5(2E||Q[1]==\'4H\'){3 Q=(2E||T.y(\'4J\')==-1)?\'4K\':\'4M\'}7{3 Q=Q[1]}3 1L=[];5(b 15!="j"){15=15.s("=").t("[]=")}5(!o("2r")){3 2r=8(6){A 6}}5(1M.1i.3w.y(\'1w.\')!=-1&&u.y(\'1w.\')==-1){u=u.s(\'1j://\').t(\'1j://1w.\')}7 5(1M.1i.3w.y(\'1w.\')==-1&&u.y(\'1w.\')!=-1){u=u.s(\'1j://1w.\').t(\'1j://\')}8 3H(){3W();1k=x f.d.4G();5("j"!=b G.I("m")&&W!=G.I("m")){m=x f.d.4d(G.I("m"));5(b 3s!=\'j\'){1q=x 3s}7{1q=x f.d.4F}5(o("3r")){3r()}5(4z==\'1\'){1I(\'4B\',\'1H\');4C{5(b 3p.2U===\'j\'){23=f.4E.4D.4N(\'4O.2U\')}7{23=3p.2U}}4X(e){}5(23){5(1W!=1){1N()}23.4Z(3G,3j)}7{1N()}}7{1N()}5(o("3y")){f.d.1n.50(m,\'51\',3y)}}}f.d.1n.4b(1M,\'4W\',3H);8 3G(F){1W=1;3 2n=x f.d.2y(F.3D.4P,F.3D.4S);1k.1T({\'1i\':2n},8(12){2l=G.I(\'2t\');2l.10=12[0].4U;34(2n,2l.10)})}8 3j(4m){1W=1;1N()}8 1N(){5(3m==\'0\'){1k.1T({\'U\':3e},8(12,1F){3 C={13:12[0].35.1i,36:3z,2d:P,2u:33,2M:2N,32:{1V:f.d.2X.2A}};5(b N!=\'j\'&&b N===\'19\'){C=1t(N,C)}m.20(C)})}5(3m=="1"){3 S=x f.d.3E();3 1h=u+"/3h-1l.3k";5(b 15!="j"){1h+="?"+15}2G(1h,8(27){3 1l=27.3l;3 L=1l.3u.3v("h");3 17=G.I(\'3g\');17.1R=\'\';1e(3 i=0;i<L.1d;i++){3 6=24(L[i],i);w=L[i].k(2z);5(w==""||w==W){w="1Y"}3 r=(b 1s!=\'j\'&&b 1s[w]!=\'j\')?1s[w]:{g:1Y,14:\'3C\'};3 h=2e(6,w,r);5(4x==\'1\'){3 1m=2I(h,6);1m.26="3B"+i;17.3x(1m)}S.2w(6[\'F\'])}5(L.1d==0){1k.1T({\'U\':3e},8(12,1F){3 C={13:12[0].35.1i,36:3z,2d:P,2u:33,2M:2N,32:{1V:f.d.2X.2A}};5(b N!=\'j\'&&b N===\'19\'){C=1t(N,C)}5(b B!=\'j\'&&b B[\'Y\']!=\'j\'&&b B[\'25\']!=\'j\'){1e(K 1U B[\'Y\']){1L[K]=x B[\'Y\'][K](B[\'25\'][K]);1L[K].2p(m)}}m.20(C)})}7{3 C={13:S.3I(),2d:P,2u:33,2M:2N,32:{1V:f.d.2X.2A}};5(b N!=\'j\'&&b N===\'19\'){C=1t(N,C)}5(b B!=\'j\'&&b B[\'Y\']!=\'j\'&&b B[\'25\']!=\'j\'){1e(K 1U B[\'Y\']){1L[K]=x B[\'Y\'][K](B[\'25\'][K]);1L[K].2p(m)}}m.20(C);m.37(S)}5(m.4l()>16){m.4V(9)}})}1I(\'21\',\'1H\')}8 5H(){5(o("3q")){3q()}3 U=G.I(\'2t\').10;1k.1T({\'U\':U,\'5G\':Q},8(12,1F){5(1F!=f.d.5I.5J){1I(\'21\',\'1H\');5(3t.s(\' \').t(\'\')!=""){3o(3t)}7{3o(U+\' 5E 5z\')}}7{34(12[0].35.1i,U)}});5(o("3n")){3n()}}8 34(13,E){5(o("3i")){3i()}3 2m=5L;3 1h=u+\'/3h-1l.3k?5U=5V&1x=\'+13.1x()+\'&1D=\'+13.1D()+\'&2m=\'+2m;5(b 15!="j"){1h+=15}2G(1h,8(27){3 1l=27.3l;3 L=1l.3u.3v(\'h\');3P();3 S=x f.d.3E();3 F=x f.d.2y(13.1x(),13.1D());3 X={22:m,3d:F,r:3F};5(b 1o!=\'j\'&&b 1o===\'19\'){X=1t(1o,X)}3 r={g:3F};S.2w(F);3 1K=x f.d.38(X);2v(r,1K);3 c=\'<z 26="3K"><D n="5Q">5D 5w:</D> <v/>\'+E+\'</z>\';2B(1K,m,1q,c);3 17=G.I(\'3g\');17.1R=\'\';5(L.1d==0){1I(\'21\',\'1H\');17.1R=\'<z n="5x">\'+5c+\'</z>\';18.2V(1K);m.3A(F);A}1e(3 i=0;i<L.1d;i++){3 6=24(L[i],i);w=L[i].k(2z);5(w==""||w==W){w="1Y"}3 r=(b 1s!=\'j\'&&b 1s[w]!=\'j\')?1s[w]:{g:1Y,14:\'3C\'};3 h=2e(6,w,r);3 1m=2I(h,6);1m.26="3B"+i;17.3x(1m);S.2w(6[\'F\'])}18.2V(1K);m.3A(S.3I());m.37(S);1I(\'21\',\'1H\')});5(o("3f")){3f()}}8 2e(6,Y,r){3 X={22:m,3d:6[\'F\'],r:r.g};5(b 1o!=\'j\'&&b 1o===\'19\'){X=1t(1o,X)}3 h=x f.d.38(X);2v(r,h);5(o("3c")){3c()}c=2f(6);2B(h,m,1q,c);18.2V(h);5(o("3b")){3b()}A h}3 46=0;3 5p="5k";8 2I(h,6){5(o("39")){39()}5(G.I(\'3a\')!=W){G.I(\'3a\').1V.5l=\'5m\'}3 z=G.5o(\'z\');3 c=2Q(6);z.1R=c;z.5n=\'4g\';z.5K(\'14\',\'4g\');46++;f.d.1n.4b(z,\'2L\',8(){f.d.1n.5j(h,\'2L\')});5(o("3J")){3J()}A z}8 2G(g,4j){3 V=1M.4c?x 4c(\'5q.5v\'):x 5u;V.4k=8(){5(V.5t==4){V.4k=45;4j(V,V.1F);5(o("4f")){4f()}}};V.3Q(\'5i\',g,2H);V.5h(W)}8 45(){}8 2B(h,22,1p,c){3 3R=8(){1p.2o();1p.58(c);5(b 2s!=\'j\'&&b 2s===\'19\'){1p.20(2s)}1p.3Q(22,h)};f.d.1n.3S(h,\'2L\',3R);f.d.1n.3S(h,\'59\',8(){1p.2o()})}8 3P(){1q.2o();1e(3 i=0;i<18.1d;i++){18[i].2p(W)}18.1d=0}8 2v(r,h){5(r.g.y(\'57\')!=\'-1\'){h.1c(u+"/1b/56.1a")}7 5(r.g.y(\'54\')!=\'-1\'){h.1c(u+"/1b/55.1a")}7 5(r.g.y(\'5a\')!=\'-1\'){h.1c(u+"/1b/5b.1a")}7 5(r.g.y(\'h\')!=\'-1\'){h.1c(u+"/1b/5g.1a")}7 5(r.g.y(\'5f\')!=\'-1\'){h.1c(u+"/1b/5e.1a")}7 5(r.g.y(\'5d\')!=\'-1\'){h.1c(u+"/1b/5P.1a")}7{h.1c(u+"/1b/5O.1a")}}8 3W(){5(M==\'5N\'){P=f.d.R.2Y}7 5(M==\'5S\'){P=f.d.R.40}7 5(M==\'5R\'){P=f.d.R.42}7 5(M==\'5T\'){P=f.d.R.3U}7 5(M!=f.d.R.2Y&&M!=f.d.R.40&&M!=f.d.R.42&&M!=f.d.R.3U){P=f.d.R.2Y}7{P=M}}8 o(3L){A 1r("b 1M."+3L+" === \'8\'")}8 1Q(30){A 1r(b 30===\'19\'&&30 5C 5M)}8 5B(10){A 1r(b 10===\'j\')}8 5A(10){A 1r(b 10!==\'j\')}8 1t(2T,2K){1e(2S 1U 2T){2K[2S]=2T[2S]}A 2K}8 2q(6,c){3 E=6[\'E\'];5(E.s(" ").t("")!=""){c=c.s("6[\'49\']").t(\'\\\'<a 1v="1j://\'+T+\'/d?5y=\'+2R(E)+\'&5F=\'+2R(6[\'1g\'])+\'" 28="2a" n="29">\'+53+\'</a>\\\'\')}7{c=c.s("6[\'49\']").t(\'\\\'<a 1v="1j://\'+T+\'/d?q=\'+2R(6[\'1g\'])+\'" 28="2a" n="29">4d</a>\\\'\')}A c}5(!o("2Q")){8 2Q(6){3 J=6[\'2k\'];5(6[\'1A\'].s(\' \').t(\'\')!=""){J+=6[\'1A\']+\'<v/>\'}3 H=6[\'2j\'];5(H.s(\' \').t(\'\')!=""){H+=\', \'}7{H=""}3 1S=6[\'2W\']+\' \'+6[\'2P\'];5(6[\'1g\'].s(",").t("").s(" ").t("")==""){6[\'1g\']=6[\'2C\']+","+6[\'2J\']}3 E=6[\'E\'];3 14=6[\'2Z\'];3 Z=6[\'1Z\'];3 g=6[\'2F\'];3 11=6[\'2g\'];3 1f=6[\'2h\'];5(g.3O(/^3M?\\:\\/\\//i)!=-1&&g.y(".")!=-1){4a="&4i;|&4i;<a 1v=\'"+g+"\' 28=\'2a\' n=\'29\'><2c>"+41+"</2c></a>"}7{g="";4a=""}6[\'1O\']=1O;6[\'T\']=T;5(o("2O")&&2O(6)){3 c=3N(2O(6));c=2q(6,c);c=1r("\'"+c+"\'")}7{3 4o=(Z.1P(1)!=\'\'&&Z.1P(1)!=\'W\'&&Z.1P(1)!=\'4v\')?\'<v>\'+Z.1P(1)+\' \'+1O:"";3 c="";5(6[\'4h\']>2){c+=\'<31 n="4w">\'}7{c+=\'<31>\'}c+=\'<44><2b><4e n="4t">\'+14+\'</4e><p>\'+J+\' \'+H+\' \'+1S+\'<v/>\'+11+\' <v/><a n="4p" 1v="\'+g+\'">\'+g+\'</a></p></2b><2b n="4u"><3Z n="4r" 3V="\'+1f+\'"/></2b></44></31>\'}A c}}5(o("2f")!=2H){8 2f(6){3 J=6[\'2k\'];5(J.s(\' \').t(\'\')!=""){J+=\'<v/>\'}7{J=""}5(6[\'1A\'].s(\' \').t(\'\')!=""){J+=6[\'1A\']+\'<v/>\'}3 H=6[\'2j\'];5(H.s(\' \').t(\'\')!=""){H+=\', \'}7{H=""}3 1S=6[\'2W\']+\' \'+6[\'2P\'];5(6[\'1g\'].s(",").t("").s(" ").t("")==""){6[\'1g\']=6[\'2C\']+","+6[\'2J\']}3 E=6[\'E\'];3 14=6[\'2Z\'];3 Z=6[\'1Z\'];3 g=6[\'2F\'];3 1f=6[\'2h\'];3 1C=6[\'3T\'];3 1y=6[\'3X\'];3 11=6[\'2g\'];3 1z=6[\'3Y\'];3 1J=6[\'43\'];3 O="";5(g.3O(/^3M?\\:\\/\\//i)!=-1&&g.y(".")!=-1){O+="| <a 1v=\'"+g+"\' 28=\'2a\' n=\'29\'><2c>"+41+"</2c></a>"}7{g=""}5(1f.y(".")!=-1){O+="<v/><3Z 3V=\'"+1f+"\' n=\'4n\'>"}7{1f=""}5(1C!=""){O+="<v/>"+1C+""}7{1C=""}5(1y!=""){O+="<v/><D n=\'1X\'>"+4q+":</D> "+1y}7{1y=""}5(11!=""){O+="<v/><D n=\'1X\'>"+52+":</D> "+11}7{11=""}5(1z!=""){O+="<v/><D n=\'1X\'>"+4T+":</D> "+1z}7{1z=""}5(1J!=""){O+="<v/><D n=\'1X\'>"+4R+":</D> "+1J}7{1J=""}6[\'4Q\']=O;6[\'1O\']=1O;6[\'T\']=T;5(o("2D")&&2D(6)){6[\'1Z\']=Z.1P(1);3 c=3N(2D(6));c=2q(6,c);c=1r("\'"+c+"\'")}7{3 c=\'<z 26="3K"><48 n="4A"><1u>\'+14+\'</1u></48><1u>\'+J+H+1S+\'</1u><v/>\'+11+\'<v/><D n="4L"><1u><a 1v="\'+g+\'">\'+g+\'</a></1u></D></z>\'}A c}}5(o("24")!=2H){8 24(l,47){3 1E={\'4h\':47,\'1g\':l.k(\'U\'),\'2k\':l.k(\'J\'),\'1A\':l.k(\'4Y\'),\'2j\':l.k(\'H\'),\'2W\':l.k(\'4y\'),\'2P\':l.k(\'4s\'),\'2C\':l.k(\'1x\'),\'2J\':l.k(\'1D\'),\'2Z\':l.k(\'14\'),\'3T\':l.k(\'1C\'),\'2F\':l.k(\'g\'),\'3X\':l.k(\'1y\'),\'2g\':l.k(\'11\'),\'3Y\':l.k(\'1z\'),\'43\':l.k(\'1J\'),\'2h\':l.k(\'1f\'),\'5r\':l.k(\'5s\'),\'1Z\':2i(l.k(\'Z\')),\'E\':G.I(\'2t\').10,\'F\':x f.d.2y(2i(l.k(\'1x\')),2i(l.k(\'1D\')))};5(b 1B!="j"){5(1Q(1B)){1e(2x 1U 1B){1E[1B[2x]]=l.k(1B[2x])}}}1E=2r(1E);A 1E}}',62,368,'|||var||if|sl_details|else|function|||typeof|html|maps||google|url|marker||undefined|getAttribute|markerNode|sl_map|class|function_exists|||icon|split|join|sl_base|br|sl_marker_type|new|indexOf|div|return|sl_mvc_objects|myOptions|span|homeAddress|point|document|city|getElementById|street|mvc|markerNodes|sl_map_type|sl_map_options|more_html|sl_map_type_v3|sl_ccTLD|MapTypeId|bounds|sl_google_map_domain|address|request|null|markerOpts|type|distance|value|phone|results|center|name|sl_map_params||sidebar|sl_marker_array|object|png|icons|setShadow|length|for|image|fullAddress|searchUrl|location|http|sl_geocoder|xml|sidebarEntry|event|sl_marker_options|infoWindow|sl_info_window|eval|sl_icons|mergeArray|strong|href|www|lat|hours|fax|sl_address2|sl_xml_properties_array|description|lng|details_array|status|sl_categorization_array|loadImg|showLoadImg|email|homeMarker|sl_mvc_instances|window|do_load_options|sl_distance_unit|toFixed|is_array|innerHTML|state_zip|geocode|in|style|sl_geo_flag|location_detail_label|sl_map_end_icon|sl_distance|setOptions|stop|map|ng|buildDetails|options|id|data|target|storelocatorlink|_blank|td|nobr|mapTypeId|createMarker|buildMarkerHTML|sl_phone|sl_image|parseFloat|sl_city|sl_address|aI|radius|the_coords|close|setMap|determineDirectionsLink|sl_details_filter|sl_infowindow_options|addressInput|overviewMapControl|determineShadow|extend|key|LatLng|sl_marker_categorization_field|DROPDOWN_MENU|bindInfoWindow|sl_latitude|sl_bubble_template|sl_ccTLD_not_set|sl_url|retrieveData|true|createSidebarEntry|sl_longitude|array2|click|disableDefaultUI|false|sl_results_template|sl_zip|buildSidebarHTML|encodeURIComponent|item|array1|geolocation|push|sl_state|MapTypeControlStyle|ROADMAP|sl_store|arr|table|mapTypeControlOptions|sl_map_overview_control|searchLocationsNear|geometry|zoom|fitBounds|Marker|start_createSidebarEntry|map_sidebar_td|end_createMarker|start_createMarker|position|sl_google_map_country|end_searchLocationsNear|map_sidebar|sl|start_searchLocationsNear|sl_geo_error|php|responseXML|sl_load_locations_default|end_searchLocations|alert|navigator|start_searchLocations|start_sl_load|sl_infowindow_type|sl_location_not_found_message|documentElement|getElementsByTagName|host|appendChild|end_sl_load|sl_zoom_level|setCenter|sidebar_div_|Default|coords|LatLngBounds|sl_map_home_icon|sl_geo_success|sl_load|getCenter|end_createSidebarEntry|sl_info_bubble|func|https|decode64|search|clearLocations|open|infowindow_click_function|addListener|sl_description|TERRAIN|src|map_type_check|sl_hours|sl_fax|img|SATELLITE|sl_website_label|HYBRID|sl_email|tr|doNothing|resultsDisplayed|iterator|h3|sl_directions_link|link|addDomListener|ActiveXObject|Map|h4|end_retrieveData|results_entry|tableHide|nbsp|callback|onreadystatechange|getZoom|err|sl_info_bubble_main_image|distance_display|stockistListUrl|sl_hours_label|imageStoreLocator|zip|titleListStockist|tdRightStore|NaN|storesTableLocator|sl_load_results_with_locations_default|state|sl_geolocate|titleBubbleHeader|show|try|factory|gears|InfoWindow|Geocoder|com|match|ditu|us|urlBubble|cn|create|beta|latitude|sl_more_html|sl_email_label|longitude|sl_fax_label|formatted_address|setZoom|load|catch|street2|getCurrentPosition|addDomListenerOnce|tilesloaded|sl_phone_label|sl_directions_label|arrow|arrow_shadow_v3|flag_shadow_v3|flag|setContent|visible_changed|bubble|bubble_shadow_v3|sl_no_results_found_message|droplet|sign_shadow_v3|sign|marker_shadow_v3|send|GET|trigger|white|display|block|className|createElement|bgcol|Microsoft|sl_tags|tags|readyState|XMLHttpRequest|XMLHTTP|Location|text_below_map|saddr|Found|isset|empty|instanceof|Your|Not|daddr|region|searchLocations|GeocoderStatus|OK|setAttribute|500000|Array|G_NORMAL_MAP|blank|droplet_shadow_v3|your_location_label|G_HYBRID_MAP|G_SATELLITE_MAP|G_PHYSICAL_MAP|mode|gen'.split('|'),0,{}))
+var sl_map;
+var sl_geocoder;
+var sl_info_window;
+var sl_marker_array = [];
+var sl_marker_type;
+var showAll = false;
+var sl_geo_flag = 0;
+if (!is_array(sl_categorization_array)) {
+    var sl_categorization_array = []
+}
+var sl_marker_categorization_field = (is_array(sl_categorization_array) && sl_categorization_array.length > 0) ? sl_categorization_array[0] : 'type';
+var sl_ccTLD = sl_google_map_domain.match(/\.([^\.]+)$/);
+var sl_ccTLD_not_set = (typeof sl_ccTLD[1] == 'undefined' || sl_ccTLD[1] == 'null' || sl_ccTLD[1] == '');
+if (sl_ccTLD_not_set || sl_ccTLD[1] == 'com') {
+    var sl_ccTLD = (sl_ccTLD_not_set || sl_google_map_domain.indexOf('ditu') == -1) ? 'us' : 'cn'
+} else {
+    var sl_ccTLD = sl_ccTLD[1]
+}
+var sl_mvc_instances = [];
+if (typeof sl_map_params != "undefined") {
+    sl_map_params = sl_map_params.split("=").join("[]=")
+}
+if (!function_exists("sl_details_filter")) {
+    var sl_details_filter = function(sl_details) {
+            return sl_details
+        }
+}
+if (window.location.host.indexOf('www.') != -1 && sl_base.indexOf('www.') == -1) {
+    sl_base = sl_base.split('http://').join('http://www.')
+} else if (window.location.host.indexOf('www.') == -1 && sl_base.indexOf('www.') != -1) {
+    sl_base = sl_base.split('http://www.').join('http://')
+}
+function sl_load() {
+    map_type_check();
+    sl_geocoder = new google.maps.Geocoder();
+    if ("undefined" != typeof document.getElementById("sl_map") && null != document.getElementById("sl_map")) {
+        sl_map = new google.maps.Map(document.getElementById("sl_map"));
+        if (typeof sl_infowindow_type != 'undefined') {
+            sl_info_window = new sl_infowindow_type
+        } else {
+            sl_info_window = new google.maps.InfoWindow
+        }
+        if (function_exists("start_sl_load")) {
+            start_sl_load()
+        }
+        if (sl_geolocate == '1') {
+            showLoadImg('show', 'loadImg');
+            try {
+                if (typeof navigator.geolocation === 'undefined') {
+                    ng = google.gears.factory.create('beta.geolocation')
+                } else {
+                    ng = navigator.geolocation
+                }
+            } catch (e) {}
+            if (ng) {
+                if (sl_geo_flag != 1) {
+                    do_load_options()
+                }
+                ng.getCurrentPosition(sl_geo_success, sl_geo_error)
+            } else {
+                do_load_options()
+
+            }
+        } else {
+            do_load_options()
+
+        }
+
+        if (function_exists("end_sl_load")) {
+            google.maps.event.addDomListenerOnce(sl_map, 'tilesloaded', end_sl_load)
+        }
+    }
+
+    $('.seeAllStores').click(function(){
+          showAll = true;
+          sl_load();
+          $('.seeAllStores').addClass('hide'); 
+    });
+
+ 
+}
+google.maps.event.addDomListener(window, 'load', sl_load);
+
+function sl_geo_success(point) {
+    sl_geo_flag = 1;
+    var the_coords = new google.maps.LatLng(point.coords.latitude, point.coords.longitude);
+    sl_geocoder.geocode({
+        'location': the_coords
+    }, function(results) {
+        aI = document.getElementById('addressInput');
+        aI.value = results[0].formatted_address;
+        searchLocationsNear(the_coords, aI.value)
+    })
+}
+function sl_geo_error(err) {
+    sl_geo_flag = 1;
+    do_load_options()
+}
+function do_load_options() {
+    if (sl_load_locations_default == '0') {
+        sl_geocoder.geocode({
+            'address': sl_google_map_country
+        }, function(results, status) {
+            var myOptions = {
+                center: results[0].geometry.location,
+                zoom: sl_zoom_level,
+                mapTypeId: sl_map_type_v3,
+                overviewMapControl: sl_map_overview_control,
+                disableDefaultUI: false,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+                }
+            };
+            if (typeof sl_map_options != 'undefined' && typeof sl_map_options === 'object') {
+                myOptions = mergeArray(sl_map_options, myOptions)
+            }
+            sl_map.setOptions(myOptions)
+        })
+    }
+    if (sl_load_locations_default == "1") {
+        var bounds = new google.maps.LatLngBounds();
+        var searchUrl = sl_base + "/sl-xml.php";
+        if (typeof sl_map_params != "undefined") {
+            searchUrl += "?" + sl_map_params
+        }
+        retrieveData(searchUrl, function(data) {
+            var xml = data.responseXML;
+            var markerNodes = xml.documentElement.getElementsByTagName("marker");
+            var sidebar = document.getElementById('map_sidebar');
+            sidebar.innerHTML = '';
+            for (var i = 0; i < markerNodes.length; i++) {
+                var sl_details = buildDetails(markerNodes[i], i);
+                sl_marker_type = markerNodes[i].getAttribute(sl_marker_categorization_field);
+                if (sl_marker_type == "" || sl_marker_type == null) {
+                    sl_marker_type = "sl_map_end_icon"
+                }
+                var icon = (typeof sl_icons != 'undefined' && typeof sl_icons[sl_marker_type] != 'undefined') ? sl_icons[sl_marker_type] : {
+                    url: sl_map_end_icon,
+                    name: 'Default'
+                };
+                var marker = createMarker(sl_details, sl_marker_type, icon);
+
+                if (sl_load_results_with_locations_default == '1') {
+                    var sidebarEntry = createSidebarEntry(marker, sl_details, showAll);
+                    sidebarEntry.id = "sidebar_div_" + i;
+                    sidebar.appendChild(sidebarEntry)
+                }
+                bounds.extend(sl_details['point'])
+            }
+            
+             $('.carouselStock').bxSlider({
+                slideWidth: 200,
+                minSlides: 2,
+                maxSlides: 2,
+                slideMargin: 40,
+                nextText:"",
+                prevText:""
+              });
+            
+            
+            if (showAll) $('.seeAllStores').addClass('hide');
+            else $('.seeAllStores').removeClass('hide');
+
+           
+
+            
+            if (markerNodes.length == 0) {
+                sl_geocoder.geocode({
+                    'address': sl_google_map_country
+                }, function(results, status) {
+                    var myOptions = {
+                        center: results[0].geometry.location,
+                        zoom: sl_zoom_level,
+                        mapTypeId: sl_map_type_v3,
+                        overviewMapControl: sl_map_overview_control,
+                        disableDefaultUI: false,
+                        mapTypeControlOptions: {
+                            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+                        }
+                    };
+                    if (typeof sl_map_options != 'undefined' && typeof sl_map_options === 'object') {
+                        myOptions = mergeArray(sl_map_options, myOptions)
+                    }
+                    if (typeof sl_mvc_objects != 'undefined' && typeof sl_mvc_objects['type'] != 'undefined' && typeof sl_mvc_objects['options'] != 'undefined') {
+                        for (mvc in sl_mvc_objects['type']) {
+                            sl_mvc_instances[mvc] = new sl_mvc_objects['type'][mvc](sl_mvc_objects['options'][mvc]);
+                            sl_mvc_instances[mvc].setMap(sl_map)
+                        }
+                    }
+                    sl_map.setOptions(myOptions)
+                })
+            } else {
+                var myOptions = {
+                    center: bounds.getCenter(),
+                    mapTypeId: sl_map_type_v3,
+                    overviewMapControl: sl_map_overview_control,
+                    disableDefaultUI: false,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+                    }
+                };
+                if (typeof sl_map_options != 'undefined' && typeof sl_map_options === 'object') {
+                    myOptions = mergeArray(sl_map_options, myOptions)
+                }
+                if (typeof sl_mvc_objects != 'undefined' && typeof sl_mvc_objects['type'] != 'undefined' && typeof sl_mvc_objects['options'] != 'undefined') {
+                    for (mvc in sl_mvc_objects['type']) {
+                        sl_mvc_instances[mvc] = new sl_mvc_objects['type'][mvc](sl_mvc_objects['options'][mvc]);
+                        sl_mvc_instances[mvc].setMap(sl_map)
+                    }
+                }
+                sl_map.setOptions(myOptions);
+                sl_map.fitBounds(bounds)
+            }
+            if (sl_map.getZoom() > 16) {
+                sl_map.setZoom(9)
+            }
+        })
+    
+
+        
+    }
+
+    
+    
+    
+    
+}
+function searchLocations() {
+    if (function_exists("start_searchLocations")) {
+        start_searchLocations()
+    }
+    var address = document.getElementById('addressInput').value;
+    sl_geocoder.geocode({
+        'address': address,
+        'region': sl_ccTLD
+    }, function(results, status) {
+        if (status != google.maps.GeocoderStatus.OK) {
+            showLoadImg('stop', 'loadImg');
+            if (sl_location_not_found_message.split(' ').join('') != "") {
+                alert(sl_location_not_found_message)
+            } else {
+                alert(address + ' Not Found')
+            }
+        } else {
+            searchLocationsNear(results[0].geometry.location, address)
+
+        }
+    });
+    if (function_exists("end_searchLocations")) {
+        end_searchLocations()
+    }
+}
+function searchLocationsNear(center, homeAddress) {
+    if (function_exists("start_searchLocationsNear")) {
+        start_searchLocationsNear()
+    }
+    var radius = 1000;
+    var searchUrl = sl_base + '/sl-xml.php?mode=gen&lat=' + center.lat() + '&lng=' + center.lng() + '&radius=' + radius;
+    if (typeof sl_map_params != "undefined") {
+        searchUrl += sl_map_params
+    }
+    retrieveData(searchUrl, function(data) {
+        var xml = data.responseXML;
+        var markerNodes = xml.documentElement.getElementsByTagName('marker');
+        clearLocations();
+        var bounds = new google.maps.LatLngBounds();
+
+        var point = new google.maps.LatLng(center.lat(), center.lng());
+        var markerOpts = {
+            map: sl_map,
+            position: point,
+            icon: sl_map_home_icon
+        };
+        if (typeof sl_marker_options != 'undefined' && typeof sl_marker_options === 'object') {
+            markerOpts = mergeArray(sl_marker_options, markerOpts)
+        }
+        var icon = {
+            url: sl_map_home_icon
+        };
+        bounds.extend(point);
+        var homeMarker = new google.maps.Marker(markerOpts);
+        determineShadow(icon, homeMarker);
+        var html = '<div id="sl_info_bubble"><span class="your_location_label">Your Location:</span> <br/>' + homeAddress + '</div>';
+        bindInfoWindow(homeMarker, sl_map, sl_info_window, html);
+        var sidebar = document.getElementById('map_sidebar');
+        sidebar.innerHTML = '';
+        if (markerNodes.length == 0) {
+            showLoadImg('stop', 'loadImg');
+            sidebar.innerHTML = '<div class="text_below_map">' + sl_no_results_found_message + '</div>';
+            sl_marker_array.push(homeMarker);
+            sl_map.setCenter(point);
+            return
+        }
+        for (var i = 0; i < markerNodes.length; i++) {
+            var sl_details = buildDetails(markerNodes[i], i);
+            sl_marker_type = markerNodes[i].getAttribute(sl_marker_categorization_field);
+            if (sl_marker_type == "" || sl_marker_type == null) {
+                sl_marker_type = "sl_map_end_icon"
+            }
+            var icon = (typeof sl_icons != 'undefined' && typeof sl_icons[sl_marker_type] != 'undefined') ? sl_icons[sl_marker_type] : {
+                url: sl_map_end_icon,
+                name: 'Default'
+            };
+            var marker = createMarker(sl_details, sl_marker_type, icon);
+            var sidebarEntry = createSidebarEntry(marker, sl_details, showAll);
+            sidebarEntry.id = "sidebar_div_" + i;
+            sidebar.appendChild(sidebarEntry);
+            bounds.extend(sl_details['point'])
+        }
+        sl_marker_array.push(homeMarker);
+        sl_map.setCenter(bounds.getCenter());
+        sl_map.fitBounds(bounds);
+        sl_map.setZoom(15);
+        showLoadImg('stop', 'loadImg')
+
+    });
+    if (function_exists("end_searchLocationsNear")) {
+        end_searchLocationsNear()
+    }
+}
+function createMarker(sl_details, type, icon) {
+    var markerOpts = {
+        map: sl_map,
+        position: sl_details['point'],
+        icon: icon.url
+    };
+    if (typeof sl_marker_options != 'undefined' && typeof sl_marker_options === 'object') {
+        markerOpts = mergeArray(sl_marker_options, markerOpts)
+    }
+    var marker = new google.maps.Marker(markerOpts);
+    determineShadow(icon, marker);
+    if (function_exists("start_createMarker")) {
+        start_createMarker()
+    }
+    html = buildMarkerHTML(sl_details);
+    bindInfoWindow(marker, sl_map, sl_info_window, html);
+    sl_marker_array.push(marker);
+    if (function_exists("end_createMarker")) {
+        end_createMarker()
+    }
+    return marker
+}
+var resultsDisplayed = 0;
+var bgcol = "white";
+
+function createSidebarEntry(marker, sl_details, showAll) {
+    if (function_exists("start_createSidebarEntry")) {
+        start_createSidebarEntry()
+    }
+    if (document.getElementById('map_sidebar_td') != null) {
+        document.getElementById('map_sidebar_td').style.display = 'block'
+    }
+    var div = document.createElement('div');
+    var html = buildSidebarHTML(sl_details, showAll);
+    div.innerHTML = html;
+    div.className = 'results_entry';
+    div.setAttribute('name', 'results_entry');
+    resultsDisplayed++;
+    google.maps.event.addDomListener(div, 'click', function() {
+        google.maps.event.trigger(marker, 'click')
+    });
+    if (function_exists("end_createSidebarEntry")) {
+        end_createSidebarEntry()
+    }
+
+    return div
+}
+function retrieveData(url, callback) {
+    var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest;
+    request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request, request.status);
+            if (function_exists("end_retrieveData")) {
+                end_retrieveData()
+            }
+        }
+    };
+    request.open('GET', url, true);
+    request.send(null)
+}
+function doNothing() {}
+function bindInfoWindow(marker, map, infoWindow, html) {
+    var infowindow_click_function = function() {
+            infoWindow.close();
+            infoWindow.setContent(html);
+            if (typeof sl_infowindow_options != 'undefined' && typeof sl_infowindow_options === 'object') {
+                infoWindow.setOptions(sl_infowindow_options)
+            }
+            infoWindow.open(map, marker)
+        };
+    google.maps.event.addListener(marker, 'click', infowindow_click_function);
+    google.maps.event.addListener(marker, 'visible_changed', function() {
+        infoWindow.close()
+    })
+}
+function clearLocations() {
+    sl_info_window.close();
+    for (var i = 0; i < sl_marker_array.length; i++) {
+        sl_marker_array[i].setMap(null)
+    }
+    sl_marker_array.length = 0
+}
+function determineShadow(icon, marker) {
+    if (icon.url.indexOf('flag') != '-1') {
+        marker.setShadow(sl_base + "/icons/flag_shadow_v3.png")
+    } else if (icon.url.indexOf('arrow') != '-1') {
+        marker.setShadow(sl_base + "/icons/arrow_shadow_v3.png")
+    } else if (icon.url.indexOf('bubble') != '-1') {
+        marker.setShadow(sl_base + "/icons/bubble_shadow_v3.png")
+    } else if (icon.url.indexOf('marker') != '-1') {
+        marker.setShadow(sl_base + "/icons/marker_shadow_v3.png")
+    } else if (icon.url.indexOf('sign') != '-1') {
+        marker.setShadow(sl_base + "/icons/sign_shadow_v3.png")
+    } else if (icon.url.indexOf('droplet') != '-1') {
+        marker.setShadow(sl_base + "/icons/droplet_shadow_v3.png")
+    } else {
+        marker.setShadow(sl_base + "/icons/blank.png")
+    }
+}
+function map_type_check() {
+    if (sl_map_type == 'G_NORMAL_MAP') {
+        sl_map_type_v3 = google.maps.MapTypeId.ROADMAP
+    } else if (sl_map_type == 'G_SATELLITE_MAP') {
+        sl_map_type_v3 = google.maps.MapTypeId.SATELLITE
+    } else if (sl_map_type == 'G_HYBRID_MAP') {
+        sl_map_type_v3 = google.maps.MapTypeId.HYBRID
+    } else if (sl_map_type == 'G_PHYSICAL_MAP') {
+        sl_map_type_v3 = google.maps.MapTypeId.TERRAIN
+    } else if (sl_map_type != google.maps.MapTypeId.ROADMAP && sl_map_type != google.maps.MapTypeId.SATELLITE && sl_map_type != google.maps.MapTypeId.HYBRID && sl_map_type != google.maps.MapTypeId.TERRAIN) {
+        sl_map_type_v3 = google.maps.MapTypeId.ROADMAP
+    } else {
+        sl_map_type_v3 = sl_map_type
+    }
+}
+function function_exists(func) {
+    return eval("typeof window." + func + " === 'function'")
+}
+function is_array(arr) {
+    return eval(typeof arr === 'object' && arr instanceof Array)
+}
+function empty(value) {
+    return eval(typeof value === 'undefined')
+}
+function isset(value) {
+    return eval(typeof value !== 'undefined')
+}
+function mergeArray(array1, array2) {
+    for (item in array1) {
+        array2[item] = array1[item]
+    }
+    return array2
+}
+function determineDirectionsLink(sl_details, html) {
+    var homeAddress = sl_details['homeAddress'];
+    if (homeAddress.split(" ").join("") != "") {
+        html = html.split("sl_details['sl_directions_link']").join('\'<a href="http://' + sl_google_map_domain + '/maps?saddr=' + encodeURIComponent(homeAddress) + '&daddr=' + encodeURIComponent(sl_details['fullAddress']) + '" target="_blank" class="storelocatorlink">' + sl_directions_label + '</a>\'')
+    } else {
+        html = html.split("sl_details['sl_directions_link']").join('\'<a href="http://' + sl_google_map_domain + '/maps?q=' + encodeURIComponent(sl_details['fullAddress']) + '" target="_blank" class="storelocatorlink">Map</a>\'')
+    }
+    return html
+}
+if (!function_exists("buildSidebarHTML")) {
+    function buildSidebarHTML(sl_details, showAll) {
+        var street = sl_details['sl_address'];
+        if (sl_details['sl_address2'].split(' ').join('') != "") {
+            street += sl_details['sl_address2'] + '<br/>'
+        }
+        var city = sl_details['sl_city'];
+        if (city.split(' ').join('') != "") {
+            city += ', '
+        } else {
+            city = ""
+        }
+        var state_zip = sl_details['sl_state'] + ' ' + sl_details['sl_zip'];
+        if (sl_details['fullAddress'].split(",").join("").split(" ").join("") == "") {
+            sl_details['fullAddress'] = sl_details['sl_latitude'] + "," + sl_details['sl_longitude']
+        }
+        var homeAddress = sl_details['homeAddress'];
+        var name = sl_details['sl_store'];
+        var distance = sl_details['sl_distance'];
+        var url = sl_details['sl_url'];
+        var phone = sl_details['sl_phone'];
+        var image = sl_details['sl_image'];
+        if (url.search(/^https?\:\/\//i) != -1 && url.indexOf(".") != -1) {
+            link = "&nbsp;|&nbsp;<a href='" + url + "' target='_blank' class='storelocatorlink'><nobr>" + sl_website_label + "</nobr></a>"
+        } else {
+            url = "";
+            link = ""
+        }
+        sl_details['sl_distance_unit'] = sl_distance_unit;
+        sl_details['sl_google_map_domain'] = sl_google_map_domain;
+        if (function_exists("sl_results_template") && sl_results_template(sl_details)) {
+            var html = decode64(sl_results_template(sl_details));
+            html = determineDirectionsLink(sl_details, html);
+            html = eval("'" + html + "'")
+        } else {
+            var distance_display = (distance.toFixed(1) != '' && distance.toFixed(1) != 'null' && distance.toFixed(1) != 'NaN') ? '<br>' + distance.toFixed(1) + ' ' + sl_distance_unit : "";
+            var html = "";
+            if (sl_details['tableHide'] > 2) {
+                if (showAll) html += '<table class="tableStoreLocator">'
+                else html += '<table class="tableStoreLocator storesTableLocator">'
+            } else {
+                html += '<table class="tableStoreLocator">'
+            }
+            html += '<tr><td><h4 class="titleListStockist">' + name + '</h4><p>' + street + ' ' + city + ' ' + state_zip + '<br/>' + phone + ' <br/><a class="stockistListUrl" href="' + url + '">' + url + '</a></p></td><td class="tdRightStore"><div class="carouselStock"><div class="slide"><img src="'+image+'"></div><div class="slide"><img src="'+image+'"></div><div class="slide"><img src="'+image+'"></div></div></td></tr></table>'
+
+                     
+        }
+        return html
+    }
+}
+if (function_exists("buildMarkerHTML") != true) {
+    function buildMarkerHTML(sl_details) {
+        var street = sl_details['sl_address'];
+        if (street.split(' ').join('') != "") {
+            street += '<br/>'
+        } else {
+            street = ""
+        }
+        if (sl_details['sl_address2'].split(' ').join('') != "") {
+            street += sl_details['sl_address2'] + '<br/>'
+        }
+        var city = sl_details['sl_city'];
+        if (city.split(' ').join('') != "") {
+            city += ', '
+        } else {
+            city = ""
+        }
+        var state_zip = sl_details['sl_state'] + ' ' + sl_details['sl_zip'];
+        if (sl_details['fullAddress'].split(",").join("").split(" ").join("") == "") {
+            sl_details['fullAddress'] = sl_details['sl_latitude'] + "," + sl_details['sl_longitude']
+        }
+        var homeAddress = sl_details['homeAddress'];
+        var name = sl_details['sl_store'];
+        var distance = sl_details['sl_distance'];
+        var url = sl_details['sl_url'];
+        var image = sl_details['sl_image'];
+        var description = sl_details['sl_description'];
+        var hours = sl_details['sl_hours'];
+        var phone = sl_details['sl_phone'];
+        var fax = sl_details['sl_fax'];
+        var email = sl_details['sl_email'];
+        var more_html = "";
+        if (url.search(/^https?\:\/\//i) != -1 && url.indexOf(".") != -1) {
+            more_html += "| <a href='" + url + "' target='_blank' class='storelocatorlink'><nobr>" + sl_website_label + "</nobr></a>"
+        } else {
+            url = ""
+        }
+        if (image.indexOf(".") != -1) {
+            more_html += "<br/><img src='" + image + "' class='sl_info_bubble_main_image'>"
+        } else {
+            image = ""
+        }
+        if (description != "") {
+            more_html += "<br/>" + description + ""
+        } else {
+            description = ""
+        }
+        if (hours != "") {
+            more_html += "<br/><span class='location_detail_label'>" + sl_hours_label + ":</span> " + hours
+        } else {
+            hours = ""
+        }
+        if (phone != "") {
+            more_html += "<br/><span class='location_detail_label'>" + sl_phone_label + ":</span> " + phone
+        } else {
+            phone = ""
+        }
+        if (fax != "") {
+            more_html += "<br/><span class='location_detail_label'>" + sl_fax_label + ":</span> " + fax
+        } else {
+            fax = ""
+        }
+        if (email != "") {
+            more_html += "<br/><span class='location_detail_label'>" + sl_email_label + ":</span> " + email
+        } else {
+            email = ""
+        }
+        sl_details['sl_more_html'] = more_html;
+        sl_details['sl_distance_unit'] = sl_distance_unit;
+        sl_details['sl_google_map_domain'] = sl_google_map_domain;
+        if (function_exists("sl_bubble_template") && sl_bubble_template(sl_details)) {
+            sl_details['sl_distance'] = distance.toFixed(1);
+            var html = decode64(sl_bubble_template(sl_details));
+            html = determineDirectionsLink(sl_details, html);
+            html = eval("'" + html + "'")
+        } else {
+            var html = '<div id="sl_info_bubble"><h3 class="titleBubbleHeader"><strong>' + name + '</strong></h3><strong>' + street + city + state_zip + '</strong><br/>' + phone + '<br/><span class="urlBubble"><strong><a href="' + url + '">' + url + '</a></strong></span></div>'
+        }
+        return html
+    }
+}
+if (function_exists("buildDetails") != true) {
+    function buildDetails(markerNode, iterator) {
+        var details_array = {
+            'tableHide': iterator,
+            'fullAddress': markerNode.getAttribute('address'),
+            'sl_address': markerNode.getAttribute('street'),
+            'sl_address2': markerNode.getAttribute('street2'),
+            'sl_city': markerNode.getAttribute('city'),
+            'sl_state': markerNode.getAttribute('state'),
+            'sl_zip': markerNode.getAttribute('zip'),
+            'sl_latitude': markerNode.getAttribute('lat'),
+            'sl_longitude': markerNode.getAttribute('lng'),
+            'sl_store': markerNode.getAttribute('name'),
+            'sl_description': markerNode.getAttribute('description'),
+            'sl_url': markerNode.getAttribute('url'),
+            'sl_hours': markerNode.getAttribute('hours'),
+            'sl_phone': markerNode.getAttribute('phone'),
+            'sl_fax': markerNode.getAttribute('fax'),
+            'sl_email': markerNode.getAttribute('email'),
+            'sl_image': markerNode.getAttribute('image'),
+            'sl_tags': markerNode.getAttribute('tags'),
+            'sl_distance': parseFloat(markerNode.getAttribute('distance')),
+            'homeAddress': document.getElementById('addressInput').value,
+            'point': new google.maps.LatLng(parseFloat(markerNode.getAttribute('lat')), parseFloat(markerNode.getAttribute('lng')))
+        };
+        if (typeof sl_xml_properties_array != "undefined") {
+            if (is_array(sl_xml_properties_array)) {
+                for (key in sl_xml_properties_array) {
+                    details_array[sl_xml_properties_array[key]] = markerNode.getAttribute(sl_xml_properties_array[key])
+                }
+            }
+        }
+        details_array = sl_details_filter(details_array);
+        return details_array
+    }
+}

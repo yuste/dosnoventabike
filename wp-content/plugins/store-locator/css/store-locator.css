@@ -174,8 +174,8 @@ background-color:transparent !important;
 	background-color:transparent;
 	font-weight:normal;
 	text-align:justify;
-	overflow: auto;
-	height:350px;
+/*	overflow: auto;*/
+	/*height:350px;*/
 	font-size: 11px;
 	/*color: #000;*/
 }

@@ -478,9 +478,11 @@ function sl_head_scripts() {
 			//sl_dyn_js($on_sl_page[0]['post_content']);
 			sl_dyn_js();
 		}
+		print "<script src='".SL_JS_BASE."/jquery.bxslider.js?v=".SL_VERSION."' type='text/javascript'></script>\n";
 		print "<script src='".SL_JS_BASE."/store-locator.js?v=".SL_VERSION."' type='text/javascript'></script>\n";
 		//if store-locator.css exists in custom-css/ folder in uploads/ dir it takes precedence over, store-locator.css in store-locator plugin directory to allow for css customizations to be preserved after updates
 		$has_custom_css=(file_exists(SL_CUSTOM_CSS_PATH."/store-locator.css"))? SL_CUSTOM_CSS_BASE : SL_CSS_BASE; 
+		print "<link  href='".$has_custom_css."/jquery.bxslider.css?v=".SL_VERSION."' type='text/css' rel='stylesheet'/>\n";
 		print "<link  href='".$has_custom_css."/store-locator.css?v=".SL_VERSION."' type='text/css' rel='stylesheet'/>\n";
 		$theme=$sl_vars['theme'];
 		if ($theme!="") {print "<link  href='".SL_THEMES_BASE."/$theme/style.css?v=".SL_VERSION."' rel='stylesheet' type='text/css'/>\n";}
@@ -1883,7 +1885,7 @@ $cs_options.="<option value='$value[city_state]'>$value[city_state]</option>";
 	</tr></table>";*/
 
 	$form.="</td>
-	<td><img src='$loading_img' id='loadImg' style='opacity:0; filter:alpha(opacity=0); height:28px; vertical-align:bottom; position:relative; '></td>
+	<td><img src='' id='loadImg' style='opacity:0; filter:alpha(opacity=0); height:28px; vertical-align:bottom; position:relative; '></td>
 	</tr></table>";
 
 	$form.=(function_exists("do_sl_hook"))? do_sl_header() : "" ;
@@ -1896,9 +1898,13 @@ $form.="<table style='width:100%;/*border:solid silver 1px*/' cellspacing='0px' 
 	  <tr id='cm_mapTR'>
         <td width='' valign='top' style='/*display:hidden; border-right:solid silver 1px*/' id='map_sidebar_td'> <div id='map_sidebar' style='width:$width$width_units;/* $height$height_units; */'> <div class='text_below_map'>$sl_instruction_message</div></div>
         </td></tr>
-  </table></form>
-  <div style='text-align:center'><h1>VIEW ALL STORES</h1></div>
-</div>";
+  </table></form>";
+
+	 if (strrpos($_SERVER['REQUEST_URI'], "en/")):
+	 	$form .= "<div style='text-align:center'><h2 class='seeAllStores hide'>VIEW ALL STORES</h2></div></div>";
+	 else:
+		$form .= "<div style='text-align:center'><h2 class='seeAllStores hide '>VER TODAS LAS TIENDAS</h2></div></div>";
+	 endif;
 
 	//preg_match("@\[STORE-LOCATOR [tag=\"(.*)\"]?\]@", $matched); 
 	//global $map_tag=$matched[1];
