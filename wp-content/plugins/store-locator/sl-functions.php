@@ -1834,9 +1834,13 @@ $cs_options.="<option value='$value[city_state]'>$value[city_state]</option>";
 	<td ";
 	
 	if ($sl_vars['use_city_search']!=1) {$form.=" colspan='4' ";}
+	if (strrpos($_SERVER['REQUEST_URI'], "en/")):
+		$form.=" valign='top'><input type='text' id='addressInput' placeholder='YOUR LOCATION' size='50' /></td>";
+	else:
+		$form.=" valign='top'><input type='text' id='addressInput' placeholder='TU LOCALIZACIÓN' size='50' /></td>";
+	endif;
+
 	
-	$form.=" valign='top'><input type='text' id='addressInput' placeholder='YOUR LOCATION' size='50' /></td>
-	";
 	
 	if (!empty($cs_array) && $sl_vars['use_city_search']==1) {
 		$form.="<td valign='top'></td>";
