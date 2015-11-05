@@ -234,6 +234,14 @@ function communityScript_func( $atts ){
 
       jQuery('.btnViewAll').click(function(){
           jQuery('.frame').removeClass('hide');
+          if (window.location.href.indexOf('/en/') != -1){
+            jQuery('.chooseFrameSelect').html('Choose Frame');
+            jQuery('.chooseColorSelect').html('Choose Color');
+          }
+          else {
+            jQuery('.chooseFrameSelect').html('Elige frame');
+            jQuery('.chooseColorSelect').html('Elige color'); 
+          }
       });
 
       jQuery('.chooseFrameSelect').hover(function(){
@@ -293,6 +301,8 @@ function communityScript_func( $atts ){
          jQuery('.chooseColorSelect').html(auxColor);
          jQuery('.frame').addClass('hide');
          jQuery('.color_'+auxColor).removeClass('hide');
+
+         jQuery('.customLi a').css('text-decoration', 'underline');
          
       });
 
@@ -317,10 +327,12 @@ function communityDNVFunction() {
 
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<li><a class="chooseColorSelect" href="javascript:;">Choose Color</a><ul class="color290">';
+      echo '<li class="regularLi"><a>REGULAR COLOR 2015</a></li><li class="customLi"><a>CUSTOM COLOR</a></li>';
     else:
       echo '<li><a class="chooseColorSelect" href="javascript:;">Elige Color</a><ul class="color290">';
+    echo '<li class="regularLi"><a>COLOR 2015</a></li><li class="customLi"><a>COLOR PERSONALIZADO</a></li>';
     endif;
-    echo '<li><a>REGULAR COLOR 2015</a></li><li><a>CUSTOM COLOR</a></li>';
+    
     echo '<li><div>';
     echo '<div id="colorPicker_palette-0" class="colorPicker-palette" style="display: block; top: 631px; left: 311px;"><div class="colorPicker-swatch"';
     echo 'style="background-color: rgb(190, 189, 127);">&nbsp;</div><div class="colorPicker-swatch" style="background-color: rgb(194, 176, 120);">&nbsp;</div>';
@@ -412,8 +424,8 @@ add_shortcode( 'communityDSNcort', 'communityDNVFunction' );
 
 function community_function_init() {
   $labels = array(
-    'name'               => _x( 'CommunityDNV', 'post type general name' ),
-    'singular_name'      => _x( 'CommunityDNV', 'post type singular name' ),
+    'name'               => _x( 'Community', 'post type general name' ),
+    'singular_name'      => _x( 'Community', 'post type singular name' ),
   );
   $args = array(
     'labels'         => $labels,
@@ -491,8 +503,8 @@ add_shortcode( 'porjectdsnvcort', 'projectdsnvFunction' );
 
 function project_function_init() {
    $labels = array(
-    'name'               => _x( 'projectsDSNV', 'post type general name' ),
-    'singular_name'      => _x( 'projectsDSNV', 'post type singular name' ),
+    'name'               => _x( 'projects', 'post type general name' ),
+    'singular_name'      => _x( 'projects', 'post type singular name' ),
   );
   $args = array(
     'labels'         => $labels,

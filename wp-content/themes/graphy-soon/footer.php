@@ -14,7 +14,7 @@
 		<?php get_sidebar( 'footer' ); ?>
 		
 		<div class="site-info footer-widget">
-			<div class="site-copyright">Dosnoventa Bikes S.L. / Pasaje Bocabella 5 / 08013 Barcelona tel: +34 667 51 54 <a class="whiteColor">info@dosnoventabikes.com</a></div>
+			<div class="site-copyright">Dosnoventa Bikes S.L. / Pasaje Bocabella 5 / 08013 Barcelona tel: +34 667 51 54 <a class="whiteColor infoMail" href="mailto:info@dosnoventabikes.com">info@dosnoventabikes.com</a></div>
 			<!--Y:MODIFICADO-->
 			<!--<div class="site-copyright">&copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 			<div class="site-credit"><?php _e( 'Powered by ', 'graphy' ); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'graphy' ) ); ?>">WordPress</a> &amp;
