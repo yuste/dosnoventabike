@@ -89,10 +89,15 @@ function myjavascript_func( $atts ){
         jQuery('.container-hover-img').css('width',jQuery(this).width());
         jQuery('.container-hover-img').css('height',jQuery(this).height());
         jQuery('.container-hover-img').stop().css('display', 'block');
-
+        jQuery('.container-hover-img').removeClass('hide');
         jQuery('.container-hover-img').click(function(){
           window.location.replace(jQuery('.container-hover-img a').prop('href'));
         });
+      });
+
+      $('.container-hover-img').on('mouseleave', function () {
+          console.log('remove')
+          jQuery('.container-hover-img').addClass('hide');
       });
 
 
