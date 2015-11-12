@@ -45,7 +45,7 @@ if (!empty($_sl['mode']) && $_sl['mode']=='gen') {
 
 	// Select all the rows in the markers table
 	$query = sprintf(
-	"SELECT sl_address, sl_address2, sl_store, sl_city, sl_state, sl_zip, sl_latitude, sl_longitude, sl_description, sl_url, sl_hours, sl_phone, sl_fax, sl_email, sl_image, sl_tags".
+	"SELECT sl_address, sl_address2, sl_store, sl_city, sl_state, sl_zip, sl_latitude, sl_longitude, sl_description, sl_url, sl_hours, sl_phone, sl_fax, sl_email, sl_image, sl_image2, sl_image3, sl_tags".
 	" $sl_custom_fields,".
 	" ( $multiplier * acos( cos( radians('%s') ) * cos( radians( sl_latitude ) ) * cos( radians( sl_longitude ) - radians('%s') ) + sin( radians('%s') ) * sin( radians( sl_latitude ) ) ) ) AS sl_distance".
 	" FROM ".SL_TABLE.
@@ -60,7 +60,7 @@ if (!empty($_sl['mode']) && $_sl['mode']=='gen') {
 } else {
 	// Select all the rows in the markers table
 	$query =  sprintf(
-	"SELECT sl_address, sl_address2, sl_store, sl_city, sl_state, sl_zip, sl_latitude, sl_longitude, sl_description, sl_url, sl_hours, sl_phone, sl_fax, sl_email, sl_image, sl_tags".
+	"SELECT sl_address, sl_address2, sl_store, sl_city, sl_state, sl_zip, sl_latitude, sl_longitude, sl_description, sl_url, sl_hours, sl_phone, sl_fax, sl_email, sl_image, sl_image2, sl_image3, sl_tags".
 	" $sl_custom_fields".
 	" FROM ".SL_TABLE.
 	" WHERE sl_store<>'' AND sl_longitude<>'' AND sl_latitude<>''".
@@ -100,9 +100,11 @@ while ($row = @mysql_fetch_assoc($result)){
   echo 'fax="' . parseToXML($row['sl_fax']) . '" ';
   echo 'email="' . parseToXML($row['sl_email']) . '" ';
   echo 'image="' . parseToXML($row['sl_image']) . '" ';
+  echo 'image2="' . parseToXML($row['sl_image2']) . '" ';
+  echo 'image3="' . parseToXML($row['sl_image3']) . '" ';
   echo 'tags="' . parseToXML($row['sl_tags']) . '" ';
   if (!empty($sl_xml_columns)){ 
-  $alrdy_used=array('name', 'address', 'street', 'street2', 'city', 'state', 'zip', 'lat', 'lng', 'distance', 'description', 'url', 'hours', 'phone', 'fax', 'email', 'image', 'tags');
+  $alrdy_used=array('name', 'address', 'street', 'street2', 'city', 'state', 'zip', 'lat', 'lng', 'distance', 'description', 'url', 'hours', 'phone', 'fax', 'email', 'image', 'image2','image3', 'tags');
   	foreach($sl_xml_columns as $key=>$value) {
   		if (!in_array($value, $alrdy_used)) { //can't have duplicate property names in xml
 	  		$row[$value]=(!isset($row[$value]))? "" : $row[$value] ;

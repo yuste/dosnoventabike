@@ -482,6 +482,8 @@ if (!function_exists("buildSidebarHTML")) {
         var url = sl_details['sl_url'];
         var phone = sl_details['sl_phone'];
         var image = sl_details['sl_image'];
+        var image2 = sl_details['sl_image2'];
+        var image3 = sl_details['sl_image3'];
         if (url.search(/^https?\:\/\//i) != -1 && url.indexOf(".") != -1) {
             link = "&nbsp;|&nbsp;<a href='" + url + "' target='_blank' class='storelocatorlink'><nobr>" + sl_website_label + "</nobr></a>"
         } else {
@@ -503,7 +505,7 @@ if (!function_exists("buildSidebarHTML")) {
             } else {
                 html += '<table class="tableStoreLocator">'
             }
-            html += '<tr><td><h4 class="titleListStockist">' + name + '</h4><p>' + street + ' ' + city + ' ' + state_zip + '<br/>' + phone + ' <br/><a class="stockistListUrl" href="' + url + '">' + url + '</a></p></td><td class="tdRightStore"><div class="carouselStock"><div class="slide"><img src="'+image+'"></div><div class="slide"><img src="'+image+'"></div><div class="slide"><img src="'+image+'"></div></div></td></tr></table>'
+            html += '<tr><td><h4 class="titleListStockist">' + name + '</h4><p>' + street + ' ' + city + ' ' + state_zip + '<br/><br/>' + phone + ' <br/><br/><a class="stockistListUrl" href="' + url + '">' + url + '</a></p></td><td class="tdRightStore"><div class="carouselStock"><div class="slide"><img src="'+image+'"></div><div class="slide"><img src="'+image2+'"></div><div class="slide"><img src="'+image3+'"></div></div></td></tr></table>'
 
                      
         }
@@ -611,6 +613,8 @@ if (function_exists("buildDetails") != true) {
             'sl_fax': markerNode.getAttribute('fax'),
             'sl_email': markerNode.getAttribute('email'),
             'sl_image': markerNode.getAttribute('image'),
+            'sl_image2': markerNode.getAttribute('image2'),
+            'sl_image3': markerNode.getAttribute('image3'),
             'sl_tags': markerNode.getAttribute('tags'),
             'sl_distance': parseFloat(markerNode.getAttribute('distance')),
             'homeAddress': document.getElementById('addressInput').value,

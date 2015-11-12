@@ -383,6 +383,8 @@ function sl_install_tables() {
 			sl_fax varchar(255) NULL,
 			sl_email varchar(255) NULL,
 			sl_image varchar(255) NULL,
+			sl_image2 varchar(255) NULL,
+			sl_image3 varchar(255) NULL,
 			sl_private varchar(1) NULL,
 			sl_neat_title varchar(255) NULL,
 			PRIMARY KEY  (sl_id)
@@ -1171,7 +1173,9 @@ function sl_location_form($mode="add", $pre_html="", $post_html=""){
 		<input name='sl_phone'>&nbsp;<small>".__("Phone", SL_TEXT_DOMAIN)."</small><br>
 		<input name='sl_fax'>&nbsp;<small>".__("Fax", SL_TEXT_DOMAIN)."</small><br>
 		<input name='sl_email'>&nbsp;<small>".__("Email", SL_TEXT_DOMAIN)."</small><br>
-		<input name='sl_image'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small>";
+		<input name='sl_image'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small><br>
+		<input name='sl_image2'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small><br>
+		<input name='sl_image3'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small>";
 		
 		$html.=(function_exists("do_sl_hook"))? do_sl_hook("sl_add_location_fields",  "append-return") : "" ;
 		$html.=wp_nonce_field("add-location_single", "_wpnonce", true, false);
@@ -1263,7 +1267,9 @@ function sl_single_location_info($value, $colspan, $bgcol) {
 		<input name='sl_phone-$value[sl_id]' id='sl_phone-$value[sl_id]' value='$value[sl_phone]' size='13'>&nbsp;<small>".__("Phone", SL_TEXT_DOMAIN)."</small><br>
 		<input name='sl_fax-$value[sl_id]' id='sl_fax-$value[sl_id]' value='$value[sl_fax]' size='13'>&nbsp;<small>".__("Fax", SL_TEXT_DOMAIN)."</small><br>
 		<input name='sl_email-$value[sl_id]' id='sl_email-$value[sl_id]' value='$value[sl_email]' size='13'>&nbsp;<small>".__("Email", SL_TEXT_DOMAIN)."</small><br>
-		<input name='sl_image-$value[sl_id]' id='sl_image-$value[sl_id]' value='$value[sl_image]' size='13'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small>";
+		<input name='sl_image-$value[sl_id]' id='sl_image-$value[sl_id]' value='$value[sl_image]' size='13'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small><br>
+		<input name='sl_image2-$value[sl_id]' id='sl_image2-$value[sl_id]' value='$value[sl_image2]' size='13'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small><br>
+		<input name='sl_image3-$value[sl_id]' id='sl_image3-$value[sl_id]' value='$value[sl_image3]' size='13'>&nbsp;<small>".__("Image URL (shown with location)", SL_TEXT_DOMAIN)."</small>";
 		
 		print "</td><td style='vertical-align:top !important; width:40%'>";
 	if (function_exists("do_sl_hook")) {do_sl_hook("sl_single_location_edit", "select-top");}

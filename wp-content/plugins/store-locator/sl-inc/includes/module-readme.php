@@ -31,7 +31,7 @@ global $sl_all_columns;
 if (!empty($sl_all_columns) && $vals=implode(', ', $sl_all_columns)) {
 	print "<b>Available Shortcode Parameters:</b><br><br><div class='sl_code code'>".$vals;
 } else {
-	print "<b>Available Shortcode Parameters:</b><br><br><div class='sl_code code'>sl_id, sl_store, sl_address, sl_address2, sl_city, sl_state, sl_zip, sl_latitude, sl_longitude, sl_tags, sl_description, sl_url, sl_hours, sl_phone, sl_fax, sl_email, sl_image, sl_private, sl_neat_title";
+	print "<b>Available Shortcode Parameters:</b><br><br><div class='sl_code code'>sl_id, sl_store, sl_address, sl_address2, sl_city, sl_state, sl_zip, sl_latitude, sl_longitude, sl_tags, sl_description, sl_url, sl_hours, sl_phone, sl_fax, sl_email, sl_image, sl_image2, sl_image3, sl_private, sl_neat_title";
 }
 print "</div><br><b>Example Usage:</b><br><br><div class='sl_code code'>[STORE-LOCATOR sl_city='Washington' not_sl_zip='20001']</div>
 (Shows all locations in the city of 'Washington' without a zip code of '20001')<br><br>

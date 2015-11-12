@@ -111,7 +111,8 @@ class Vimeography_Helpers {
       'portrait'  => 0,
       'byline'    => 0,
       'api'       => 1,
-      'player_id' => 'vimeography'. rand('1', '999999')
+      'player_id' => 'vimeography'. rand('1', '999999'),
+      'sort'      => "date"
     );
 
     $query = http_build_query($params);

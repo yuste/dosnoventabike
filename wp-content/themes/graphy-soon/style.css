@@ -61,7 +61,7 @@ p {
 
 
 .hide {
-	display: none;
+	display: none !important;
 }
 
 .center {
@@ -123,6 +123,7 @@ p.classTextFutura{
 	text-align: justify;
 	line-height: 17px !important;
   	font-size: 12px  !important;
+  	vertical-align: top !important;
 }
 
 .entry-content > p {
@@ -245,6 +246,8 @@ ul li a:hover {
 	
 	width: 1180px;
 }
+
+
 
 
 .sbi_load_btn{
@@ -455,12 +458,12 @@ ul#menu-global_menu li {
 }
 
 ul#menu-footer1 li a:hover{
-	color:#ffd800;
+	color:#646464 !important;
 }
 
 
 ul#menu-footer2 li a:hover{
-	color:#ffd800;
+	color:white;
 }
 
 ul#menu-footer2 li a{
@@ -472,7 +475,7 @@ ul#menu-footer3 li a{
 	font-family: 'Helvetica';
 }
 ul#menu-footer3 li a:hover{
-	color:#ffd800;
+	color:white;
 }
 
 
@@ -906,6 +909,7 @@ ol.qe-faqs-group-index  li {
 	background: #1f1f1f !important;
 	border:none !important;
 	color:white;
+	font-family: "Helvetica";
 	font-size:12px !important;
 	padding-left:15px !important;
 }
@@ -1743,15 +1747,32 @@ table.tableHeadquarter tr td {
 
    }
 
+a.load_btn_more:hover{
+   	color:white !important;
+	background-color: #646464 !important;
+}
+
 .boxProject{
 	text-align: center;
 	margin-bottom: 70px;
 	margin-top: 70px;
 }
 
-.boxProject > h3 {
-	margin-top: 0px;
-	margin-bottom: 0px;
+
+
+.titleProject {
+	font-size: 25px !important;
+	font-weight: normal !important;
+	text-align: center !important;
+	margin-top: 30px;
+	margin-bottom: 5px !important;
+	font-family:'Futura','Oswald', 'sans-serif';
+}
+
+.subtitlteProject{
+	font-weight: bold !important;
+	font-size: 13px !important;
+	font-family: "Helvetica";
 }
 
 
@@ -1807,3 +1828,11 @@ table.tableHeadquarter tr td {
 .btn-share-social {
 	margin-right: 30px;
 }
+
+
+a.sbi_load_btn:hover {
+	color:white !important;
+	background-color: #646464 !important;
+}
+
+

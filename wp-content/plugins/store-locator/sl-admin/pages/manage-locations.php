@@ -130,7 +130,9 @@ if (function_exists("do_sl_hook") && !empty($sl_columns)){
 <th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_phone&d=$d'>".__("Phone", SL_TEXT_DOMAIN)."</a></th>
 <th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_fax&d=$d'>".__("Fax", SL_TEXT_DOMAIN)."</a></th>
 <th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_email&d=$d'>".__("Email", SL_TEXT_DOMAIN)."</a></th>
-<th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_image&d=$d'>".__("Image", SL_TEXT_DOMAIN)."</a></th>";
+<th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_image&d=$d'>".__("Image", SL_TEXT_DOMAIN)."</a></th>
+<th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_image2&d=$d'>".__("Image", SL_TEXT_DOMAIN)."</a></th>
+<th><a href='".str_replace("&o=$_GET[o]&d=$_GET[d]", "", $_SERVER['REQUEST_URI'])."&o=sl_image3&d=$d'>".__("Image", SL_TEXT_DOMAIN)."</a></th>";
 	}
 }
 
@@ -162,6 +164,8 @@ print "<th>(Lat, Lon)</th>
 				$value['sl_url']=(!url_test($value['sl_url']) && trim($value['sl_url'])!="")? "http://".$value['sl_url'] : $value['sl_url'] ;
 				$value['sl_url']=($value['sl_url']!="")? "<a href='$value[sl_url]' target='blank'>".__("View", SL_TEXT_DOMAIN)."</a>" : "" ;
 				$value['sl_image']=($value['sl_image']!="")? "<a href='$value[sl_image]' target='blank'>".__("View", SL_TEXT_DOMAIN)."</a>" : "" ;
+				$value['sl_image2']=($value['sl_image2']!="")? "<a href='$value[sl_image2]' target='blank'>".__("View", SL_TEXT_DOMAIN)."</a>" : "" ;
+				$value['sl_image3']=($value['sl_image3']!="")? "<a href='$value[sl_image3]' target='blank'>".__("View", SL_TEXT_DOMAIN)."</a>" : "" ;
 				$value['sl_description']=($value['sl_description']!="")? "<a href='#description-$value[sl_id]' rel='sl_pop'>".__("View", SL_TEXT_DOMAIN)."</a><div id='description-$value[sl_id]' style='display:none;'>".comma($value['sl_description'])."</div>" : "" ;
 			
 				if(empty($_GET['edit'])) {$_GET['edit']="";}
@@ -204,7 +208,9 @@ $value[sl_zip]</td>
 <td>$value[sl_phone]</td>
 <td>$value[sl_fax]</td>
 <td>$value[sl_email]</td>
-<td>$value[sl_image]</td>";
+<td>$value[sl_image]</td>
+<td>$value[sl_image2]</td>
+<td>$value[sl_image3]</td>";
 					}
 				}
 				print "<td title='(".$value['sl_latitude'].", ".$value['sl_longitude'].")' style='cursor:help;'>(".round($value['sl_latitude'],2).", ".round($value['sl_longitude'],2).")</td></tr>";

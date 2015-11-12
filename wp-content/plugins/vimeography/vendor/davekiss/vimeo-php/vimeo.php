@@ -68,8 +68,10 @@ class Vimeography_Vimeo
             $headers[] = 'Authorization: Basic ' . base64_encode($this->_client_id . ':' . $this->_client_secret);
         } else if (!empty($this->_client_id) && empty($this->_client_secret)) {
            $params['client_id'] = $this->_client_id;
+
         }
 
+        
         // Add Modified header if provided
         if ($last_modified !== NULL) {
           $headers[] =  'If-Modified-Since: ' . $last_modified;

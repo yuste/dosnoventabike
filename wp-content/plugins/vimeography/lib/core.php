@@ -169,6 +169,7 @@ abstract class Vimeography_Core {
    */
   private function _make_vimeo_request($endpoint, $params, $last_modified) {
     try {
+      $params["sort"] = "date";
       $response = $this->_vimeo->request( $endpoint, $params, 'GET', $last_modified );
 
       switch ($response['status']) {

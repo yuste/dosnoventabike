@@ -129,21 +129,29 @@ function myjavascript2_func( $atts ){
       element.innerHTML = '<div class=\"subcontainer-hover\"></div>';
       document.body.appendChild(element);
 
-      jQuery('.divLeft').hover(function() {
-        element.dataset.link=jQuery(this).data('link');
-        element.dataset.description=jQuery(this).data('description');
-        element.dataset.name=jQuery(this).data('name');
+      jQuery('.divLeft > img').hover(function() {
+        console.log('hover');
+        var parent = jQuery(this).parent();
+        element.dataset.link=parent.data('link');
+        element.dataset.description=parent.data('description');
+        element.dataset.name=parent.data('name');
 
-        element.innerHTML = '<div class=\"subcontainer-hover\"  style=\"position: relative;top: 50%;transform: translateY(-50%);color:black;text-decoration:underline;font-style:italic;font-size:30px\">'+jQuery(this).data('name')+'</div>';
-        jQuery('.container-hover-img').css('top',jQuery(this).position().top+$('.vimeography-thumbnails').position().top);
-        jQuery('.container-hover-img').css('left',jQuery(this).position().left+$('.vimeography-thumbnails').position().left);
-        jQuery('.container-hover-img').css('width',jQuery(this).width());
-        jQuery('.container-hover-img').css('height',jQuery(this).height());
+        element.innerHTML = '<div class=\"subcontainer-hover\"  style=\"position: relative;top: 50%;transform: translateY(-50%);color:black;text-decoration:underline;font-style:italic;font-size:30px\">'+jQuery(parent).data('name')+'</div>';
+        jQuery('.container-hover-img').css('top',jQuery(parent).position().top+$('.vimeography-thumbnails').position().top);
+        jQuery('.container-hover-img').css('left',jQuery(parent).position().left+$('.vimeography-thumbnails').position().left);
+        jQuery('.container-hover-img').css('width','238px');
+        jQuery('.container-hover-img').css('height','150px');
         jQuery('.container-hover-img').stop().css('display', 'block');
-      
-
+        $('.container-hover-img').removeClass('hide');
+      }, function(){
+       
       });
-    
+
+      $('.container-hover-img').on('mouseleave', function () {
+          console.log('remove')
+          $('.container-hover-img').addClass('hide');
+      });
+
       
     jQuery('.container-hover-img').on('click', '.subcontainer-hover',  function(e) {
 
@@ -327,10 +335,10 @@ function communityDNVFunction() {
 
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<li><a class="chooseColorSelect" href="javascript:;">Choose Color</a><ul class="color290">';
-      echo '<li class="regularLi"><a>REGULAR COLOR 2015</a></li><li class="customLi"><a>CUSTOM COLOR</a></li>';
+      echo '<li class="customLi"><a>CUSTOM COLOR</a></li>';
     else:
       echo '<li><a class="chooseColorSelect" href="javascript:;">Elige Color</a><ul class="color290">';
-    echo '<li class="regularLi"><a>COLOR 2015</a></li><li class="customLi"><a>COLOR PERSONALIZADO</a></li>';
+    echo '<li class="customLi"><a>COLOR PERSONALIZADO</a></li>';
     endif;
     
     echo '<li><div>';
@@ -344,10 +352,10 @@ function communityDNVFunction() {
     echo '</div></li></ul></li>';
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<li><button class="btn290 btnViewAll">VIEW ALL</button></li>';
-      echo '<li style="margin-right:0px"><a href="mailto:info@bikes.com" class="sendBike">SEND YOUR DOSNOVENTA</a></li></ul>';
+      echo '<li style="margin-right:0px"><a href="mailto:community@dosnoventabikes.com" class="sendBike">SEND YOUR DOSNOVENTA</a></li></ul>';
     else:
       echo '<li><button class="btn290 btnViewAll">VER TODO</button></li>';
-      echo '<li style="margin-right:0px"><a href="mailto:info@bikes.com" class="sendBike">ENVÍA TU DOSNOVENTA</a></li></ul>';
+      echo '<li style="margin-right:0px"><a href="mailto:community@dosnoventabikes.com" class="sendBike">ENVÍA TU DOSNOVENTA</a></li></ul>';
     endif;
     echo '<div class="gallery-template"><ul class="bikes">';
     $count = 1;
@@ -461,15 +469,15 @@ function projectdsnvFunction() {
       else {
         echo "<div class='boxProject boxProject_".$cont."'>";  
       }
-      echo "<img src=".$imageProject["url"]." />";
-      echo "<h1><a href='".$pageProject."'>".$titleProject."</a></h1>";
-      echo "<h3>".$subtitleProject."</h3>";
+      echo "<a href='".$pageProject."'><img src=".$imageProject["url"]." /></a>";
+      echo "<p class='titleProject'><a href='".$pageProject."'>".$titleProject."</a></p>";
+      echo "<span class='subtitlteProject'>".$subtitleProject."</span>";
       echo "</div>";
       $cont++;
 
     endwhile;
 
-    if ($cont > 2){
+    if ($cont > 3){
         if (strrpos($_SERVER['REQUEST_URI'], "en/")):
           echo '<div id="sbi_load"><a class="load_btn_more" href="javascript:void(0);" style="">Load More...</a></div>';
         else: 
@@ -479,7 +487,7 @@ function projectdsnvFunction() {
 
 
     echo '<script>
-      var cont = 2;
+      var cont = 3;
       var total = '.$cont.'
       $(".load_btn_more").click(function() {
             for(var i = cont; i < cont+3; i++){
