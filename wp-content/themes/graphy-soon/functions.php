@@ -147,6 +147,12 @@ function myjavascript2_func( $atts ){
         jQuery('.container-hover-img').css('width','238px');
         jQuery('.container-hover-img').css('height','150px');
         jQuery('.container-hover-img').stop().css('display', 'block');
+
+        jQuery(this).css('filter', 'grayscale(100%)');
+        jQuery(this).css('-webkit-filter', 'grayscale(100%)');
+
+      
+
         $('.container-hover-img').removeClass('hide');
       }, function(){
        

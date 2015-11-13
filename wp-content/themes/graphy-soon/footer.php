@@ -114,6 +114,9 @@ $.cssHooks.backgroundColor = {
     _top = _cur_top;
   });
 
+ var topAux = 100;
+ var maxTop = jQuery('.textOverflow').prop('scrollHeight');
+
  jQuery('.barSubscribe').click(function(){
  	jQuery('.backgroundSubscribe').css('display','block');
  	jQuery('.barSubscribe').css('display', 'none');
@@ -127,6 +130,26 @@ jQuery('#changeEn').click(function() {
 	window.location.replace(window.location.href.replace('/es/','/en/'));
 });
 
+
+jQuery('.arrowsDown').on('click', function(){
+    topAux +=50;
+    if (topAux > maxTop) topAux = maxTop-50;
+    console.log('----Down---');
+    console.log(topAux);
+    console.log(maxTop);
+    jQuery('.textOverflow').scrollTop(topAux);
+});
+
+jQuery('.arrowsTop').on('click', function(){
+    topAux -= 50;
+    if (topAux < 0) topAux = 0;
+    console.log('----TOP---');
+    console.log(topAux);
+    console.log(maxTop);
+    jQuery('.textOverflow').scrollTop(topAux);
+    
+});
+
 if (window.location.href.indexOf('/es/') != -1) {
 	jQuery('#changeEs').addClass('decorateLanguage');
 }
@@ -136,7 +159,11 @@ else {
 
 var numImage =Math.floor((Math.random() * 4) + 1);
 jQuery('#imageHomeCentral').attr('src', "http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/06/background-home"+numImage+".jpg");
-jQuery('#imageHomeCentral').removeClass('hide');
+
+jQuery('#imageHomeCentral').one("load", function(){
+    jQuery('#imageHomeCentral').removeClass('hide');
+});
+
 
 if($('#cm_mapTR').find('table.storesTableLocator').length !=0){
 	jQuery('.btnViewAllStores').css('display', 'block');

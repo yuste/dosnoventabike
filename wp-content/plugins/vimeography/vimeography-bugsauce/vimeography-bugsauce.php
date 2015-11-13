@@ -82,7 +82,7 @@ if ( ! class_exists('Vimeography_Themes_Bugsauce') ) {
       $this->featured->oembed = $helpers->get_featured_embed($this->featured->link);
       $this->featured->title = $this->featured->name;
       $this->featured->description = $this->featured->description;
-
+      $this->featured->link = $this->featured->link;
       return $this->featured;
     }
 

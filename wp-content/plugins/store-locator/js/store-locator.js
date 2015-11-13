@@ -249,6 +249,7 @@ function searchLocations() {
     if (function_exists("end_searchLocations")) {
         end_searchLocations()
     }
+  
 }
 function searchLocationsNear(center, homeAddress) {
     if (function_exists("start_searchLocationsNear")) {

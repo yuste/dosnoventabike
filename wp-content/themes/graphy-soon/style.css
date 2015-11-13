@@ -13,7 +13,8 @@ Template: graphy
 
 @font-face { 
 	font-family: "Futura"; 
-	src: url("http://dosnoventa.jsalvatella.com/wp-content/themes/graphy-soon/fonts/futura-condensedmedium-webfont.woff");
+	/*src: url("http://dosnoventa.jsalvatella.com/wp-content/themes/graphy-soon/fonts/futura-condensedmedium-webfont.woff");*/
+	src: url("http://dosnoventa.jsalvatella.com/wp-content/themes/graphy-soon/fonts/FuturaStd-Condensed.otf") format("opentype");
 }
 
 
@@ -45,6 +46,42 @@ p {
 	text-align: justify !important;
 	line-height: 18px !important;
 }
+
+
+.textOverflow{
+	max-height: 200px;
+    overflow: auto;
+    overflow-y: hidden; 
+    width: 95%;
+    height: auto;
+    float:left;
+    outline-style: none;
+    direction: ltr;
+    outline-width: 0px;
+    margin-bottom: 20px;
+   
+}
+
+.arrowsTop {
+	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/arrowTop.png") 0 0px;
+    float: right;
+    height: 20px;
+    width: 31px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.arrowsDown {
+	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/arrowDown.png") 0 0px;
+    float: right;
+    height: 20px;
+    width: 31px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    margin-top: 150px;
+}
+
+
 
 #content {
 	display: none;
@@ -241,7 +278,7 @@ ul li a:hover {
 }
 
 .divLogosPartner {
-	margin-top:180px;
+	margin-top:182px;
 	margin-left:0px;
 	
 	width: 1180px;
@@ -439,7 +476,7 @@ background-color: #555;
 }
 
 ul#menu-global_menu li {
-	padding-bottom: 2px;
+	padding-bottom: 3px;
 }
 
 .menu-footer3-container ul li a,
@@ -487,6 +524,16 @@ ul#menu-footer3 li a:hover{
 .infoMail:hover{
 	color:#ffd800 !important;
 }
+
+
+.titleYellow {
+	color:#ffd800;
+}
+
+.paragraphFam{
+	margin-top: 40px;
+}
+
 .languagesMenu{
 	width: 100px;
 	font-size: 18px;
@@ -580,9 +627,23 @@ ul#menu-footer3 li a:hover{
 	margin-bottom: 20px;
 }
 
+
+
 .current-menu-item  {
 	background: white;
 	color:black;
+}
+
+#menu-footer1 > li.current-menu-item {
+	background-color: inherit !important;
+}
+
+#menu-footer2 > li.current-menu-item {
+	background-color: inherit !important;
+}
+
+#menu-footer3 > li.current-menu-item {
+	background-color: inherit !important;
 }
 
 .current-menu-item > a {
@@ -1683,12 +1744,48 @@ a.btn290:hover {
 
 /***CONTACT****/
 
+.wpcf7-validation-errors {
+	border:0px !important;
+	display: block;
+    font-size: 18px !important;
+    width: 350px !important;
+    color:#ffd800 !important;
+    font-family: "Helvetica" !important;
+}
+
 table.contactTable{
 	border: none !important;
 }
 
+.wpcf7-submit:hover{
+	color:white !important;
+	background-color: #646464 !important;
+	 -webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+	font-weight: normal !important;
+}
 
-qe-faq-content
+.wpcf7-submit{
+	 -webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+  outline: none;
+  background: white;
+  padding-top:3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: black !important;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family:'Futura','Oswald', 'sans-serif' !important;
+  border-radius: 1px !important;
+  margin-top: 1.6em;
+  width: 130;
+  cursor: pointer;
+}
 
 .wpcf7-form-control{
 	background-color: #1f1f1f;
@@ -1842,5 +1939,9 @@ a.sbi_load_btn:hover {
 	color:white !important;
 	background-color: #646464 !important;
 }
+
+
+
+
 
 
