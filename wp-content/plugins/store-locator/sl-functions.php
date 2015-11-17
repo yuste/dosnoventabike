@@ -1911,14 +1911,14 @@ $form.="<table style='width:100%;/*border:solid silver 1px*/' cellspacing='0px' 
   	  endif;
 
 	$form .="<tr id='cm_mapTR'>
-        <td width='' valign='top' style='/*display:hidden; border-right:solid silver 1px*/' id='map_sidebar_td'> <div id='map_sidebar' style='width:$width$width_units;/* $height$height_units; */'> <div class='text_below_map'>$sl_instruction_message</div></div>
+        <td width='' valign='top' style='/*display:hidden; border-right:solid silver 1px*/' class='first' id='map_sidebar_td'> <div id='map_sidebar' style='width:$width$width_units;/* $height$height_units; */'> <div class='text_below_map'>$sl_instruction_message</div></div>
         </td></tr>
   </table></form>";
 
 	 if (strrpos($_SERVER['REQUEST_URI'], "en/")):
-	 	$form .= "<div style='text-align:center'><h2 class='seeAllStores hide'>VIEW ALL STORES</h2></div></div>";
+	 	$form .= "<div style='text-align:center'><a class='seeAllStores btn290 hide'>VIEW ALL STORES</a></div></div>";
 	 else:
-		$form .= "<div style='text-align:center'><h2 class='seeAllStores hide '>VER TODAS LAS TIENDAS</h2></div></div>";
+		$form .= "<div style='text-align:center'><a class='seeAllStores btn290 hide'>VER TODAS LAS TIENDAS</a></div></div>";
 	 endif;
 
 	//preg_match("@\[STORE-LOCATOR [tag=\"(.*)\"]?\]@", $matched); 

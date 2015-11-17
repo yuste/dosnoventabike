@@ -23,7 +23,7 @@ class DUP_Server
 		//PHP SUPPORT
 		$safe_ini = strtolower(ini_get('safe_mode'));
 		$dup_tests['PHP']['SAFE_MODE'] = $safe_ini  != 'on' || $safe_ini != 'yes' || $safe_ini != 'true' || ini_get("safe_mode") != 1 ? 'Pass' : 'Fail';
-		$dup_tests['PHP']['VERSION'] = version_compare(phpversion(), '5.2.17') >= 0 ? 'Pass' : 'Fail';
+		$dup_tests['PHP']['VERSION'] = version_compare(phpversion(), '5.2.9') >= 0 ? 'Pass' : 'Fail';
 		$dup_tests['PHP']['ZIP']	 = class_exists('ZipArchive')				? 'Pass' : 'Fail';
 		$dup_tests['PHP']['FUNC_1']  = function_exists("file_get_contents")		? 'Pass' : 'Fail';
 		$dup_tests['PHP']['FUNC_2']  = function_exists("file_put_contents")		? 'Pass' : 'Fail';
@@ -113,12 +113,33 @@ class DUP_Server
 	*/
 	public static function InstallerFilesFound() 
 	{
-		$phpFile  = file_exists(DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_PHP);
-		$logFile  = file_exists(DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_LOG);
-		$sqlFile1 = file_exists(DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_SQL);
-		$sqlFile2 = file_exists(DUPLICATOR_WPROOTPATH . 'database.sql');	
-		return  ($phpFile || $logFile || $sqlFile1 || $sqlFile2);
+		$files = self::GetInstallerFiles();
+		foreach($files as $file => $path) 
+		{
+			if (file_exists($path))
+				return true;
+		}
+		return false;
 	}
+	
+	
+	/** 
+	* Gets a list of all the installer files by name and full path
+	* @return array [file_name, file_path]
+	*/
+	public static function GetInstallerFiles() 
+	{
+		/* Files:
+		 * installer.php, installer-backup.php, installer-data.sql, installer-log.txt, database.sql */
+		return array(
+			DUPLICATOR_INSTALL_PHP => DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_PHP,  
+			DUPLICATOR_INSTALL_BAK => DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_BAK, 
+			DUPLICATOR_INSTALL_SQL => DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_SQL,
+			DUPLICATOR_INSTALL_LOG => DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_LOG,
+			DUPLICATOR_INSTALL_DB  => DUPLICATOR_WPROOTPATH . DUPLICATOR_INSTALL_DB
+		);
+	}
+	
 	
 	/** 
 	* Get the IP of a client machine

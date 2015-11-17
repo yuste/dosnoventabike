@@ -74,6 +74,7 @@ function sl_load() {
     $('.seeAllStores').click(function(){
           showAll = true;
           sl_load();
+          $('#map_sidebar').removeClass('first');
           $('.seeAllStores').addClass('hide'); 
     });
 

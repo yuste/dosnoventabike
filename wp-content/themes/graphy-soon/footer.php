@@ -133,11 +133,11 @@ jQuery('#changeEn').click(function() {
 
 jQuery('.arrowsDown').on('click', function(){
     topAux +=50;
-    if (topAux > maxTop) topAux = maxTop-50;
+    if (topAux > maxTop) topAux = maxTop-100;
     console.log('----Down---');
     console.log(topAux);
     console.log(maxTop);
-    jQuery('.textOverflow').scrollTop(topAux);
+    jQuery('.textOverflow').animate({ scrollTop:topAux});
 });
 
 jQuery('.arrowsTop').on('click', function(){
@@ -146,7 +146,7 @@ jQuery('.arrowsTop').on('click', function(){
     console.log('----TOP---');
     console.log(topAux);
     console.log(maxTop);
-    jQuery('.textOverflow').scrollTop(topAux);
+    jQuery('.textOverflow').animate({ scrollTop:topAux});
     
 });
 

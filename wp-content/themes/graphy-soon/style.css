@@ -264,6 +264,10 @@ ul li a:hover {
 	padding-left:5px;
 }
 
+.textwidget .socialIcons img {
+	opacity: 1;
+}
+
 .socialIcons img {
 	width: 40px;
 	opacity: 0.5;
@@ -916,8 +920,8 @@ ol.qe-faqs-group-index  li {
 
 
 .seeAllStores{
-	cursor: pointer;
 	margin-top: -150px !important;
+
 }
 
 .tableStoreLocator tr td:first-child{
@@ -943,7 +947,12 @@ ol.qe-faqs-group-index  li {
 #map_sidebar{
 	width: 100%;
     height: 100%;
+    height: 630px;
     overflow: hidden;
+}
+
+#map_sidebar.first {
+	height: 630px !important;
 }
 
 .urlBubble {
@@ -992,6 +1001,11 @@ ol.qe-faqs-group-index  li {
 .btnViewAllStores{
 	display: none;
 	cursor: pointer;
+}
+
+.btnViewAll {
+	padding-right: 45px !important;
+    padding-left: 45px !important;
 }
 
 #sl_div td {
@@ -1177,7 +1191,7 @@ ul.sub-menu li a{
 .overlay-links {
 	width: 225px;
     height: 35px;
-    margin: 28.363636363636363% 0% 28.363636363636363% 0%;
+    margin: 20.363636363636363% 0% 28.363636363636363% 0%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1212,7 +1226,7 @@ ul.bikes li .overlay {
   height: 100%;
   position: absolute;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   -moz-box-shadow: inset 0 0 100px #000000;
   -webkit-box-shadow: inset 0 0 100px #000000;
   box-shadow: inset 0 0 100px #000000;
@@ -1234,22 +1248,52 @@ ul.bikes li .overlay:hover {
 ul.bikes li .overlay .overlay-links {
   width: 225px;
   height: 35px;
-  margin: 28.363636363636363% 0% 28.363636363636363% 0%;
+  margin: 15.363636363636363% 0% 28.363636363636363% 0%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center !important;
 }
 ul.bikes li .overlay .overlay-links a {
   float: left;
-  padding: 10px;
-  margin: 0 5px;
   text-align: center;
-  background: #e4f2f2;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   color:black !important;
   font-size: 20px;
+  text-align: center !important;
 }
+
+ul.bikes li .overlay .overlay-links > p {
+	color:white;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	text-align: center !important;
+}
+
+ul.bikes li .overlay .overlay-links .textwidget {
+	text-align: center;
+	margin-left: 15px;
+}
+
+ul.bikes li .overlay .overlay-links .textwidget .socialIcons:hover{
+
+}
+
+.yellowBike{
+	color:#ffd800;
+}
+
+.separatorBikes{
+	width: 400px;
+	height: 3px;
+	margin-left: -80px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	background-color:white;
+}
+
+
 ul.bikes li .overlay .overlay-links .view-build {
   padding: 10px 10px 10px 32px;
   background: #e4f2f2 url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/button-view-build.png") 9px no-repeat;
@@ -1289,11 +1333,9 @@ ul.bikes li ul.bike-parts li span {
   font-weight: bold;
 }
 ul.bikes img {
-  width: 100%;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  margin: 0 0 -3px 0;
 }
 
 
@@ -1570,8 +1612,8 @@ font-family: "Helvetica";
     width: 200px;
     border: 1px #ffffff solid;
     padding-left: 10px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 120px;
     min-width: 230px;
 
@@ -1593,8 +1635,8 @@ div.colorPicker-swatch {
     min-width: 240px;
     border: 1px #ffffff solid;
     padding-left: 10px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 140px;
 }
 
@@ -1706,12 +1748,12 @@ div.colorPicker-swatch {
 }
 
 a.btn290 {
-		 outline: none;
+  outline: none;
   background: white;
-  padding-top:3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
   color: black !important;
   font-size: 18px;
   font-weight: bold;
@@ -1719,7 +1761,7 @@ a.btn290 {
   font-family:'Futura','Oswald', 'sans-serif' !important;
   border-radius: 1px !important;
   margin-top: 1.6em;
-  width: 130;
+  width: 130px;
   cursor: pointer;
 }
 
@@ -1729,17 +1771,23 @@ a.btn290:hover {
 }
 
 
-.sendBike{
+a.sendBike{
 	height: 25px;
     width: 200px;
-    border: 1px #ffffff solid;
+    border: 2px #646464 solid;
     padding-left: 10px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 10px;
     margin-left: 80px;
     cursor: pointer;
+    color: #646464 !important;
 
+}
+
+a.sendBike:hover {
+	border: 2px white solid;
+	color: white !important;
 }
 
 /***CONTACT****/
@@ -1832,7 +1880,7 @@ table.tableHeadquarter tr td {
 }
 
 .slb_data{
-	height: 0px !important;
+	/*height: 0px !important;*/
 }
 
 /**PROJECT PAGE**/
@@ -1942,6 +1990,32 @@ a.sbi_load_btn:hover {
 
 
 
+/***LIGHTBOX**/
+
+.slb_template_tag_ui_nav_prev{
+	left:-150px;
+	width: 0px;
+}
+
+ 
+.slb_template_tag_ui_nav_next {
+	right: -150px !important;
+	width: 0px;
+}
+
+
+.slb_container {
+	background-color: transparent !important;
+}
+
+
+.slb_details {
+	display: none;
+}
+
+.slb_controls {
+	display: none;
+}
 
 
 

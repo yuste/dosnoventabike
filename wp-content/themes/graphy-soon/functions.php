@@ -325,6 +325,14 @@ function communityScript_func( $atts ){
          
       });
 
+      jQuery('.bikeImg').hover(function(){
+            var srcYellow = $(this).prop('src');
+            $(this).prop('src', srcYellow.substr(0, srcYellow.length-4)+'-yellow.png');
+      }, function(){
+            var srcYellow2 = $(this).prop('src');
+            $(this).prop('src', srcYellow2.substr(0, srcYellow2.length-11)+'-yellow.png');
+      });
+
     </script>";
 }
 add_shortcode( 'communityScript', 'communityScript_func' );
@@ -372,39 +380,30 @@ function communityDNVFunction() {
     $count = 1;
     while ( $loop->have_posts() ) : $loop->the_post();
       $imageBike  = get_field("bikeimage"); 
-      $frameBike  = get_field("frame"); 
-      $driveBike  = get_field("drive"); 
-      $cogBike    = get_field("cog"); 
-      $chainBike  = get_field("chain"); 
-      $pedalsBike = get_field("pedals"); 
-      $rearBike   = get_field("rear_wheel"); 
-      $frontBike  = get_field("front_wheel"); 
-      $barsBike   = get_field("bars"); 
-      $headsetBike= get_field("headset"); 
-      $stemBike   = get_field("stem"); 
-      $seatBike   = get_field("seat"); 
-      $colorBike  = get_field("color");
+      $modelBike  = get_field("model"); 
+      $riderBike  = get_field("name"); 
+      $colorBike  = get_field("color"); 
+      $cityBike   = get_field("city"); 
       $titleBike =  get_the_title();
 
 
-      echo '<li id="bike-item" class="frame color_'.$colorBike.' frame_'.$frameBike.'  black fsa vittoria nitto charge"><div class="overlay"><div class="overlay-links">';
-      echo '<a class="view-build" href="#" title="View Build">View Build</a><a class="zoom-in" rel="lightbox[uniqueID|filename]"  href="'.$imageBike["url"].'" title="View Full Size">Zoom In</a>';
-      echo '</div></div><ul class="bike-parts"><h2 class="center black">'.$titleBike.'</h2>';
-      if ($frameBike != "") echo '<li><span>Frame: </span>'.$frameBike.'</li>';
-      if ($driveBike != "") echo '<li><span>Drive: </span>'.$driveBike.'</li>';
-      if ($cogBike != "") echo '<li><span>Cog: </span>'.$cogBike.'</li>';
-      if ($chainBike != "") echo '<li><span>Chain: </span>'.$chainBike.'</li>';
-      if ($pedalsBike != "") echo '<li><span>Pedals: </span>'.$pedalsBike.'</li>';
-      if ($rearBike != "") echo '<li><span>Rear wheel: </span>'.$rearBike.'</li>';
-      if ($frontBike != "") echo '<li><span>Front wheel: </span>'.$frontBike.'</li>';
-      if ($barsBike != "") echo '<li><span>Bars: </span>'.$barsBike.'</li>';
-      if ($headsetBike != "") echo '<li><span>Headset: </span>'.$headsetBike.'</li>';
-      if ($stemBike != "") echo '<li><span>Stem: </span>'.$stemBike.'</li>';
-      if ($seatBike != "") echo '<li><span>Seat: </span>'.$seatBike.'</li>';
-      if ($colorBike != "") echo '<li><span>Color (RAL): </span>'.$colorBike.'</li>';
-      
+      echo '<li id="bike-item" class="frame color_'.$colorBike.' frame_'.$modelBike.'  black fsa vittoria nitto charge"><div class="overlay"><div class="overlay-links">';
+      //echo '<a class="view-build" href="#" title="View Build">View Build</a><a class="zoom-in" rel="lightbox[uniqueID|filename]"  href="'.$imageBike["url"].'" title="View Full Size">Zoom In</a>';
+      echo '<p>'.$modelBike.'</P>';
+      if (strrpos($_SERVER['REQUEST_URI'], "en/")):
+        echo '<p>RIDER <span class="yellowBike">'.$riderBike.'</span></p>';
+        echo '<p>COUNTRY <span class="yellowBike">'.$cityBike.'</span></p>';
+      else:
+        echo '<p>CICLISTA <span class="yellowBike">'.$riderBike.'</span></p>';
+        echo '<p>PAIS <span class="yellowBike">'.$cityBike.'</span></p>';
+      endif;
+      echo '<div class="separatorBikes"></div>';
+      echo '<div class="textwidget"><a class="socialIcons" href="https://vimeo.com/user7105911/videos"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/vimeo-ico.png"></a>
+<a class="socialIcons" href="https://www.facebook.com/pages/Dosnoventa/313463345350698"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/facebook-ico.png"></a>
+<a class="socialIcons" href="https://twitter.com/dosnoventa"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/twitter.ico.png"></a>
+<a class="socialIcons" href="http://dosnoventa.tumblr.com/"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/tumblr-ico.png"></a></div>';
 
-      echo '</ul><img src="'.$imageBike["url"].'"></li>';
+      echo '</div></div><img src="'.$imageBike["url"].'"></li>';
       
 
 

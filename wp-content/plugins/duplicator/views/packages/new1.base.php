@@ -28,6 +28,8 @@ $view_state = DUP_UI::GetViewStateArray();
 $ui_css_storage = (isset($view_state['dup-pack-storage-panel']) && $view_state['dup-pack-storage-panel']) ? 'display:block' : 'display:none';
 $ui_css_archive = (isset($view_state['dup-pack-archive-panel']) && $view_state['dup-pack-archive-panel']) ? 'display:block' : 'display:none';
 $ui_css_installer = (isset($view_state['dup-pack-installer-panel']) && $view_state['dup-pack-installer-panel']) ? 'display:block' : 'display:none';
+$dup_intaller_files = implode(", ", array_keys(DUP_Server::GetInstallerFiles()));
+
 ?>
 
 <style>
@@ -158,7 +160,7 @@ META-BOX1: SYSTEM REQUIREMENTS -->
                     </tr>					
                 </table>
                 <small>
-					<?php _e("PHP versions 5.2.17+ or higher is required. Please note that in versioning logic a value such as 5.2.9 is less than 5.2.17. For compression to work the ZipArchive extension for PHP is required. Safe Mode should be set to 'Off' in you php.ini file and is deprecated as of PHP 5.3.0.  For any issues in this section please contact your hosting provider or server administrator.  For additional information see our online documentation.", 'wpduplicator'); ?>
+					<?php _e("PHP versions 5.2.9+ or higher is required.  For compression to work the ZipArchive extension for PHP is required. Safe Mode should be set to 'Off' in you php.ini file and is deprecated as of PHP 5.3.0.  For any issues in this section please contact your hosting provider or server administrator.  For additional information see our online documentation.", 'wpduplicator'); ?>
                 </small>
             </div>
         </div>		
@@ -218,12 +220,12 @@ META-BOX1: SYSTEM REQUIREMENTS -->
             </div>
             <div class="dup-sys-info dup-info-box">
                 <?php if ($dup_tests['RES']['INSTALL'] == 'Pass') : ?>
-                        <?php _e('None of the reserved files (installer.php, installer-data.sql, database.sql and installer-log.txt) where found from a previous install.  This means you are clear to create a new package.', 'wpduplicator'); ?>
+                        <?php _e("None of the reserved files [{$dup_intaller_files}] where found from a previous install.  This means you are clear to create a new package.", 'wpduplicator'); ?>
                     <?php else: 
                         $duplicator_nonce = wp_create_nonce('duplicator_cleanup_page');
                     ?> 
                     <form method="post" action="admin.php?page=duplicator-tools&tab=cleanup&action=installer&_wpnonce=<?php echo $duplicator_nonce; ?>">
-                    <?php _e('A reserved file(s) was found in the WordPress root directory. Reserved file names are installer.php, database.sql installer-data.sql and installer-log.txt.  To archive your data correctly please remove any of these files from your WordPress root directory.  Then try creating your package again.', 'wpduplicator'); ?>
+                    <?php _e("A reserved file(s) was found in the WordPress root directory. Reserved file names are [{$dup_intaller_files}].  To archive your data correctly please remove any of these files from your WordPress root directory.  Then try creating your package again.", 'wpduplicator'); ?>
                         <br/><input type='submit' class='button action' value='<?php _e('Remove Files Now', 'wpduplicator') ?>' style='font-size:10px; margin-top:5px;' />
                     </form>
 				<?php endif; ?>
