@@ -347,6 +347,7 @@ class Quick_And_Easy_FAQs_Public {
             /**
              * Create Contents
              */
+            echo '<div class="textOverflowFaqs">';
             foreach ( $faqs_queries_array as $faqs_query ) {
                 $faqs_query->rewind_posts();
                 if ( $faqs_query->have_posts() ) :
@@ -362,7 +363,9 @@ class Quick_And_Easy_FAQs_Public {
                     endwhile;
                 endif;
             }
-
+            echo '</div>';
+            echo '<div class="arrowsTopFaq"></div>';
+            echo '<div class="arrowsDownFaq"></div>';
             // All the custom loops ends here so reset the query
             wp_reset_query();
 

@@ -1837,13 +1837,13 @@ $cs_options.="<option value='$value[city_state]'>$value[city_state]</option>";
 <div id='sl_div'>
   <form onsubmit='searchLocations(); return false;' id='searchForm' action=''>
     <table border='0' cellpadding='3px' class='sl_header' style='width:$width$width_units;'><tr>
-	<td ";
+	<td class='widthSearchInput' ";
 	
 	if ($sl_vars['use_city_search']!=1) {$form.=" colspan='4' ";}
 	if (strrpos($_SERVER['REQUEST_URI'], "en/")):
-		$form.=" valign='top'><input type='text' id='addressInput' placeholder='YOUR LOCATION' size='50' /></td>";
+		$form.=" valign='top'><input type='text' id='addressInput' placeholder='YOUR LOCATION' size='50' /></td><td class='searchTextMap'>Searching...</td>";
 	else:
-		$form.=" valign='top'><input type='text' id='addressInput' placeholder='TU LOCALIZACIÓN' size='50' /></td>";
+		$form.=" valign='top'><input type='text' id='addressInput' placeholder='TU LOCALIZACIÓN' size='50' /></td><td class='searchTextMap'>Buscando...</td>";
 	endif;
 
 	
@@ -1916,9 +1916,9 @@ $form.="<table style='width:100%;/*border:solid silver 1px*/' cellspacing='0px' 
   </table></form>";
 
 	 if (strrpos($_SERVER['REQUEST_URI'], "en/")):
-	 	$form .= "<div style='text-align:center'><a class='seeAllStores btn290 hide'>VIEW ALL STORES</a></div></div>";
+	 	$form .= "<div class='divSeeAllStores'><a class='seeAllStores btn290 hide'>VIEW ALL STORES</a></div></div>";
 	 else:
-		$form .= "<div style='text-align:center'><a class='seeAllStores btn290 hide'>VER TODAS LAS TIENDAS</a></div></div>";
+		$form .= "<div class='divSeeAllStores'><a class='seeAllStores btn290 hide'>VER TODAS LAS TIENDAS</a></div></div>";
 	 endif;
 
 	//preg_match("@\[STORE-LOCATOR [tag=\"(.*)\"]?\]@", $matched); 

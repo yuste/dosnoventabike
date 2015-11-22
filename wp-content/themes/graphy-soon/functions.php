@@ -141,15 +141,14 @@ function myjavascript2_func( $atts ){
         element.dataset.description=parent.data('description');
         element.dataset.name=parent.data('name');
 
-        element.innerHTML = '<div class=\"subcontainer-hover\"  style=\"position: relative;top: 50%;transform: translateY(-50%);color:black;text-decoration:underline;font-style:italic;font-size:30px\">'+jQuery(parent).data('name')+'</div>';
+        element.innerHTML = '<div class=\"subcontainer-hover\"  style=\"position: relative;top: 50%;transform: translateY(-50%);color:black;text-decoration:underline;font-style:italic;font-size:25px\">'+jQuery(parent).data('name')+'</div>';
         jQuery('.container-hover-img').css('top',jQuery(parent).position().top+$('.vimeography-thumbnails').position().top);
         jQuery('.container-hover-img').css('left',jQuery(parent).position().left+$('.vimeography-thumbnails').position().left);
         jQuery('.container-hover-img').css('width','238px');
         jQuery('.container-hover-img').css('height','150px');
         jQuery('.container-hover-img').stop().css('display', 'block');
 
-        jQuery(this).css('filter', 'grayscale(100%)');
-        jQuery(this).css('-webkit-filter', 'grayscale(100%)');
+        
 
       
 
@@ -264,7 +263,7 @@ function communityScript_func( $atts ){
       });
 
       jQuery('.chooseFrameSelect').hover(function(){
-          var auxTop  = jQuery('.chooseFrameSelect').position().top + 30;
+          var auxTop  = jQuery('.chooseFrameSelect').position().top + 35;
           var auxLeft = jQuery('.chooseFrameSelect').position().left - 21;
           jQuery('.select290').css('left', auxLeft);
           jQuery('.select290').css('top', auxTop);
@@ -273,8 +272,10 @@ function communityScript_func( $atts ){
           
       });
 
+
+
       jQuery('.select290').hover(function(){
-          var auxTop  = jQuery('.chooseFrameSelect').position().top + 30;
+          var auxTop  = jQuery('.chooseFrameSelect').position().top + 35;
           var auxLeft = jQuery('.chooseFrameSelect').position().left-21;
           jQuery('.select290').css('left', auxLeft);
           jQuery('.select290').css('top', auxTop);
@@ -284,7 +285,7 @@ function communityScript_func( $atts ){
       });
 
       jQuery('.chooseColorSelect').hover(function(){
-          var auxTop  = jQuery('.chooseColorSelect').position().top + 30;
+          var auxTop  = jQuery('.chooseColorSelect').position().top + 35;
           var auxLeft = jQuery('.chooseColorSelect').position().left - 21;
           jQuery('.color290').css('left', auxLeft);
           jQuery('.color290').css('top', auxTop);
@@ -294,7 +295,7 @@ function communityScript_func( $atts ){
       });
 
       jQuery('.color290').hover(function(){
-          var auxTop  = jQuery('.chooseColorSelect').position().top + 30;
+          var auxTop  = jQuery('.chooseColorSelect').position().top + 35;
           var auxLeft = jQuery('.chooseColorSelect').position().left-21;
           jQuery('.color290').css('left', auxLeft);
           jQuery('.color290').css('top', auxTop);
@@ -321,16 +322,17 @@ function communityScript_func( $atts ){
          jQuery('.frame').addClass('hide');
          jQuery('.color_'+auxColor).removeClass('hide');
 
+
          jQuery('.customLi a').css('text-decoration', 'underline');
          
       });
 
       jQuery('.bikeImg').hover(function(){
             var srcYellow = $(this).prop('src');
-            $(this).prop('src', srcYellow.substr(0, srcYellow.length-4)+'-yellow.png');
+            $(this).prop('src', srcYellow.substr(0, srcYellow.length-4)+'-yellow1.png');
       }, function(){
             var srcYellow2 = $(this).prop('src');
-            $(this).prop('src', srcYellow2.substr(0, srcYellow2.length-11)+'-yellow.png');
+            $(this).prop('src', srcYellow2.substr(0, srcYellow2.length-12)+'.png');
       });
 
     </script>";
@@ -343,20 +345,22 @@ function communityDNVFunction() {
     $args = array( 'post_type' => 'communityDNV', 'posts_per_page' => 10 );
     $loop = new WP_Query( $args );
     
+    echo '<div id="openModal" class="modalDialog"><div><a href="#close" title="Close" class="close">X</a><h3>SEND YOUR DOSNOVENTA</h3><hr /><div class="selectModalDialog selectModalDialogFrame">Select Frame</div><div class="selectModalDialog selectModalDialogColor">Select Color</div><hr/><p><input class="inputModalDialog" placeholder="Name" type="text"/></p><p><input  placeholder="Email" class="inputModalDialog"  type="text"/></p><p><div class="fileUpload btn btn-primary"><span>Browse file...</span><input type="file" class="upload" /></div></p><div class="btnSendModalDialog">SEND</div></div></div>';
+
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
-      echo '<ul class="packSelect290"><li><a class="chooseFrameSelect" href="javascript:;">Choose Frame</a><ul class="select290 changeFrameSelect"></li>';
+      echo '<ul class="packSelect290"><li><div class="chooseFrameSelect" href="javascript:;">Choose Frame</div><ul class="select290 changeFrameSelect"></li>';
     else:
-      echo '<ul class="packSelect290"><li><a class="chooseFrameSelect" href="javascript:;">Elige Frame</a><ul class="select290 changeFrameSelect"></li>';
+      echo '<ul class="packSelect290"><li><div class="chooseFrameSelect" href="javascript:;">Elige Frame</div><ul class="select290 changeFrameSelect"></li>';
     endif;
     echo '<li data-value="KUALA_LUMPUR"><a>KUALA_LUMPUR</a></li><li data-value="MONTECARLO"><a>MONTECARLO</a></li><li data-value="DETROIT"><a>DETROIT</a></li><li data-value="HOUSTON"><a>HOUSTON</a></li>';
     echo '<li data-value="BARCELONA"><a>BARCELONA</a></li><li data-value="TOKYO"><a>TOKYO</a></li><li data-value="EDINBURGH"><a>EDINBURGH</a></li><li data-value="SEOUL"><a>SEOUL</a></li>';
     echo '<li data-value="COPENHAGEN"><a>COPENHAGEN</a></li><li data-value="STUTTGART"><a>STUTTGART</a></li><li data-value="VERONA"><a>VERONA</a></li></ul></li>';
 
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
-      echo '<li><a class="chooseColorSelect" href="javascript:;">Choose Color</a><ul class="color290">';
+      echo '<li><div class="chooseColorSelect" href="javascript:;">Choose Color</div><ul class="color290">';
       echo '<li class="customLi"><a>CUSTOM COLOR</a></li>';
     else:
-      echo '<li><a class="chooseColorSelect" href="javascript:;">Elige Color</a><ul class="color290">';
+      echo '<li><div class="chooseColorSelect" href="javascript:;">Elige Color</div><ul class="color290">';
     echo '<li class="customLi"><a>COLOR PERSONALIZADO</a></li>';
     endif;
     
@@ -371,10 +375,10 @@ function communityDNVFunction() {
     echo '</div></li></ul></li>';
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<li><a class="btn290 btnViewAll">VIEW ALL</a></li>';
-      echo '<li style="margin-right:0px"><a href="mailto:community@dosnoventabikes.com" class="sendBike">SEND YOUR DOSNOVENTA</a></li></ul>';
+      echo '<li style="margin-right:0px"><a href="#openModal" class="sendBike">SEND YOUR DOSNOVENTA</a></li></ul>';
     else:
       echo '<li><a class="btn290 btnViewAll">VER TODO</a></li>';
-      echo '<li style="margin-right:0px"><a href="mailto:community@dosnoventabikes.com" class="sendBike">ENVÍA TU DOSNOVENTA</a></li></ul>';
+      echo '<li style="margin-right:0px"><a href="#openModal" class="sendBike">ENVÍA TU DOSNOVENTA</a></li></ul>';
     endif;
     echo '<div class="gallery-template"><ul class="bikes">';
     $count = 1;
@@ -398,10 +402,9 @@ function communityDNVFunction() {
         echo '<p>PAIS <span class="yellowBike">'.$cityBike.'</span></p>';
       endif;
       echo '<div class="separatorBikes"></div>';
-      echo '<div class="textwidget"><a class="socialIcons" href="https://vimeo.com/user7105911/videos"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/vimeo-ico.png"></a>
-<a class="socialIcons" href="https://www.facebook.com/pages/Dosnoventa/313463345350698"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/facebook-ico.png"></a>
-<a class="socialIcons" href="https://twitter.com/dosnoventa"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/twitter.ico.png"></a>
-<a class="socialIcons" href="http://dosnoventa.tumblr.com/"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/tumblr-ico.png"></a></div>';
+      echo '<div class="textwidget"><a class="socialIcons" href="http://www.facebook.com/sharer.php?u='.$imageBike["url"].'"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/facebook-ico.png"></a>
+      <a class="socialIcons" href="http://twitter.com/home?status='.$imageBike["url"].'"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/twitter.ico.png"></a>
+<a class="socialIcons" href="http://www.tumblr.com/share/link?url='.$imageBike["url"].'"><img class="bikeImg" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/tumblr-ico.png"></a></div>';
 
       echo '</div></div><img src="'.$imageBike["url"].'"></li>';
       

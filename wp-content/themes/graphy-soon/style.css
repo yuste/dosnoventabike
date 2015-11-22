@@ -62,23 +62,70 @@ p {
    
 }
 
+.textOverflowFaqs {
+	width: 65%;
+    float: right;
+	max-height: 900px;
+    overflow: auto;
+    overflow-y: hidden; 
+    height: auto;
+    float:left;
+    outline-style: none;
+    direction: ltr;
+    outline-width: 0px;
+    margin-bottom: 20px;
+}
+
+.qe-faq-content {
+    width: 95% !important;
+    float: right !important;
+}
+
+
 .arrowsTop {
 	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/arrowTop.png") 0 0px;
     float: right;
     height: 20px;
-    width: 31px;
+    width: 22px;
     background-repeat: no-repeat;
     cursor: pointer;
+    background-size: 43px;
 }
 
 .arrowsDown {
 	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/arrowDown.png") 0 0px;
     float: right;
     height: 20px;
-    width: 31px;
+    width: 22px;
     cursor: pointer;
     background-repeat: no-repeat;
-    margin-top: 150px;
+    margin-top: 180px;
+    margin-right: -22px;
+	background-size: 43px;
+}
+
+
+.arrowsTopFaq {
+	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/arrowTop.png") 0 0px;
+    float: right;
+    height: 20px;
+    width: 22px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 43px;
+    margin-top: 10px;
+}
+
+.arrowsDownFaq {
+	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/11/arrowDown.png") 0 0px;
+    float: right;
+    height: 20px;
+    width: 22px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    margin-top: 910px;
+    margin-right: -45px;
+	background-size: 43px;
 }
 
 
@@ -535,7 +582,7 @@ ul#menu-footer3 li a:hover{
 }
 
 .paragraphFam{
-	margin-top: 40px;
+	margin-top: 100px;
 }
 
 .languagesMenu{
@@ -588,7 +635,7 @@ ul#menu-footer3 li a:hover{
  input[placeholder],
     [placeholder],
     *[placeholder] {
-      color: white !important;
+      color: white ;
     }
 
 .titleContentSubscribe{
@@ -947,8 +994,22 @@ ol.qe-faqs-group-index  li {
 #map_sidebar{
 	width: 100%;
     height: 100%;
-    height: 630px;
     overflow: hidden;
+}
+
+.divSeeAllStores{
+	text-align:center;
+	margin-top:-230px;
+}
+
+#searchForm{
+	margin-bottom: 80px;
+}
+
+.loadSeeAllStores{
+	text-align: center;
+	margin-top: -150px;
+	font-size: 20px !important;
 }
 
 #map_sidebar.first {
@@ -970,6 +1031,14 @@ ol.qe-faqs-group-index  li {
 
 #sl_info_bubble h1 {
 	font-family:'Futura','Oswald', 'sans-serif';
+}
+
+.widthSearchInput {
+	width: 10%;
+}
+
+.searchTextMap{
+	display: none;
 }
 
 #addressInput {
@@ -1207,7 +1276,9 @@ ul.bikes {
   margin: 0 0 10px 0;
   font-size: 0.8125em;
   list-style: none;
+  margin-left: -10px;
 }
+
 ul.bikes li {
   width: 48.24561403508772%;
   max-height: 344px;
@@ -1273,12 +1344,10 @@ ul.bikes li .overlay .overlay-links > p {
 
 ul.bikes li .overlay .overlay-links .textwidget {
 	text-align: center;
-	margin-left: 15px;
+	margin-left: 40px;
 }
 
-ul.bikes li .overlay .overlay-links .textwidget .socialIcons:hover{
-	
-}
+
 
 .yellowBike{
 	color:#ffd800;
@@ -1609,13 +1678,13 @@ font-family: "Helvetica";
 
 .chooseFrameSelect {
 	height: 25px;
-    width: 200px;
+    min-width: 227px;
+    max-width: 227px;
     border: 1px #ffffff solid;
     padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 120px;
-    min-width: 230px;
+    padding-top: 4px;
+    padding-bottom: 7px;
+    cursor: pointer;
 
 }
 
@@ -1631,13 +1700,13 @@ div.colorPicker-swatch {
 
 .chooseColorSelect{
 	height: 25px;
-    width: 240px;
-    min-width: 240px;
+    min-width: 227px;
+    max-width: 227px;
     border: 1px #ffffff solid;
     padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 140px;
+    padding-top: 4px;
+    padding-bottom: 7px;
+    cursor: pointer;
 }
 
 #colorPicker_hex-0{
@@ -1723,7 +1792,7 @@ div.colorPicker-swatch {
 	background-color: #ffffff;
 	z-index: 9999;
 	margin:0px;
-	padding-right: 102px;
+	padding-right: 112px;
 	display: block;
 
 }
@@ -1793,6 +1862,15 @@ a.sendBike:hover {
 /***CONTACT****/
 
 .wpcf7-validation-errors {
+	border:0px !important;
+	display: block;
+    font-size: 18px !important;
+    width: 350px !important;
+    color:#ffd800 !important;
+    font-family: "Helvetica" !important;
+}
+
+.wpcf7-response-output {
 	border:0px !important;
 	display: block;
     font-size: 18px !important;
@@ -2017,5 +2095,159 @@ a.sbi_load_btn:hover {
 	display: none;
 }
 
+.imgVideo{
+	filter:grayscale(100%);	
+	-webkit-filter:grayscale(100%);
+}
+
+
+/***DSNV COMMUNITY****/
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	color:black !important;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div > p {
+	margin-bottom: 0px;
+}
+
+.modalDialog > div > h3 {
+	color:black !important;
+	margin-bottom: 0px;
+	margin-top: 12px;
+    margin-left: -20px;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 1px 33px 30px 33px;
+	margin-top: 30px;
+	border-radius: 0px;
+	background: #fff;
+	color:black !important;
+}
+
+
+.selectModalDialog {
+	width: 97%;
+    border: 1px solid #D7D5D5;
+    height: 35px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    padding-top: 4px;
+    color:#ABA9A9 !important;
+    font-family: "Helvetica";
+    cursor: pointer;
+}
+
+.inputFileDialog::-webkit-input-placeholder {
+ color:#999999 !important;
+}
+.inputFileDialog:-moz-placeholder{
+ color:#999999 !important;
+}
+
+.inputFileDialog::-moz-placeholder { 
+  color:#999999 !important;
+}
+
+.inputFileDialog:-ms-input-placeholder {  
+  color:#999999 !important;
+}
+
+
+input.inputFileDialog {
+	border: 1px solid #D7D5D5;
+	font-family: "Helvetica" !important;
+
+}
+
+
+.btnSendModalDialog{
+	background-color: black;
+	color: white;
+    text-align: center;
+    min-width: 120px;
+    max-width: 120px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: 35%;
+    margin-top: 30px;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    border: 1px solid #D7D5D5;
+    height: 24px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 8px;
+    padding-bottom: 7px;
+    padding-top: 3px;
+    color:#999999;
+
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    
+}
+
+.input[type="text"], .inputModalDialog {
+	width: 100%;
+	color:black !important;
+}
+
+.close {
+	background: #000000;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 7px;
+    text-align: center;
+    top: 5px;
+    width: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000
+}
+
+.close:hover { 
+	background: #646464; 
+	color:white !important;
+}
 
 

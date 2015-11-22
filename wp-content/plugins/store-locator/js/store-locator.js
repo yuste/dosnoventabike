@@ -3,6 +3,7 @@ var sl_geocoder;
 var sl_info_window;
 var sl_marker_array = [];
 var sl_marker_type;
+var sl_zoom_level = 2;
 var showAll = false;
 var sl_geo_flag = 0;
 if (!is_array(sl_categorization_array)) {
@@ -72,15 +73,31 @@ function sl_load() {
     }
 
     $('.seeAllStores').click(function(){
+        if (window.location.href.indexOf('/en/') != -1){
+          $(this).replaceWith("<p class='loadSeeAllStores'>Loading...</p>");
+        }
+        else {
+            $(this).replaceWith("<p class='loadSeeAllStores'>Cargando...</p>");
+        }
+        
           showAll = true;
           sl_load();
           $('#map_sidebar').removeClass('first');
           $('.seeAllStores').addClass('hide'); 
+          $('.classTextFuturaStores').addClass('hide');
+          $('.divSeeAllStores').css('margin-top', '0px');
     });
+
+
 
  
 }
 google.maps.event.addDomListener(window, 'load', sl_load);
+
+function end_sl_load(){
+    $('.loadSeeAllStores').addClass('hide');
+    $('.classTextFuturaStores').removeClass('hide');
+}
 
 function sl_geo_success(point) {
     sl_geo_flag = 1;
@@ -120,6 +137,8 @@ function do_load_options() {
     }
     if (sl_load_locations_default == "1") {
         var bounds = new google.maps.LatLngBounds();
+        console.log('boundss');
+        console.dir(bounds);
         var searchUrl = sl_base + "/sl-xml.php";
         if (typeof sl_map_params != "undefined") {
             searchUrl += "?" + sl_map_params
@@ -228,8 +247,11 @@ function do_load_options() {
 }
 function searchLocations() {
     if (function_exists("start_searchLocations")) {
+
         start_searchLocations()
     }
+    $('.searchTextMap').css('display', 'block');
+
     var address = document.getElementById('addressInput').value;
     sl_geocoder.geocode({
         'address': address,
@@ -243,7 +265,18 @@ function searchLocations() {
                 alert(address + ' Not Found')
             }
         } else {
-            searchLocationsNear(results[0].geometry.location, address)
+            console.dir(address);
+            console.log('----');
+            console.dir(results);
+            console.log('----');
+            console.dir(results[0].geometry.location);
+            var lele = results[0].geometry.location;
+            console.log('----');
+            console.dir(lele.lat());
+            console.dir(lele.lng());
+            console.log('--b--');
+            console.dir(results[0].geometry.bounds);
+            searchLocationsNear(results[0].geometry.location, address, results[0].geometry.bounds)
 
         }
     });
@@ -252,7 +285,7 @@ function searchLocations() {
     }
   
 }
-function searchLocationsNear(center, homeAddress) {
+function searchLocationsNear(center, homeAddress, auxbounds) {
     if (function_exists("start_searchLocationsNear")) {
         start_searchLocationsNear()
     }
@@ -265,7 +298,10 @@ function searchLocationsNear(center, homeAddress) {
         var xml = data.responseXML;
         var markerNodes = xml.documentElement.getElementsByTagName('marker');
         clearLocations();
-        var bounds = new google.maps.LatLngBounds();
+        //var bounds = new google.maps.LatLngBounds();
+        var bounds = auxbounds;
+        console.log('bounds');
+        console.dir(bounds);
 
         var point = new google.maps.LatLng(center.lat(), center.lng());
         var markerOpts = {
@@ -279,7 +315,7 @@ function searchLocationsNear(center, homeAddress) {
         var icon = {
             url: sl_map_home_icon
         };
-        bounds.extend(point);
+        //bounds.extend(point);
         var homeMarker = new google.maps.Marker(markerOpts);
         determineShadow(icon, homeMarker);
         var html = '<div id="sl_info_bubble"><span class="your_location_label">Your Location:</span> <br/>' + homeAddress + '</div>';
@@ -307,19 +343,33 @@ function searchLocationsNear(center, homeAddress) {
             var sidebarEntry = createSidebarEntry(marker, sl_details, showAll);
             sidebarEntry.id = "sidebar_div_" + i;
             sidebar.appendChild(sidebarEntry);
-            bounds.extend(sl_details['point'])
+            //bounds.extend(sl_details['point'])
         }
         sl_marker_array.push(homeMarker);
-        sl_map.setCenter(bounds.getCenter());
-        sl_map.fitBounds(bounds);
+        console.log('center');
+        console.dir(center);
+        sl_map.setCenter(center);
+        //sl_map.fitBounds(center);
         sl_map.setZoom(15);
         showLoadImg('stop', 'loadImg')
+        $('.searchTextMap').css('display', 'none');
+        $('.carouselStock').bxSlider({
+            slideWidth: 200,
+            minSlides: 2,
+            maxSlides: 2,
+            slideMargin: 40,
+            nextText:"",
+            prevText:""
+          });
 
     });
     if (function_exists("end_searchLocationsNear")) {
         end_searchLocationsNear()
     }
 }
+
+
+
 function createMarker(sl_details, type, icon) {
     var markerOpts = {
         map: sl_map,

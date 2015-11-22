@@ -150,6 +150,21 @@ jQuery('.arrowsTop').on('click', function(){
     
 });
 
+
+jQuery('.arrowsDownFaq').on('click', function(){
+    topAux +=70;
+    if (topAux > maxTop) topAux = maxTop-100;
+    console.log('----Down---');
+    jQuery('.textOverflowFaqs').animate({ scrollTop:topAux});
+});
+
+jQuery('.arrowsTopFaq').on('click', function(){
+    topAux -= 70;
+    if (topAux < 0) topAux = 0;
+    jQuery('.textOverflowFaqs').animate({ scrollTop:topAux});
+    
+});
+
 if (window.location.href.indexOf('/es/') != -1) {
 	jQuery('#changeEs').addClass('decorateLanguage');
 }
