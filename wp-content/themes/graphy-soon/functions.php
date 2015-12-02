@@ -242,6 +242,18 @@ function communityScript_func( $atts ){
       var auxColorBack = '#ffffff';
 
 
+      jQuery('.select2902 li').click(function(){
+          jQuery('.selectModalDialogFrame').html(jQuery(this).data('value'));
+      });
+      
+
+      jQuery('.upload').on('change', function(){
+          var stringImg = jQuery(this).val();
+          stringImg = stringImg.split('\\\');
+          jQuery('#browseFile').html('../'+stringImg[2]);
+      });
+
+
       jQuery('.select290 li').click(function(){
           jQuery('.frame').addClass('hide');
           jQuery('.frame_'+jQuery(this).data('value')).removeClass('hide');
@@ -264,7 +276,7 @@ function communityScript_func( $atts ){
 
       jQuery('.chooseFrameSelect').hover(function(){
           var auxTop  = jQuery('.chooseFrameSelect').position().top + 35;
-          var auxLeft = jQuery('.chooseFrameSelect').position().left - 21;
+          var auxLeft = jQuery('.chooseFrameSelect').position().left - 16;
           jQuery('.select290').css('left', auxLeft);
           jQuery('.select290').css('top', auxTop);
       }, function() {
@@ -273,10 +285,27 @@ function communityScript_func( $atts ){
       });
 
 
+      jQuery('.selectModalDialogFrame').hover(function(){
+          var auxTop  = jQuery('.selectModalDialogFrame').position().top + 35;
+          var auxLeft = jQuery('.selectModalDialogFrame').position().left;
+          jQuery('.select2902').css('left', '1px');
+      }, function() {
+          jQuery('.select2902').css('left', '-9999px');
+          
+      });
+
+
+      jQuery('.select2902').hover(function(){
+          var auxLeft = jQuery('.chooseFrameSelect').position().left-21;
+          jQuery('.select2902').css('left', '1px');
+      }, function() {
+        jQuery('.select2902').css('left', '-9999px');
+          
+      });
 
       jQuery('.select290').hover(function(){
           var auxTop  = jQuery('.chooseFrameSelect').position().top + 35;
-          var auxLeft = jQuery('.chooseFrameSelect').position().left-21;
+          var auxLeft = jQuery('.chooseFrameSelect').position().left-16;
           jQuery('.select290').css('left', auxLeft);
           jQuery('.select290').css('top', auxTop);
       }, function() {
@@ -286,7 +315,7 @@ function communityScript_func( $atts ){
 
       jQuery('.chooseColorSelect').hover(function(){
           var auxTop  = jQuery('.chooseColorSelect').position().top + 35;
-          var auxLeft = jQuery('.chooseColorSelect').position().left - 21;
+          var auxLeft = jQuery('.chooseColorSelect').position().left - 16;
           jQuery('.color290').css('left', auxLeft);
           jQuery('.color290').css('top', auxTop);
       }, function() {
@@ -296,11 +325,25 @@ function communityScript_func( $atts ){
 
       jQuery('.color290').hover(function(){
           var auxTop  = jQuery('.chooseColorSelect').position().top + 35;
-          var auxLeft = jQuery('.chooseColorSelect').position().left-21;
+          var auxLeft = jQuery('.chooseColorSelect').position().left-16;
           jQuery('.color290').css('left', auxLeft);
           jQuery('.color290').css('top', auxTop);
       }, function() {
         jQuery('.color290').css('left', '-9999px');
+          
+      });
+
+      jQuery('.selectModalDialogColor').hover(function(){
+          jQuery('.color2902').css('left', '1px');
+      }, function() {
+         jQuery('.color2902').css('left', '-9999px');
+          
+      });
+
+      jQuery('.color2902').hover(function(){
+          jQuery('.color2902').css('left', '1px');
+      }, function() {
+         jQuery('.color2902').css('left', '-99999px');
           
       });
     
@@ -327,6 +370,28 @@ function communityScript_func( $atts ){
          
       });
 
+      jQuery('.colorPicker-swatch2').hover(function(){
+        jQuery('#colorPicker_hex-02').val(parseColors[jQuery(this).css('background-color').toUpperCase()]);
+        jQuery('#colorPicker_hex-0').css('background-color', jQuery(this).css('background-color').toUpperCase());
+      }, function(){
+        jQuery('#colorPicker_hex-02').val(auxColor);
+        jQuery('#colorPicker_hex-02').css('background-color',auxColorBack);
+      });
+
+      jQuery('.colorPicker-swatch2').click(function(){
+         auxColor     = parseColors[jQuery(this).css('background-color').toUpperCase()];
+         auxColorBack = jQuery(this).css('background-color').toUpperCase()
+         jQuery('#colorPicker_hex-02').val(auxColor); 
+         jQuery('#colorPicker_hex-02').css('background-color', auxColorBack);
+         jQuery('.selectModalDialogColor').html(auxColor);
+         jQuery('.frame').addClass('hide');
+         jQuery('.color_'+auxColor).removeClass('hide');
+
+
+         jQuery('.customLi a').css('text-decoration', 'underline');
+         
+      });
+
       jQuery('.bikeImg').hover(function(){
             var srcYellow = $(this).prop('src');
             $(this).prop('src', srcYellow.substr(0, srcYellow.length-4)+'-yellow1.png');
@@ -345,7 +410,31 @@ function communityDNVFunction() {
     $args = array( 'post_type' => 'communityDNV', 'posts_per_page' => 10 );
     $loop = new WP_Query( $args );
     
-    echo '<div id="openModal" class="modalDialog"><div><a href="#close" title="Close" class="close">X</a><h3>SEND YOUR DOSNOVENTA</h3><hr /><div class="selectModalDialog selectModalDialogFrame">Select Frame</div><div class="selectModalDialog selectModalDialogColor">Select Color</div><hr/><p><input class="inputModalDialog" placeholder="Name" type="text"/></p><p><input  placeholder="Email" class="inputModalDialog"  type="text"/></p><p><div class="fileUpload btn btn-primary"><span>Browse file...</span><input type="file" class="upload" /></div></p><div class="btnSendModalDialog">SEND</div></div></div>';
+    echo '<div id="openModal" class="modalDialog"><div><a href="#close" title="Close" class="close">X</a><h3>SEND YOUR DOSNOVENTA</h3><hr /><div class="selectModalDialog selectModalDialogFrame">Select Frame<div class="arrowSelectModal"></div></div><div class="selectModalDialog selectModalDialogColor">Select Color<div class="arrowSelectModal"></div></div><hr/><p><input class="inputModalDialog" placeholder="Name" type="text"/></p><p><input  placeholder="Email" class="inputModalDialog"  type="text"/></p><p><div class="fileUpload btn btn-primary"><span id="browseFile">Browse file...</span><input type="file" class="upload" /></div></p><div class="btnSendModalDialog">SEND</div></div>';
+    if (strrpos($_SERVER['REQUEST_URI'], "en/")):
+      echo '<ul class="select2902 changeFrameSelect2">';
+    else:
+      echo '<ul class="select2902 changeFrameSelect2">';
+    endif;
+    echo '<li data-value="KUALA_LUMPUR"><a>KUALA_LUMPUR</a></li><li data-value="MONTECARLO"><a>MONTECARLO</a></li><li data-value="DETROIT"><a>DETROIT</a></li><li data-value="HOUSTON"><a>HOUSTON</a></li>';
+    echo '<li data-value="BARCELONA"><a>BARCELONA</a></li><li data-value="TOKYO"><a>TOKYO</a></li><li data-value="EDINBURGH"><a>EDINBURGH</a></li><li data-value="SEOUL"><a>SEOUL</a></li>';
+    echo '<li data-value="COPENHAGEN"><a>COPENHAGEN</a></li><li data-value="STUTTGART"><a>STUTTGART</a></li><li data-value="VERONA"><a>VERONA</a></li></ul>';
+
+    echo '<ul class="color2902"><li><div id="colorPicker_palette-0" class="colorPicker-palette" style="display: block; top: 631px; left: 311px;"><div class="colorPicker-swatch2"';
+    echo 'style="background-color: rgb(190, 189, 127);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(194, 176, 120);">&nbsp;</div>';
+    echo '<div class="colorPicker-swatch2" style="background-color: rgb(198, 166, 100);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(229, 190, 1);">&nbsp;</div>';
+    echo '<div class="colorPicker-swatch2" style="background-color: rgb(205, 164, 52);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(169, 131, 7);">&nbsp;</div>';
+    echo '<div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(228, 160, 16);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(220, 157, 0);">';
+    echo '&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(138, 102, 66);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(199, 180, 70);">&nbsp;</div>';
+    echo '<div class="colorPicker-swatch2" style="background-color: rgb(234, 230, 202);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(225, 204, 79);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(230, 214, 144);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(237, 255, 33);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(245, 208, 51);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(248, 243, 43);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(158, 151, 100);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(153, 153, 80);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(243, 218, 11);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(250, 210, 1);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(174, 160, 75);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(255, 255, 0);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(157, 145, 1);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(244, 169, 0);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(214, 174, 1);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(243, 165, 5);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(239, 169, 74);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(106, 93, 77);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(112, 83, 53);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(243, 159, 24);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(201, 60, 32);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(203, 40, 33);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(255, 117, 20);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(244, 70, 17);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(255, 35, 1);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(255, 164, 32);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(247, 94, 37);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(245, 64, 33);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(216, 75, 32);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(236, 124, 38);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(229, 81, 55);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(195, 88, 49);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(165, 32, 25);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(162, 35, 29);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(155, 17, 30);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(117, 21, 30);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(94, 33, 41);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(65, 34, 39);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(100, 36, 36);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(120, 31, 25);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(193, 135, 107);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(161, 35, 18);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(211, 110, 112);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(234, 137, 154);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(179, 40, 33);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(230, 50, 68);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(213, 48, 50);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(204, 6, 5);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(217, 80, 48);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(248, 0, 0);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(197, 29, 52);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(203, 50, 52);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(179, 36, 40);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(146, 43, 62);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(222, 76, 138);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(100, 28, 52);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(108, 70, 117);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(160, 52, 114);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(74, 25, 44);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(146, 78, 125);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(161, 133, 148);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(207, 52, 118);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(31, 52, 56);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(32, 33, 79);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(29, 30, 51);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(24, 23, 28);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(30, 36, 96);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(62, 95, 138);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(38, 37, 45);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(2, 86, 105);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(14, 41, 75);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(35, 26, 36);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(59, 131, 189);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(30, 33, 61);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(96, 110, 140);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(34, 113, 179);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(6, 57, 113);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(63, 136, 143);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(27, 85, 131);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(29, 51, 74);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(37, 109, 123);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(37, 40, 80);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(73, 103, 141);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(93, 155, 155);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(42, 100, 120);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(40, 114, 51);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(45, 87, 44);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(66, 70, 50);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(31, 58, 61);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(47, 69, 56);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(62, 59, 50);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(52, 59, 41);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(57, 53, 42);">&nbsp;</div>';
+    echo '<div class="colorPicker-swatch2" style="background-color: rgb(49, 55, 43);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(53, 104, 45);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(88, 114, 70);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(52, 62, 64);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(108, 113, 86);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(71, 64, 46);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(59, 60, 54);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(30, 89, 69);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(76, 145, 65);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(87, 166, 57);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(189, 236, 182);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(137, 172, 118);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(37, 34, 27);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(48, 132, 70);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(61, 100, 45);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(1, 93, 82);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(132, 195, 190);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(44, 85, 69);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(32, 96, 61);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(49, 127, 67);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(73, 126, 118);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(127, 181, 181);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(0, 143, 57);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(0, 187, 45);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(138, 149, 151);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(126, 123, 82);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(108, 112, 89);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(150, 153, 146);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(100, 107, 99);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(109, 101, 82);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(106, 95, 49);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(77, 86, 69);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(76, 81, 74);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(67, 75, 77);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(78, 87, 84);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(70, 69, 49);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(67, 71, 80);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(41, 49, 51);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(35, 40, 43);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(51, 47, 44);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(104, 108, 94);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(71, 74, 81);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(47, 53, 59);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(139, 140, 122);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(71, 75, 78);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(184, 183, 153);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(125, 132, 113);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(143, 139, 102);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(215, 215, 215);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(127, 118, 121);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(125, 127, 125);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(181, 184, 177);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(108, 105, 96);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(157, 161, 170);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(141, 148, 141);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(78, 84, 82);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(202, 196, 176);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(144, 144, 144);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(130, 137, 143);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(208, 208, 208);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(149, 95, 32);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(108, 59, 42);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(115, 66, 34);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(89, 53, 31);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(111, 79, 40);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(91, 58, 41);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(89, 35, 33);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(56, 44, 30);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(99, 58, 52);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(76, 47, 39);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(64, 58, 58);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(33, 33, 33);">&nbsp;</div><div class="colorPicker-swatch2" style="border-color: rgb(0, 0, 0); background-color: rgb(166, 94, 46);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(121, 85, 61);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(117, 92, 72);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(78, 59, 49);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(118, 60, 40);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(231, 235, 218);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(244, 244, 244);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(40, 40, 40);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(10, 10, 10);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(143, 143, 143);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(255, 255, 255);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(28, 28, 28);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(246, 246, 246);">&nbsp;</div><div class="colorPicker-swatch2" style="background-color: rgb(215, 215, 215);">&nbsp;</div><div class="colorPicker_hexWrap"><p class="labelRal"><label  for="colorPicker_hex-02">RAL</label><input type="text" id="colorPicker_hex-02" value="4006"></p></div></div>';
+    echo '</div></li></ul>';
+
+
+
+    
+    echo '</div>';
+
 
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<ul class="packSelect290"><li><div class="chooseFrameSelect" href="javascript:;">Choose Frame</div><ul class="select290 changeFrameSelect"></li>';
@@ -358,10 +447,9 @@ function communityDNVFunction() {
 
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<li><div class="chooseColorSelect" href="javascript:;">Choose Color</div><ul class="color290">';
-      echo '<li class="customLi"><a>CUSTOM COLOR</a></li>';
     else:
       echo '<li><div class="chooseColorSelect" href="javascript:;">Elige Color</div><ul class="color290">';
-    echo '<li class="customLi"><a>COLOR PERSONALIZADO</a></li>';
+  
     endif;
     
     echo '<li><div>';

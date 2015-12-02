@@ -1688,6 +1688,16 @@ font-family: "Helvetica";
 
 }
 
+div.colorPicker-swatch2 {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #000;
+    margin: 2px;
+    float: left;
+    cursor: pointer;
+    line-height: 12px;
+}
+
 div.colorPicker-swatch {
     height: 12px;
     width: 12px;
@@ -1714,17 +1724,34 @@ div.colorPicker-swatch {
 	color:black;
 }
 
+
+.color2902{
+	border: 1px solid #D7D5D5;
+    background-color: #ffffff;
+    color: black;
+    margin-right: 30px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    width: 239px;
+    position: relative;
+	z-index: 9999;
+	margin:auto !important;
+	top:-696px;
+	left:9999px;
+	width: 400px;
+}
+
 .color290{
 	border: 1px solid white;
     background-color: #ffffff;
     color: black;
     margin-right: 30px;
+    padding-top: 10px;
     margin-bottom: 30px;
-    width: 239px;
+    width: 237px;
     position: absolute;
     left:-999999px;
     z-index: 9999;
-    border:1px;
 }
 #colorPicker_palette-0{
 	margin-left: 10px;
@@ -1774,17 +1801,18 @@ div.colorPicker-swatch {
     color: black;
     margin-right: 30px;
     margin-bottom: 30px;
-
+    width:239px;
     position: absolute;
     left:-999999px;
     z-index: 9999;
     border:1px;
 }
-
+.select2902 li.active a,
 .select290 li.active a {
 	text-decoration: underline;
 }
 
+.select2902 li,
 .select290 li {
 	list-style-position: outside;
 	list-style-type: none;
@@ -1792,11 +1820,11 @@ div.colorPicker-swatch {
 	background-color: #ffffff;
 	z-index: 9999;
 	margin:0px;
-	padding-right: 112px;
 	display: block;
 
 }
 
+.select2902 li a,
 .select290 li a {
 	z-index: 9999;
 	margin-left: 10px;
@@ -1806,14 +1834,32 @@ div.colorPicker-swatch {
 }
 
 
+.select2902 li:hover a,
 .select290 li:hover a{
 	text-decoration: underline;
 	cursor: pointer;
 }
+
+.select2902 li a:hover,
 .select290 li a:hover {
 	color:black !important;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+
+.select2902 {
+	border: 1px solid #D7D5D5;
+    background-color: #ffffff;
+    color: black;
+    margin-right: 30px;
+    margin-bottom: 30px;
+	position: relative;
+	z-index: 9999;
+	margin:auto !important;
+	top:-439px;
+	left:-9999px;
+	width: 400px;
 }
 
 a.btn290 {
@@ -1848,7 +1894,7 @@ a.sendBike{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
-    margin-left: 80px;
+    margin-left: 60px;
     cursor: pointer;
     color: #646464 !important;
 
@@ -2110,7 +2156,7 @@ a.sbi_load_btn:hover {
 	bottom: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-	z-index: 99999;
+	z-index: 888;
 	color:black !important;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
@@ -2147,15 +2193,24 @@ a.sbi_load_btn:hover {
 }
 
 
+.arrowSelectModal{
+	background: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/12/arrow.png") no-repeat;
+    width: 60px;
+    height: 50px;
+    float: right;
+    background-position-y: 0px;
+    background-position-x: 15px;
+}
+
 .selectModalDialog {
-	width: 97%;
+	width: 95%;
     border: 1px solid #D7D5D5;
     height: 35px;
     margin-bottom: 12px;
-    padding-left: 10px;
     padding-top: 4px;
-    color:#ABA9A9 !important;
+	color:black !important;
     font-family: "Helvetica";
+    padding-left: 20px !important;
     cursor: pointer;
 }
 
@@ -2181,13 +2236,17 @@ input.inputFileDialog {
 
 }
 
+#openModal > div > hr {
+	width: 100%
+}
+
 
 .btnSendModalDialog{
 	background-color: black;
 	color: white;
     text-align: center;
-    min-width: 120px;
-    max-width: 120px;
+    min-width: 140px;
+    max-width: 140px;
     padding-bottom: 5px;
     padding-top: 5px;
     margin-left: 35%;
@@ -2218,12 +2277,41 @@ input.inputFileDialog {
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
-    
+
+}
+
+.fileUpload > span {
+	color:black !important;
+    font-family: "Helvetica" !important;
+    padding-left: 12px !important;
 }
 
 .input[type="text"], .inputModalDialog {
 	width: 100%;
 	color:black !important;
+}
+
+
+
+.inputModalDialog::-webkit-input-placeholder {
+  font-family: "Helvetica";
+  color:black;
+}
+.inputModalDialog::-moz-placeholder { /* Firefox 19+ */
+  font-family: "Helvetica";
+  color:black;
+}
+.inputModalDialog:-ms-input-placeholder {
+  font-family: "Helvetica";
+  color:black;
+}
+.inputModalDialog:-moz-placeholder { /* Firefox 18- */
+  font-family: "Helvetica";
+  color:black;
+}
+
+.inputModalDialog {
+	 padding-left: 20px !important;
 }
 
 .close {
