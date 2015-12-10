@@ -244,6 +244,8 @@ function communityScript_func( $atts ){
 
       jQuery('.select2902 li').click(function(){
           jQuery('.selectModalDialogFrame').html(jQuery(this).data('value'));
+          jQuery('.selectModalDialogFrame').val(jQuery(this).data('value'));
+          jQuery('.select2902').css('left', '-9999px');
       });
       
 
@@ -384,9 +386,10 @@ function communityScript_func( $atts ){
          jQuery('#colorPicker_hex-02').val(auxColor); 
          jQuery('#colorPicker_hex-02').css('background-color', auxColorBack);
          jQuery('.selectModalDialogColor').html(auxColor);
+         jQuery('.selectModalDialogColor').val(auxColor);
          jQuery('.frame').addClass('hide');
          jQuery('.color_'+auxColor).removeClass('hide');
-
+         jQuery('.color2902').css('left', '-99999px');
 
          jQuery('.customLi a').css('text-decoration', 'underline');
          
@@ -400,6 +403,18 @@ function communityScript_func( $atts ){
             $(this).prop('src', srcYellow2.substr(0, srcYellow2.length-12)+'.png');
       });
 
+      jQuery('#pfs_form').on('click', '.btnSendModalDialog', function(e){
+          e.preventDefault();
+          if ( $('.inputFrame').val() == '' || $('.inputColor').val() == '' || $('.nameModal').val() == '' || $('.nameCity').val() == '' || $('.nameEmail').val() == '' || $('.upload').val() == ''){
+              $('.alertModalDialog').css('display','block');
+          }
+          else {
+            jQuery('#pfs_form').submit();
+            
+          }
+      });
+  
+
     </script>";
 }
 add_shortcode( 'communityScript', 'communityScript_func' );
@@ -410,7 +425,7 @@ function communityDNVFunction() {
     $args = array( 'post_type' => 'communityDNV', 'posts_per_page' => 10 );
     $loop = new WP_Query( $args );
     
-    echo '<div id="openModal" class="modalDialog"><div><a href="#close" title="Close" class="close">X</a><h3>SEND YOUR DOSNOVENTA</h3><hr /><div class="selectModalDialog selectModalDialogFrame">Select Frame<div class="arrowSelectModal"></div></div><div class="selectModalDialog selectModalDialogColor">Select Color<div class="arrowSelectModal"></div></div><hr/><p><input class="inputModalDialog" placeholder="Name" type="text"/></p><p><input  placeholder="Email" class="inputModalDialog"  type="text"/></p><p><div class="fileUpload btn btn-primary"><span id="browseFile">Browse file...</span><input type="file" class="upload" /></div></p><div class="btnSendModalDialog">SEND</div></div>';
+    echo '<div id="openModal" class="modalDialog"><div><a href="#close" title="Close" class="close">X</a><h3>SEND YOUR DOSNOVENTA</h3><hr /><div class="alertModalDialog">Todos los campos son necesarios</div><form class="pfs MultiFile-intercepted" id="pfs_form" method="post" action="http://dosnoventa.jsalvatella.com/wp-content/plugins/post-from-site/pfs-submit.php" enctype="multipart/form-data"><input type="hidden" name="MAX_FILE_SIZE" value="3000000"><input type="hidden" name="model" class="inputFrame selectModalDialogFrame"><input type="hidden" name="color" class="inputColor selectModalDialogColor"><div class="selectModalDialog selectModalDialogFrame">Select Frame<div class="arrowSelectModal"></div></div><div class="selectModalDialog selectModalDialogColor">Select Color<div class="arrowSelectModal"></div></div><hr/><p><input class="inputModalDialog nameModal" placeholder="Name" name="name" type="text"/></p><p><input class="inputModalDialog nameCity" placeholder="City" name="city" type="text"/></p><p><input  placeholder="Email" class="inputModalDialog nameEmail"  name="email" type="text"/></p><p><div class="fileUpload btn btn-primary"><span id="browseFile">Browse file...</span><input type="file" name="image[]" class="upload" /></div></p><input type="submit" class="btnSendModalDialog" value="SEND"></form></div>';
     if (strrpos($_SERVER['REQUEST_URI'], "en/")):
       echo '<ul class="select2902 changeFrameSelect2">';
     else:
@@ -518,7 +533,7 @@ function communityDNVFunction() {
           });
       });
 
-      
+    
 
     
       

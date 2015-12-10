@@ -77,13 +77,17 @@
 		</div>
 
 		<?php if ( is_home() && get_header_image() ) : ?>
-		<div id="header-image" class="header-image">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</div><!-- #header-image -->
+			<div id="header-image" class="header-image">
+				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+			</div><!-- #header-image -->
+		<?php elseif ( strpos($_SERVER['REQUEST_URI'], "frame") != "") : ?>
+			<div id="header-image" class="header-image header-image-frontpage">
+				<img  id="imageHomeCentral" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/07/background-home-web2.jpg" class="imageHomeCentral hide attachment-graphy-page-thumbnail wp-post-image" alt="background-home">
+			</div>
 		<?php elseif ( is_page() && has_post_thumbnail() ) : ?>
 			<?php if (is_front_page()) : ?>
 				<div id="header-image" class="header-image header-image-frontpage">
-					<img  id="imageHomeCentral" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/07/background-home-web2.jpg" class="hide attachment-graphy-page-thumbnail wp-post-image" alt="background-home">
+					<img  id="imageHomeCentral" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/07/background-home-web2.jpg" class="imageHomeCentral hide attachment-graphy-page-thumbnail wp-post-image" alt="background-home">
 				</div>
 			<?php else :?>
 				<div id="header-image" class="header-image">
@@ -92,6 +96,5 @@
 			<?php endif; ?>
 		</div><!-- #header-image -->
 		<?php endif; ?>
-	</header><!-- #masthead -->
-
+	</header><!-- #masthead -->			
 	<div id="content" class="site-content">

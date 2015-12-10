@@ -67,7 +67,7 @@ $.cssHooks.backgroundColor = {
 
 <?php if (is_front_page()) : ?>
 	jQuery('footer').css('display', 'block');
-    jQuery('#header-image').css('display', 'block');
+    jQuery('.header-image').css('display', 'block');
 	jQuery('.page').fadeIn( "slow", function() {
     	
  	});
@@ -79,7 +79,7 @@ $.cssHooks.backgroundColor = {
     jQuery('#content').fadeIn( "slow", function() {
     	
  	});
-    jQuery('#header-image').fadeIn( "slow", function() {
+    jQuery('.header-image').fadeIn( "slow", function() {
     	
  	});
 <?php endif; ?>	
@@ -173,10 +173,10 @@ else {
 }
 
 var numImage =Math.floor((Math.random() * 4) + 1);
-jQuery('#imageHomeCentral').attr('src', "http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/06/background-home"+numImage+".jpg");
+jQuery('.imageHomeCentral').attr('src', "http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/06/background-home"+numImage+".jpg");
 
-jQuery('#imageHomeCentral').one("load", function(){
-    jQuery('#imageHomeCentral').removeClass('hide');
+jQuery('.imageHomeCentral').one("load", function(){
+    jQuery('.imageHomeCentral').removeClass('hide');
 });
 
 

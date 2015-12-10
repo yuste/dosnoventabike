@@ -1724,6 +1724,13 @@ div.colorPicker-swatch {
 	color:black;
 }
 
+.alertModalDialog{
+	background-color: #ffd800;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    display: none;
+}
 
 .color2902{
 	border: 1px solid #D7D5D5;
@@ -1736,7 +1743,7 @@ div.colorPicker-swatch {
     position: relative;
 	z-index: 9999;
 	margin:auto !important;
-	top:-696px;
+	top:-810px;
 	left:9999px;
 	width: 400px;
 }
@@ -1857,7 +1864,7 @@ div.colorPicker-swatch {
 	position: relative;
 	z-index: 9999;
 	margin:auto !important;
-	top:-439px;
+	top:-554px;
 	left:-9999px;
 	width: 400px;
 }
@@ -1894,7 +1901,7 @@ a.sendBike{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
-    margin-left: 60px;
+    margin-left: 35px;
     cursor: pointer;
     color: #646464 !important;
 
@@ -2240,17 +2247,23 @@ input.inputFileDialog {
 	width: 100%
 }
 
+input.btnSendModalDialog:hover{
+	box-shadow: none;
+	background-color: #646464 !important;
+	color:white;	
+}
 
-.btnSendModalDialog{
-	background-color: black;
-	color: white;
+input.btnSendModalDialog{
+    box-shadow: none;
+    background-color: black !important;
+    color: white;
     text-align: center;
     min-width: 140px;
-    max-width: 140px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    max-width: 140px !important;
+    padding-bottom: 10px;
+    padding-top: 10px !important;
     margin-left: 35%;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .fileUpload {
