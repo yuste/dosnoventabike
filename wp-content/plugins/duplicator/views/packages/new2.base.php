@@ -1,14 +1,24 @@
 <?php
 	require_once (DUPLICATOR_PLUGIN_PATH . 'classes/package.php');
 	require_once (DUPLICATOR_PLUGIN_PATH . 'classes/utility.php');
+	
+	if(empty($_POST))
+	{
+		//F5 Refresh Check
+		$redirect = admin_url('admin.php?page=duplicator&tab=new1');
+		echo "<script>window.location.href = '{$redirect}'</script>";
+		exit;
+	}
+	
 	global $wp_version;
 	$Package = new DUP_Package();
 	$Package->SaveActive($_POST);
 	$Package = DUP_Package::GetActive();
 	
-	$package_mysqldump	= DUP_Settings::Get('package_mysqldump');
-	$mysqlDumpPath = DUP_Database::GetMySqlDumpPath();
-	$build_mode = ($mysqlDumpPath && $package_mysqldump) ? 'mysqldump (fast)' : 'PHP (slow)';
+	$mysqldump_on	 = DUP_Settings::Get('package_mysqldump') && DUP_Database::GetMySqlDumpPath();
+	$mysqlcompat_on  = isset($Package->Database->Compatible) && strlen($Package->Database->Compatible);
+	$mysqlcompat_on  = ($mysqldump_on && $mysqlcompat_on) ? true : false;
+	$dbbuild_mode    = ($mysqldump_on) ? 'mysqldump (fast)' : 'PHP (slow)';
     
     $zip_check = DUP_Util::GetZipPath();
 ?>
@@ -17,6 +27,7 @@
 	/* ============----------
 	PROGRESS ARES-CHECKS */
 	div#dup-progress-area {text-align:center; max-width:650px; min-height:200px; margin:0px auto 0px auto; padding:0px;}
+	div.dup-progress-title {font-size:22px;padding:5px 0 20px 0; font-weight: bold}
 	div#dup-msg-success {color:#18592A; padding:5px; text-align: left}	
 	div#dup-msg-success-subtitle {font-style: italic; margin:7px 0px}	
 	div#dup-msg-error {color:#A62426; padding:5px; max-width: 790px;}
@@ -86,7 +97,7 @@ TOOL BAR: STEPS -->
 <div id="dup-progress-area">
 	<!--  PROGRESS BAR -->
 	<div id="dup-progress-bar-area">
-		<h2><i class="fa fa-spinner fa-spin"></i> <?php DUP_Util::_e('Scanning Site'); ?></h2>
+		<div class="dup-progress-title"><i class="fa fa-spinner fa-spin"></i> <?php DUP_Util::_e('Scanning Site'); ?></div>
 		<div id="dup-progress-bar"></div>
 		<b><?php DUP_Util::_e('Please Wait...'); ?></b>
 	</div>
@@ -322,14 +333,16 @@ TOOL BAR: STEPS -->
 									DUP_Util::_e('No file extension filters have been set.');
 								}
 							?>	
-													<small>
-							<?php DUP_Util::_e('The root directory above is where Duplicator will start archiving files.  The excluded directories and file extension will be skipped during the archive process.'); ?>
-						</small><br/>
+							<small>
+								<?php 
+									DUP_Util::_e('The root directory is where Duplicator starts archiving files.  The excluded sections will be skipped during the archive process.  '); 
+									DUP_Util::_e('All results are stored in a json file. ');
+								?>
+								<a href="<?php echo DUPLICATOR_SITE_URL ?>/wp-admin/admin-ajax.php?action=duplicator_package_scan" target="dup_report"><?php DUP_Util::_e('[view json report]');?></a>														
+							</small><br/>
 						</div>
-
 					</div>	
 				<?php endif;  ?>	
-
 			</div><!-- end .dup-panel -->
 			<br/>
 
@@ -388,7 +401,19 @@ TOOL BAR: STEPS -->
 				<table id="dup-scan-db-details">
 					<tr><td><b><?php DUP_Util::_e('Name:');?></b></td><td><?php echo DB_NAME ;?> </td></tr>
 					<tr><td><b><?php DUP_Util::_e('Host:');?></b></td><td><?php echo DB_HOST ;?> </td></tr>
-					<tr><td><b><?php DUP_Util::_e('Build Mode:');?></b></td><td><a href="?page=duplicator-settings" target="_blank"><?php echo $build_mode ;?></a> </td></tr>
+					<tr>
+						<td style="vertical-align: top"><b><?php DUP_Util::_e('Build Mode:');?></b></td>
+						<td style="line-height:18px">
+							<a href="?page=duplicator-settings" target="_blank"><?php echo $dbbuild_mode ;?></a>
+							<?php if ($mysqlcompat_on) :?>
+								<br/>
+								<small style="font-style:italic; color:maroon">
+									<i class="fa fa-exclamation-circle"></i> <?php DUP_Util::_e('MySQL Compatibility Mode Enabled'); ?>
+									<a href="https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html#option_mysqldump_compatible" target="_blank">[<?php DUP_Util::_e('details'); ?>]</a>
+								</small>										
+							<?php endif;?>
+						</td>
+					</tr>
 				</table>	
 
 			</div><!-- end .dup-panel -->

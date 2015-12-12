@@ -2352,3 +2352,108 @@ input.btnSendModalDialog{
 }
 
 
+
+/****FRAME****/
+
+
+table.boxFrame{
+	
+	border:none !important;
+	border-spacing: 31px 0px !important;
+	padding-bottom: 60px;
+}
+
+table.boxFrame {
+	background-color: #1f1f1f;
+}
+
+table.boxFrame > tr:first-child > td {
+    padding-top: 0px;
+    padding-left: 0px;
+
+
+}
+
+table.boxFrame  tr  td {
+    border-top: 1px solid #e5e5e5;
+    font-size: 24px !important;
+    font-family: "Futura";
+    font-weight: 100;
+}
+
+table.boxFrame  tr:first-child  td {
+    border-top: none;
+}
+
+
+table.tableFrames2  tr:first-child  td {
+	font-size: 35px !important;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+table.tableFrames2  tr td {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+table.tableFrames2 {
+	margin-top: -23px;
+	font-family: "Futura";
+	border: none;
+	border-spacing: 5px 0px !important;
+}
+
+table.tableFrames2 tr td {
+	font-family: "Futura";
+	background-color: #1f1f1f;
+	font-size: 24px;
+	width: 50%;
+}
+
+
+.headerFrames{
+	margin-top: 40px !important;
+}
+
+.headerSpecification h5{
+	font-size: 35px;
+}
+
+.headerSpecification{
+	background-color: #1f1f1f;
+	padding-top: 5px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+div.exp-col-content-holder {
+    margin: 0px 0px 0px 0px !important;
+}
+
+.ecf_closed:before {
+	float: right;
+}
+
+.expand-cnt-link:before {
+	float: right;
+}
+
+.listFrame{
+	list-style: inherit;
+    text-decoration: inherit;
+    font-family: "Helvetica";
+    font-size: 14px;
+    line-height: 22px;
+    list-style-type: none;
+    margin-top: -30px;
+    margin-left: 15px;
+}	
+
+
+
+
+
+
+

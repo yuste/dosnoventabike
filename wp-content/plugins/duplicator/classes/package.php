@@ -132,10 +132,13 @@ class DUP_Package {
 						  $report['ARC']['Status']['Size'], 
 						  $report['ARC']['Status']['Names'], 
 						  $report['ARC']['Status']['Big'], 
-						  $db['Status']);
+						  $db['Status']['Size'],
+						  $db['Status']['Rows']);
 		
-		$warn_counts = array_count_values($warnings);						  
+		$warn_counts = array_count_values($warnings);	
+
 		$report['RPT']['Warnings'] = $warn_counts['Warn'];
+		$report['RPT']['Success']  = $warn_counts['Good'];
 		$report['RPT']['ScanTime'] = DUP_Util::ElapsedTime(DUP_Util::GetMicrotime(), $timerStart);
 		$fp = fopen(DUPLICATOR_SSDIR_PATH_TMP . "/{$this->ScanFile}", 'w');
 		fwrite($fp, json_encode($report));
@@ -276,9 +279,10 @@ class DUP_Package {
 			$name = substr(sanitize_file_name($name), 0 , 40);
 			$name = str_replace($name_chars, '', $name);
 
-			$filter_dirs   = isset($post['filter-dirs']) ? $this->parseDirectoryFilter($post['filter-dirs']) : '';
-			$filter_exts   = isset($post['filter-exts']) ? $this->parseExtensionFilter($post['filter-exts']) : '';
-			$tablelist     = isset($post['dbtables'])    ? implode(',', $post['dbtables']) : '';
+			$filter_dirs	= isset($post['filter-dirs']) ? $this->parseDirectoryFilter($post['filter-dirs']) : '';
+			$filter_exts	= isset($post['filter-exts']) ? $this->parseExtensionFilter($post['filter-exts']) : '';
+			$tablelist		= isset($post['dbtables'])    ? implode(',', $post['dbtables']) : '';
+			$compatlist		= isset($post['dbcompat'])    ? implode(',', $post['dbcompat']) : '';
 
 			//PACKAGE
 			$this->Version		= DUPLICATOR_VERSION;
@@ -305,6 +309,7 @@ class DUP_Package {
 			//DATABASE
 			$this->Database->FilterOn		= isset($post['dbfilter-on'])   ? 1 : 0;
 			$this->Database->FilterTables	= esc_html($tablelist);
+			$this->Database->Compatible  = $compatlist;
 
 			update_option(self::OPT_ACTIVE, $this);
 		}

@@ -3,7 +3,7 @@
   Plugin Name: Duplicator
   Plugin URI: http://www.lifeinthegrid.com/duplicator/
   Description: Create a backup of your WordPress files and database. Duplicate and move an entire site from one location to another in a few steps. Create a full snapshot of your site at any point in time.
-  Version: 0.5.34
+  Version: 1.1.0
   Author: LifeInTheGrid
   Author URI: http://www.lifeinthegrid.com
   Text Domain: wpduplicator
@@ -84,7 +84,7 @@ if (is_admin() == true) {
         if (DUPLICATOR_VERSION != get_option("duplicator_version_plugin")) {
             duplicator_activate();
         }
-        load_plugin_textdomain('wpduplicator', FALSE, dirname(plugin_basename(__FILE__)) . '/lang/');
+        load_plugin_textdomain('duplicator', FALSE, dirname(plugin_basename(__FILE__)) . '/lang/');
     }
 
     /* DEACTIVATION / UNINSTALL 
@@ -100,8 +100,8 @@ if (is_admin() == true) {
         $plugin = plugin_basename(__FILE__);
         // create link
         if ($file == $plugin) {
-            $links[] = '<a href="admin.php?page=duplicator-help" title="' . __('Get Help', 'wpduplicator') . '" >' . __('Help', 'wpduplicator') . '</a>';
-            $links[] = '<a href="admin.php?page=duplicator-about" title="' . __('Support the Plugin', 'wpduplicator') . '">' . __('About', 'wpduplicator') . '</a>';
+            $links[] = '<a href="admin.php?page=duplicator-help" title="' . __('Get Help', 'duplicator') . '" >' . __('Help', 'duplicator') . '</a>';
+            $links[] = '<a href="admin.php?page=duplicator-about" title="' . __('Support the Plugin', 'duplicator') . '">' . __('About', 'duplicator') . '</a>';
             return $links;
         }
         return $links;
@@ -140,8 +140,10 @@ if (is_admin() == true) {
         wp_register_style('dup-jquery-ui', DUPLICATOR_PLUGIN_URL . 'assets/css/jquery-ui.css', null, "1.11.2");
         wp_register_style('dup-font-awesome', DUPLICATOR_PLUGIN_URL . 'assets/css/font-awesome.min.css', null, '4.1.0');
         wp_register_style('dup-plugin-style', DUPLICATOR_PLUGIN_URL . 'assets/css/style.css', null, DUPLICATOR_VERSION);
+		wp_register_style('dup-jquery-qtip',DUPLICATOR_PLUGIN_URL . 'assets/js/jquery.qtip/jquery.qtip.min.css', null, '2.2.1');
         /* JS */
         wp_register_script('dup-parsley', DUPLICATOR_PLUGIN_URL . 'assets/js/parsley-standalone.min.js', array('jquery'), '1.1.18');
+		wp_register_script('dup-jquery-qtip', DUPLICATOR_PLUGIN_URL . 'assets/js/jquery.qtip/jquery.qtip.min.js', array('jquery'), '2.2.1');
     }
 
     //PAGE VIEWS
@@ -168,11 +170,13 @@ if (is_admin() == true) {
      *  Loads the menu item into the WP tools section and queues the actions for only this plugin */
     function duplicator_menu() {
         $wpfront_caps_translator = 'wpfront_user_role_editor_duplicator_translate_capability';
-
-        //Main Menu
+		$icon_svg = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQXJ0d29yayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyMy4yNXB4IiBoZWlnaHQ9IjIyLjM3NXB4IiB2aWV3Qm94PSIwIDAgMjMuMjUgMjIuMzc1IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyMy4yNSAyMi4zNzUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM5Q0ExQTYiIGQ9Ik0xOC4wMTEsMS4xODhjLTEuOTk1LDAtMy42MTUsMS42MTgtMy42MTUsMy42MTRjMCwwLjA4NSwwLjAwOCwwLjE2NywwLjAxNiwwLjI1TDcuNzMzLDguMTg0QzcuMDg0LDcuNTY1LDYuMjA4LDcuMTgyLDUuMjQsNy4xODJjLTEuOTk2LDAtMy42MTUsMS42MTktMy42MTUsMy42MTRjMCwxLjk5NiwxLjYxOSwzLjYxMywzLjYxNSwzLjYxM2MwLjYyOSwwLDEuMjIyLTAuMTYyLDEuNzM3LTAuNDQ1bDIuODksMi40MzhjLTAuMTI2LDAuMzY4LTAuMTk4LDAuNzYzLTAuMTk4LDEuMTczYzAsMS45OTUsMS42MTgsMy42MTMsMy42MTQsMy42MTNjMS45OTUsMCwzLjYxNS0xLjYxOCwzLjYxNS0zLjYxM2MwLTEuOTk3LTEuNjItMy42MTQtMy42MTUtMy42MTRjLTAuNjMsMC0xLjIyMiwwLjE2Mi0xLjczNywwLjQ0M2wtMi44OS0yLjQzNWMwLjEyNi0wLjM2OCwwLjE5OC0wLjc2MywwLjE5OC0xLjE3M2MwLTAuMDg0LTAuMDA4LTAuMTY2LTAuMDEzLTAuMjVsNi42NzYtMy4xMzNjMC42NDgsMC42MTksMS41MjUsMS4wMDIsMi40OTUsMS4wMDJjMS45OTQsMCwzLjYxMy0xLjYxNywzLjYxMy0zLjYxM0MyMS42MjUsMi44MDYsMjAuMDA2LDEuMTg4LDE4LjAxMSwxLjE4OHoiLz48L3N2Zz4=';
+        
+		//Main Menu
         $perms = 'export';
         $perms = apply_filters($wpfront_caps_translator, $perms);
-        $main_menu = add_menu_page('Duplicator Plugin', 'Duplicator', $perms, 'duplicator', 'duplicator_get_menu', plugins_url('duplicator/assets/img/create.png'));
+        $main_menu = add_menu_page('Duplicator Plugin', 'Duplicator', $perms, 'duplicator', 'duplicator_get_menu', $icon_svg);
+		//$main_menu = add_menu_page('Duplicator Plugin', 'Duplicator', $perms, 'duplicator', 'duplicator_get_menu', plugins_url('duplicator/assets/img/logo-menu.svg'));
 
         $perms = 'export';
         $perms = apply_filters($wpfront_caps_translator, $perms);
@@ -224,6 +228,7 @@ if (is_admin() == true) {
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-progressbar');
         wp_enqueue_script('dup-parsley');
+		wp_enqueue_script('dup-jquery-qtip');
     }
 
     /**
@@ -233,6 +238,7 @@ if (is_admin() == true) {
         wp_enqueue_style('dup-jquery-ui');
         wp_enqueue_style('dup-font-awesome');
 		wp_enqueue_style('dup-plugin-style');
+		wp_enqueue_style('dup-jquery-qtip');
     }
 
     /**
@@ -244,7 +250,7 @@ if (is_admin() == true) {
             $this_plugin = plugin_basename(__FILE__);
 
         if ($file == $this_plugin) {
-            $settings_link = '<a href="admin.php?page=duplicator">' . __("Manage", 'wpduplicator') . '</a>';
+            $settings_link = '<a href="admin.php?page=duplicator">' . __("Manage", 'duplicator') . '</a>';
             array_unshift($links, $settings_link);
         }
         return $links;

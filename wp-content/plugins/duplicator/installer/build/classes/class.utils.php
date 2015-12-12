@@ -164,7 +164,7 @@ class DupUtil {
             while ($table = @mysqli_fetch_array($query)) {
                 $all_tables[] = $table[0];
             }
-            if (is_array($all_tables)) {
+            if (isset($all_tables) && is_array($all_tables)) {
                 return $all_tables;
             }
         }
@@ -308,6 +308,38 @@ class DupUtil {
 		} else {
 			return false;
 		}
+	}
+	
+	/**
+     *  GET_ZIP_FILES
+     *  Returns an array of zip files found in the current directory
+	 *  @return array of zip files
+     */
+	static public function get_zip_files() {
+		
+		$files = array();
+		foreach (glob("*.zip") as $name) {
+			if (file_exists($name)) {
+				$files[] = $name;
+			}
+		}
+		
+		if (count($files) > 0) {
+			return $files;
+		}
+		
+		//FALL BACK: Windows XP has bug with glob, 
+		//add secondary check for PHP lameness
+		$dh    = opendir('.');
+		while (false !== ($name = readdir($dh))) {
+			$ext = substr($name, strrpos($name, '.') + 1);
+			if(in_array($ext, array("zip"))) {
+				$files[] = $name;
+			}
+		}
+		closedir($dh);
+		
+		return $files;
 	}
 	
 	
