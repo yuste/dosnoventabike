@@ -48,6 +48,128 @@ p {
 }
 
 
+li#menu-item-1224 > ul.sub-menu:hover,
+li#menu-item-1224:hover ul.sub-menu {
+	display: block;
+}
+
+li#menu-item-1224 > ul.sub-menu{
+	background-color: #f2f2f2 !important;
+	padding-left: 225px !important;
+    padding-top: 44px;
+    padding-right: 919px;
+    padding-bottom: 20px;
+    left: -353px;
+    top: 38px;
+    width: 100%;
+    z-index: 555;
+    display: none;
+}
+
+
+
+li#menu-item-1224 > ul.sub-menu > li {
+	background-color: inherit;
+	text-align: left;
+	width: 300px;
+}
+
+li#menu-item-1224 > ul.sub-menu > li > a{
+	color:black;
+	font-size: 37px;
+}
+
+li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu{
+    left: 30px;
+    top: 44px;
+}
+
+
+li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li {
+	background-color: inherit;
+	text-align: left;
+	width: 300px;
+}
+
+li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li > a{
+	color:black;
+	line-height: 0px;
+	font-size: 27px;
+}
+
+li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li > a:hover{
+	color:#ffd800;
+}
+
+.main-navigation ul li#menu-item-1224 ul.sub-menu li:hover > ul.sub-menu {
+    opacity: 0;
+}
+
+
+li#menu-item-1224 > ul.sub-menu > li.menu-item-has-children > a:before  {
+	position: absolute;
+	left: 0px;
+    width: 10px;
+    height: 30px;
+    content: " ";
+	background-image: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/12/señalador.png");
+	background-repeat: no-repeat;
+	background-position-y: 8px;
+} 
+
+
+li#menu-item-1224 > ul.sub-menu > li.menu-item-has-children > a:before  {
+	position: absolute;
+	left: 0px;
+    width: 10px;
+    height: 30px;
+    content: " ";
+	background-image: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/12/señalador.png");
+	background-repeat: no-repeat;
+	background-position-y: 8px;
+} 
+
+li#menu-item-1224 > ul.sub-menu > li.menu-item-has-children.openMenu > a:before  {
+	position: absolute;
+	left: 0px;
+    width: 10px;
+    height: 30px;
+    content: " ";
+	background-image: url("http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/12/señaladorDown.png");
+	background-repeat: no-repeat;
+	background-position-y: 8px;
+}
+
+li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li.current_page_item > a{
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu {
+	display: none;
+}
+
+.imgMenuFrame{
+	position: absolute;
+	display: none;
+    right: 230px;
+    top: 30px;
+    width: 50%;
+}
+
+.textMenuFrame{
+	position: absolute;
+	display: none;
+	top: 80px;
+	right: 49px;
+	font-size: 64px;
+	font-family: "Futura";
+	width: 230px;
+	height: 200px;
+	line-height: 58px;
+	font-style: italic;
+}
+
 .textOverflow{
 	max-height: 200px;
     overflow: auto;
@@ -317,11 +439,11 @@ ul li a:hover {
 
 .socialIcons img {
 	width: 40px;
-	opacity: 0.5;
+	opacity: 0.5 !important;
 }
 
 .socialIcons img:hover {
-	opacity: 1;
+	opacity: 1 !important;
 }
 
 .textwidget{
@@ -861,6 +983,19 @@ background-color: white;
 	.site-copyright {
 		margin-left:160px
 	}
+	
+	li#menu-item-1224 > ul.sub-menu {
+	    padding-left: 535px !important;
+	    padding-right: 1235px;
+	    padding-bottom: 26px;
+	    left: -660px;
+	}
+
+	.imgMenuFrame{
+		width: 30%;
+		right: 600px;
+	}
+
 }
 
 /*PLUGIN MAPS*/
@@ -2264,6 +2399,28 @@ input.btnSendModalDialog{
     padding-top: 10px !important;
     margin-left: 35%;
     margin-top: 5px;
+}
+
+button.btnBuyMore:hover {
+	box-shadow: none;
+}
+
+
+button.btnBuyMore {
+	box-shadow: none;
+	background: black;
+    color: white;
+    max-width: 120px;
+    height: 35px;
+    margin-top: 0px;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 45px !important;
+    margin-left: 63px;
+    cursor: pointer !important;
+    font-family: "Helvetica";
+    font-size: 14px !important;
+    font-style: normal;
 }
 
 .fileUpload {

@@ -131,6 +131,80 @@ jQuery('#changeEn').click(function() {
 });
 
 
+jQuery('li#menu-item-1224 > ul.sub-menu > li').hover(function(e){ 
+    e.preventDefault();
+});
+
+jQuery('li#menu-item-1224 > ul.sub-menu > li > a').click(function(e){  
+    e.preventDefault();
+    if (jQuery(this).parent().hasClass('menu-item-has-children')){
+        if (jQuery(this).parent().hasClass('openMenu')){
+            jQuery(this).parent().find('.sub-menu').css('display', 'none');
+            jQuery(this).parent().find('.sub-menu').css('opacity', '0');
+            jQuery(this).parent().removeClass('openMenu');
+            jQuery(this).parent().css('height', '100%');
+        }
+        else {
+            jQuery(this).parent().addClass('openMenu');
+            jQuery(this).parent().css('height', '230px');
+            jQuery(this).parent().find('.sub-menu').css('display', 'block');
+            jQuery(this).parent().find('.sub-menu').css('opacity', '1');
+        }
+    }
+});
+
+var imgMenu;
+
+jQuery('li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li').hover(function(){
+       var idSub = jQuery(this).prop("id");
+       jQuery('.imgMenuFrame.'+idSub).css('display', 'block');
+       jQuery('.textMenuFrame.'+idSub).css('display', 'block');
+
+},function(){
+       var idSub = jQuery(this).prop("id");
+       jQuery('.imgMenuFrame.'+idSub).css('display', 'none');
+       jQuery('.textMenuFrame.'+idSub).css('display', 'none');
+});
+
+jQuery('li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu').hover(function(){
+
+}, function() {
+ //   jQuery('.imgMenuFrame').css('display', 'none');
+//    jQuery('.textMenuFrame').css('display', 'none');
+});
+
+
+jQuery('li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li').each(function(){
+    var urlHref = jQuery(this).find('a').prop('href');
+    var auxId = jQuery(this).prop("id");
+    console.log("urlll-->"+jQuery(this).prop("id"));
+    var jsonString = "url="+urlHref;
+    jQuery.ajax({
+        cache: false,
+        url: "/wp-content/themes/graphy-soon/get_featured_image.php",
+        type: "POST",
+        dataType:'json',
+        data: jsonString,
+        success: function(data){
+            if (data){
+
+                var auxSrc = 'http://dosnoventa.jsalvatella.com/wp-content/uploads/'+data[0];
+                jQuery('li#menu-item-1224 > ul.sub-menu').append('<img class="imgMenuFrame '+auxId+'" src="'+auxSrc+'" />');
+                jQuery('li#menu-item-1224 > ul.sub-menu').append('<div class="textMenuFrame '+auxId+'" >'+data[1]+'<button class="btnBuyMore">BUY NOW</button></div>');
+
+            }
+
+        },
+        error : function(jqXHR, textStatus, errorThrown){
+            
+        },
+        xhrFields: {
+            withCredentials: true
+        }
+    });
+        
+});
+
 jQuery('.arrowsDown').on('click', function(){
     topAux +=50;
     if (topAux > maxTop) topAux = maxTop-100;
