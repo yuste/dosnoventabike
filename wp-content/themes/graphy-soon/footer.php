@@ -156,21 +156,25 @@ jQuery('li#menu-item-1224 > ul.sub-menu > li > a').click(function(e){
 var imgMenu;
 
 jQuery('li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li').hover(function(){
+       jQuery('li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu > li > a').css('color', 'black');
+       jQuery(this).find('a').css('color','#ffd800');
+       jQuery('.imgMenuFrame').css('display', 'none');
+       jQuery('.textMenuFrame').css('display', 'none');
        var idSub = jQuery(this).prop("id");
        jQuery('.imgMenuFrame.'+idSub).css('display', 'block');
        jQuery('.textMenuFrame.'+idSub).css('display', 'block');
 
 },function(){
-       var idSub = jQuery(this).prop("id");
-       jQuery('.imgMenuFrame.'+idSub).css('display', 'none');
-       jQuery('.textMenuFrame.'+idSub).css('display', 'none');
+       //var idSub = jQuery(this).prop("id");
+       
+       //jQuery('.textMenuFrame.'+idSub).css('display', 'none');
 });
 
-jQuery('li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu').hover(function(){
+jQuery('li#menu-item-1224 > ul.sub-menu').hover(function(){
 
 }, function() {
- //   jQuery('.imgMenuFrame').css('display', 'none');
-//    jQuery('.textMenuFrame').css('display', 'none');
+   jQuery('.imgMenuFrame').css('display', 'none');
+   jQuery('.textMenuFrame').css('display', 'none');
 });
 
 
