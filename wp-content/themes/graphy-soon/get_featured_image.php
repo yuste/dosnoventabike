@@ -15,10 +15,12 @@ $postID = url_to_postid($_POST['url']);
  
 $imageID  = get_post_meta($postID, 'imagemenu', true);
 $textMenu = get_post_meta($postID, "textmenu", true);
+$urlBuy   = get_post_meta($postID, "urlbuy", true);
 
 $array = array(
   "file" => wp_get_attachment_metadata($imageID, true)["file"],
-  "text" => $textMenu
+  "text" => $textMenu,
+  "urlbuy" => $urlBuy
   
 );
 

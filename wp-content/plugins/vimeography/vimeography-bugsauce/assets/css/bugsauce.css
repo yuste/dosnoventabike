@@ -62,11 +62,7 @@
   text-decoration: underline;
 }
 
-.numPagination{
-  margin-left: 6px;
-  margin-right: 6px;
-  cursor: pointer;
-}
+
 
 .paginationVimeo .disabled {
   color:rgb(85, 85, 85);

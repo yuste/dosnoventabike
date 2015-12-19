@@ -57,9 +57,9 @@ li#menu-item-1224 > ul.sub-menu{
 	background-color: #f2f2f2 !important;
 	padding-left: 225px !important;
     padding-top: 44px;
-    padding-right: 919px;
+    padding-right: 980px;
     padding-bottom: 20px;
-    left: -353px;
+    left: -415px;
     top: 38px;
     width: 100%;
     z-index: 555;
@@ -152,9 +152,9 @@ li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu {
 .imgMenuFrame{
 	position: absolute;
 	display: none;
-    right: 230px;
-    top: 30px;
-    width: 50%;
+    right: 275px;
+    top: 18px;
+    width: 650px;
 }
 
 .textMenuFrame{
@@ -166,7 +166,7 @@ li#menu-item-1224 > ul.sub-menu > li > ul.sub-menu {
 	font-family: "Futura";
 	width: 230px;
 	height: 200px;
-	line-height: 58px;
+	line-height: 65px;
 	font-style: italic;
 }
 
@@ -470,6 +470,8 @@ ul li a:hover {
     padding-right: 30px !important;
     padding-left: 40px !important;
     border-radius: 1px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #sbi_load > a {
@@ -986,14 +988,18 @@ background-color: white;
 	
 	li#menu-item-1224 > ul.sub-menu {
 	    padding-left: 535px !important;
-	    padding-right: 1235px;
+	    padding-right: 1346px;
 	    padding-bottom: 26px;
-	    left: -660px;
+	    left: -770px;
 	}
 
 	.imgMenuFrame{
-		width: 30%;
-		right: 600px;
+		width: 675px;
+    	right: 490px;
+	}
+
+	.textMenuFrame{
+		right: 230px;
 	}
 
 }
@@ -1073,10 +1079,11 @@ ol.qe-faqs-group-index  li {
 
 .tableStaff {
 	border:none !important;
+	table-layout: fixed;
 }
 
-.tableStaff tr td{
-	width: 60% !important;
+table.tableStaff  tr td{
+	width: 600px !important;
 	vertical-align: bottom;
 }
 
@@ -1086,6 +1093,7 @@ ol.qe-faqs-group-index  li {
 
 .divTextColumnStaff{
 	padding-bottom: 40px;
+	width: 360px;
 }
 
 .titleStaff {
@@ -1128,6 +1136,7 @@ ol.qe-faqs-group-index  li {
 
 #map_sidebar{
 	width: 100%;
+	min-height: 200px;
     height: 100%;
     overflow: hidden;
 }
@@ -1137,15 +1146,30 @@ ol.qe-faqs-group-index  li {
 	margin-top:-230px;
 }
 
-#searchForm{
-	margin-bottom: 80px;
-}
-
 .loadSeeAllStores{
 	text-align: center;
 	margin-top: -150px;
 	font-size: 20px !important;
 }
+
+
+@-moz-document url-prefix() { 
+	
+	.divSeeAllStores  {
+		margin-top:0px;
+	}
+	.loadSeeAllStores{
+		margin-top: 0px !important;
+	}
+}
+
+
+
+#searchForm{
+	margin-bottom: 80px;
+}
+
+
 
 #map_sidebar.first {
 	height: 630px !important;
@@ -2410,7 +2434,8 @@ button.btnBuyMore {
 	box-shadow: none;
 	background: black;
     color: white;
-    max-width: 120px;
+    max-width: 128px;
+    width:128px;
     height: 35px;
     margin-top: 0px;
     vertical-align: middle;

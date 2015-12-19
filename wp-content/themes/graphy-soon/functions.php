@@ -184,7 +184,7 @@ function myjavascript2_func( $atts ){
                     // This needs to be done so that the Vimeo API can interact with the player
                     video.html = vimeography.utilities.set_video_id(video.html);
                   gallery.find('.vimeography-player').html(video.html).fitVids().animate({'opacity':1}, 300);
-                  $('.vimeography-description').html('<h1 class=\"uppercase\">'+name+'</h1><p>'+description+'</p>');
+                  $('.vimeography-description').html('<h1 class=\"uppercase\">'+name+'</h1><div class=\"textOverflow\">'+description+'</div><div class=\"arrowsTop\"></div><div class=\"arrowsDown\"></div>');
 
                     gallery.find('.vimeography-main').spin(false);
                     gallery.trigger('vimeography/video/ready');
@@ -216,7 +216,7 @@ function myjavascript2_func( $atts ){
                     // This needs to be done so that the Vimeo API can interact with the player
                     video.html = vimeography.utilities.set_video_id(video.html);
                   gallery.find('.vimeography-player').html(video.html).fitVids().animate({'opacity':1}, 300);
-                  $('.vimeography-description').html('<h1 class=\"uppercase\">'+name+'</h1><p>'+description+'</p>');
+                  $('.vimeography-description').html('<h1 class=\"uppercase\">'+name+'</h1><div class=\"textOverflow\">'+description+'</div><div class=\"arrowsTop\"></div><div class=\"arrowsDown\"></div>');
 
                     gallery.find('.vimeography-main').spin(false);
                     gallery.trigger('vimeography/video/ready');

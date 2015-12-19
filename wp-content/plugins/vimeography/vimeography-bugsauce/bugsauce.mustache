@@ -10,7 +10,11 @@
       </div>
       <div class="vimeography-description">
         <h2 class="uppercase">{{{title}}}</h2>
-        <p>{{{description}}}</p>
+        <div class="textOverflow">
+          <p>{{{description}}}</p>
+        </div>
+        <div class="arrowsTop"></div>
+        <div class="arrowsDown"></div>
       </div>
       <p class="classTextFutura" style="margin-bottom:100px;margin-left: 30px; font-size: 20px; text-align: center;"><a target="_blank" class="pedro" href="http://www.facebook.com/sharer.php?u={{link}}"><img class="btn-share-social share-face alignnone size-full wp-image-813" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-face.png" alt="btn-face" width="80" height="38" /></a><a target="_blank" href="http://twitter.com/home?status=Check%20out%20this%20product:+{{link}}"><img class="btn-share-social share-tweet alignnone size-full wp-image-812" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-twitter.png" alt="btn-twitter" width="80" height="38" /></a><a target="_blank" href="http://pinterest.com/pin/create/button/?url={{link}}?v=1444748418&amp;description=STAFF%20#"><img class="btn-share-social share-pin alignnone size-full wp-image-811" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-pin.png" alt="btn-pin" width="80" height="38" /></a><a target="_blank" href="http://www.tumblr.com/share/link?url={{link}}"><img class="btn-share-social share-tumblr alignnone size-full wp-image-810" src="http://dosnoventa.jsalvatella.com/wp-content/uploads/2015/05/btn-tumblr.png" alt="btn-tumblr" width="80" height="38" /></a></p>
     {{/featured}}
@@ -103,36 +107,14 @@
 
       $('.vimeography-thumbnails').on('click', '.numPagination', function(){
           $('.subcontainer-hover').addClass('hide');
-          $('.numPagination').removeClass('active');
-          $('.pageNext').css('display', 'none');
-          
-          if ($(this).hasClass('paginationNext') && !$(this).hasClass('disabled')){
-            page++;
-            $('.page'+page).css('display', 'block');
-            $('.num_'+page).addClass('active');
-          }
-          else if ($(this).hasClass('paginationPrev') && !$(this).hasClass('disabled')){
-            page--;
-            $('.page'+page).css('display', 'block');
-            $('.num_'+page).addClass('active');
-            
-          }
-          else {
-            page = $(this).html();
-            $('.page'+$(this).html()).css('display', 'block');
-            $(this).addClass('active');
-          }
-          if (page > 1){
-            $('.paginationPrev').removeClass('disabled');
-          }
-          else {
-            $('.paginationPrev').addClass('disabled');
-          }
+          page++;
+          $('.page'+page).css('display', 'block');
+
           if (page == numPages) {
-            $('.paginationNext').addClass('disabled');
+            $('.paginationNext').css('display', 'none');
           }
           else {
-            $('.paginationNext').removeClass('disabled');
+            $('.paginationNext').css('display', 'inline-grid');
           }
 
       });
